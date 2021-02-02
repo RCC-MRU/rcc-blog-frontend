@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class CategoriesComponent extends Component {
   render() {
-    return <div></div>;
+    return <h1>This is Category Component</h1>;
   }
 }
 

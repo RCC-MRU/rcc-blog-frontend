@@ -1,17 +1,31 @@
 import React from "react";
-import HomeComponent from "./Components/HomeComponent";
-// import LoginComponent from "./Components/LoginComponent";
+import Router from "./Components/Router";
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-    return <HomeComponent />;
+    return (
+      <BrowserRouter>
+        <Router/>
+      </BrowserRouter>
+    );
   }
 }
 
 export default App;
 
-// HomeComponent: Srijan
+/**
+ * Enpoints list:
+ * /home
+ * /blog
+ * /categories
+ * /signup
+ * /login
+ */
+
+// HomeComponent Srijan
 // LoginComponent: Arsh
 // SignupComponent: Kunal
 // BlogpostComponent: Khushi
 // CategoriesComponent: Nipun
+
