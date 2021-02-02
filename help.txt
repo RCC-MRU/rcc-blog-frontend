@@ -1,9 +1,0 @@
-External packages:-
-
-bootstrap: https://www.npmjs.com/package/bootstrap  v4.6
-
-bootstrap-social: https://www.npmjs.com/package/bootstrap-social v5.1.1
-
-font-awesome: https://www.npmjs.com/package/font-awesome  v4.7.0
-
-reactstrap: https://www.npmjs.com/package/reactstrap  v8.9.0

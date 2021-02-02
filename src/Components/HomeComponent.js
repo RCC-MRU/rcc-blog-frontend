@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from "react";
 
-class HomeComponent extends React.Component {
+class HomeComponent extends Component {
   render() {
-    return <h1>Hello World</h1>;
+    return <>
+    <h1>Hello World</h1>
+    </>;
   }
 }
 

@@ -1,5 +1,6 @@
 # Getting Started with Create React App
-https://app.creately.com/diagram/hYPkjqK3u3d/edit
+
+ER Diagram: https://app.creately.com/diagram/hYPkjqK3u3d/edit
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
