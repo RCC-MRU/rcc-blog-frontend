@@ -1,12 +1,12 @@
 import React from "react";
-import Router from "./Components/Router";
-import { BrowserRouter } from 'react-router-dom';
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Router/>
+        <Router />
       </BrowserRouter>
     );
   }
@@ -28,4 +28,3 @@ export default App;
 // SignupComponent: Kunal
 // BlogpostComponent: Khushi
 // CategoriesComponent: Nipun
-
