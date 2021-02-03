@@ -33,11 +33,11 @@ class SignupComponent extends Component {
                        <div className="form-group">
 
                           <input type="password" placeholder=" .........." className=" inp no-outline pt-4"
-                           id="exampleInputPassword1" />
+                           id="exampleInputPassword2" />
                         </div>
                         <div className="form-group form-check pt-4">
                           <input type="checkbox" className="form-check-input " id="exampleCheck1" />
-                           <label className="form-check-label" for="exampleCheck1">
+                           <label className="form-check-label" htmlFor="exampleCheck1">
                           <p className="check"> By clicking sign up, You agree to our Terms of use and knowledge that you have read
                           our Privacy Policy</p>
                            </label>
