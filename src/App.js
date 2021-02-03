@@ -28,3 +28,5 @@ export default App;
 // SignupComponent: Kunal
 // BlogpostComponent: Khushi
 // CategoriesComponent: Nipun
+
+//bugsFixer && Manager:Harsh
