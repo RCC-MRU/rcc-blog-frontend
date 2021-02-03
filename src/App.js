@@ -29,4 +29,4 @@ export default App;
 // BlogpostComponent: Khushi
 // CategoriesComponent: Nipun
 
-//bugsFixer && Manager:Harsh && Sanchit
+//bugsFixer && Manager: Harsh && Sanchit

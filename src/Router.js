@@ -14,7 +14,7 @@ class Router extends Component {
         <Route exact path="/blog" component={() => <BlogpostComponent />} />
         <Route
           exact
-          path="/categories"
+          path="/category"
           component={() => <CategoriesComponent />}
         />
         <Route exact path="/signup" component={() => <SignupComponent />} />

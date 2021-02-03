@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class SignupComponent extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <section>
           <div className="container box ">
             <div className="row w-100">
@@ -83,7 +83,7 @@ class SignupComponent extends Component {
             </div>
           </div>
         </section>
-      </div>
+      </React.Fragment>
     );
   }
 }
