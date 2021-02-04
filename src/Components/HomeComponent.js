@@ -12,7 +12,7 @@ class HomeComponent extends Component {
             <p className="small-heading">How To Live a Healthy and Fit Life?</p>
           </div>
 
-          {/* header ends */}
+         
 
           <section className="spacing-section">
             {/* first three pics  */}
@@ -21,11 +21,17 @@ class HomeComponent extends Component {
                 <div className="col-12 col-md-6 my-1 px-1">
                   <div className="banner-img-left">
                     <div className="centered">
-                      <button className="btn btn-black btn-sm text-white">
+                    <img
+              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
+              className="img-fluid"
+              alt="categories"
+            />  
+              <button className="btn btn-black btn-sm text-white">
                         workout
                       </button>
-                      <p>Add This to your Daily 20 Min Workout Routine</p>
-                      <p className="edit-font">Kunal - Nov 20, 2020</p>
+            
+                      <p className="card-text font-format">Add This to your Daily 20 Min Workout Routine</p>
+                      <p className="card-text format-text-para">Kunal - Nov 20, 2020</p>
                     </div>
                   </div>
                 </div>
@@ -34,22 +40,37 @@ class HomeComponent extends Component {
                     <div className="col-6 px-2">
                       <div className="banner-img-right">
                         <div className="centered">
-                          <button className="btn btn-black btn-sm text-white">
+                        <img
+              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
+              width="770px"
+              height="513px"
+              className="img-fluid"
+              alt="categories"
+            />  
+            <button className="btn btn-black btn-sm text-white">
                             workout
                           </button>
-                          <p>Add This to your Daily 20 Min Workout Routine</p>
-                          <p className="edit-font">Kunal - Nov 20, 2020</p>
+                          <p className="card-text font-format">Add This to your Daily 20 Min Workout Routine</p>
+                      <p className="card-text format-text-para">Kunal - Nov 20, 2020</p>
                         </div>
                       </div>
                     </div>
                     <div className="col-6 px-2">
                       <div className="banner-img-right">
                         <div className="centered">
+                        <img
+              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
+              width="770px"
+              height="513px"
+              className="img-fluid"
+              alt="categories"
+            />  
+
                           <button className="btn btn-black btn-sm text-white">
                             workout
                           </button>
-                          <p>Add This to your Daily 20 Min Workout Routine</p>
-                          <p className="edit-font">Kunal - Nov 20, 2020</p>
+                          <p className="card-text font-format">Add This to your Daily 20 Min Workout Routine</p>
+                      <p className="card-text format-text-para">Kunal - Nov 20, 2020</p>
                         </div>
                       </div>
                     </div>
