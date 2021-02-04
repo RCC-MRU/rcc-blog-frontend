@@ -451,7 +451,7 @@ class HomeComponent extends Component {
     </div>
     
     </React.Fragment>
-    ),
+    );
   }
 }
 
