@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
 class BlogpostComponent extends Component {
+
+state = {value: "Leave a comment"};
+
+handleChange = e => {
+this.setState({value: e.target.value});
+};
+
   render() {
     return (
       <React.Fragment>
@@ -105,7 +112,7 @@ class BlogpostComponent extends Component {
                 <hr style={{ marginTop: "-20px" }} />
                 <hr style={{ marginTop: "-14px" }} />
                 <form>
-                  <textarea name="comment"> Leave a comment</textarea>
+                  <textarea value={this.state.value} onChange={this.handleChange} />
                   <div className="Post-btn">
                     <input type="submit" value="Post" />
                   </div>
@@ -130,7 +137,7 @@ class BlogpostComponent extends Component {
                 </p>
                 <h5
                   style={{
-                    fontFamily: "Red Hat Text",
+                    fontFamily: "'Red Hat Text', sans-serif",
                     size: "23px",
                     color: "rgba(0, 0, 0, 0.7)",
                   }}
