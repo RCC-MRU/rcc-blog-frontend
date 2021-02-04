@@ -450,8 +450,8 @@ class HomeComponent extends Component {
     </section>
     </div>
     
-    </React.Fragment>;
-    );
+    </React.Fragment>
+    ),
   }
 }
 
