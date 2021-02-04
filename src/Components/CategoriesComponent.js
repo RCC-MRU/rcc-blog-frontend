@@ -4,6 +4,11 @@ class CategoriesComponent extends Component {
   render() {
     return (
       <React.Fragment>
+       <div class="rectangle-nav">
+      <p class="category-rectangle">Category</p>
+      <p class="fitness-rectangle">Fitness</p>
+    </div>
+    <br /><br /><br /><br /><br />
         <section id="blogPost">
       <div className="container">
         <div className="row">
@@ -72,9 +77,9 @@ class CategoriesComponent extends Component {
               </div>
               <div className="col-md-3"><i className="far fa-heart"></i></div>
               <div className="col-md-3">
-                <i className="fab fa-facebook-f"></i>
-                <i className="fab fa-twitter"></i>
-                <i className="far fa-envelope"></i>
+                <i className="fa fa-facebook-f"></i>
+                <i className="fa fa-twitter"></i>
+                <i className="fa fa-envelope"></i>
               </div>
             </div>
             <hr style= {{marginTop: "-20px"}} />
@@ -106,11 +111,11 @@ class CategoriesComponent extends Component {
               <div className="col-md-6">
                 <p>Kunal Arora</p>
               </div>
-              <div className="col-md-3"><i className="far fa-heart"></i></div>
+              <div className="col-md-3"><i className="fa fa-heart"></i></div>
               <div className="col-md-3">
-                <i className="fab fa-facebook-f"></i>
-                <i className="fab fa-twitter"></i>
-                <i className="far fa-envelope"></i>
+                <i className="fa fa-facebook-f"></i>
+                <i className="fa fa-twitter"></i>
+                <i className="fa fa-envelope"></i>
               </div>
             </div>
             <hr style={{marginTop: "-20px"}} />
@@ -145,11 +150,11 @@ class CategoriesComponent extends Component {
               <hr />
               <h4 className="connectAndFollow-title border">Connect And Follow</h4>
               <div className="social-blogpost">
-                <div><i className="fab fa-facebook-f"></i></div>
-                <div><i className="fab fa-instagram"></i></div>
-                <div><i className="fab fa-google-plus"></i></div>
-                <div><i className="fab fa-twitter"></i></div>
-                <div><i className="fas fa-rss-square"></i></div>
+                <div><i className="fa fa-facebook-f"></i></div>
+                <div><i className="fa fa-instagram"></i></div>
+                <div><i className="fa fa-google-plus"></i></div>
+                <div><i className="fa fa-twitter"></i></div>
+                <div><i className="fa fa-rss-square"></i></div>
               </div>
             </div>
 
@@ -158,7 +163,7 @@ class CategoriesComponent extends Component {
               <h4 className="categories-title border">Categories</h4>
               <div className="row-md-4">
                 <img
-                  src= "./assets/images/pexels-li-sun-2294361 (1).jpg "
+                  src= {process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
                   className="img-fluid"
                   alt="cat"
                 />
@@ -166,7 +171,7 @@ class CategoriesComponent extends Component {
               </div>
               <div className="row-md-4">
                 <img
-                  src="./assets/images/pexels-li-sun-2294361 (1).jpg"
+                  src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
                   className="img-fluid" alt="pic"
                 />
                 <div className="textblock"><span>workout</span></div>
