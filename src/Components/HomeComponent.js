@@ -7,7 +7,7 @@ class HomeComponent extends Component {
         <div className="container">
           <div className="container text-center my-4 ">
             <p className="format-heading">
-              Health <span class="red-col"> & </span> Fitness
+              Health <span className="red-col"> & </span> Fitness
             </p>
             <p className="small-heading">How To Live a Healthy and Fit Life?</p>
           </div>
@@ -248,7 +248,7 @@ class HomeComponent extends Component {
                     <div className="col-12 col-md-6 d-flex justify-content-center">
                       <div className="card border-0">
                         <img
-                          class="card-img-top health-section img-fluid"
+                          className="card-img-top health-section img-fluid"
                           src={process.env.PUBLIC_URL +"images/plate_food.jpg"}
                       alt="home"
                         />

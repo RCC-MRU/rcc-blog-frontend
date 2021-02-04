@@ -4,9 +4,9 @@ class CategoryComponent extends Component {
   render() {
     return (
       <React.Fragment>
-       <div class="rectangle-nav">
-      <p class="category-rectangle">Category</p>
-      <p class="fitness-rectangle">Fitness</p>
+       <div className="rectangle-nav">
+      <p className="category-rectangle">Category</p>
+      <p className="fitness-rectangle">Fitness</p>
     </div>
     <br /><br /><br /><br /><br />
         <section id="blogPost">

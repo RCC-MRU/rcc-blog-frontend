@@ -6,21 +6,29 @@ import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 
+// import header and footer
+import HeaderComponent from "./Components/HeaderComponent";
+import FooterComponent from "./Components/FooterComponent";
+
 class Router extends Component {
   render() {
     return (
-      <Switch>
-        <Route path="/home" component={() => <HomeComponent />} />
-        <Route exact path="/blog" component={() => <BlogpostComponent />} />
-        <Route
-          exact
-          path="/category"
-          component={() => <CategoryComponent />}
-        />
-        <Route exact path="/signup" component={() => <SignupComponent />} />
-        <Route exact path="/login" component={() => <LoginComponent />} />
-        <Redirect to="/home" />
-      </Switch>
+      <React.Fragment>
+        <HeaderComponent/>
+        <Switch>
+          <Route path="/home" component={() => <HomeComponent />} />
+          <Route exact path="/blog" component={() => <BlogpostComponent />} />
+          <Route
+            exact
+            path="/category"
+            component={() => <CategoryComponent />}
+          />
+          <Route exact path="/signup" component={() => <SignupComponent />} />
+          <Route exact path="/login" component={() => <LoginComponent />} />
+          <Redirect to="/home" />
+        </Switch>
+        <FooterComponent/>
+      </React.Fragment>
     );
   }
 }
