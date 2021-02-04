@@ -305,8 +305,8 @@ text-align: center; */
 .login-img {
   /* position: absolute; */
 
-  height: 676px;
-  width: 643px;
+  height: 90%;
+  width: 94%;
   padding-top: 1.7rem;
 
   /* padding-left: 1.2rem; */
@@ -409,6 +409,16 @@ text-align: center; */
 
   color: rgba(0, 0, 0, 0.68);
 }
+@media (max-width: 768px) { 
+  .box { 
+      background: white; 
+      box-shadow: none;
+  } 
+  .login-img{
+    display: none;
+  }
+} 
+
 
 .sign-up-page {
   font-family: Roboto;
