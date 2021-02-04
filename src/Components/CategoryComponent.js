@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class CategoriesComponent extends Component {
+class CategoryComponent extends Component {
   render() {
     return (
       <React.Fragment>
@@ -240,4 +240,4 @@ class CategoriesComponent extends Component {
   }
 }
 
-export default CategoriesComponent;
+export default CategoryComponent;

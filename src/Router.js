@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import HomeComponent from "./Components/HomeComponent";
 import LoginComponent from "./Components/LoginComponent";
 import SignupComponent from "./Components/SignupComponent";
-import CategoriesComponent from "./Components/CategoriesComponent";
+import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 
 class Router extends Component {
@@ -15,7 +15,7 @@ class Router extends Component {
         <Route
           exact
           path="/category"
-          component={() => <CategoriesComponent />}
+          component={() => <CategoryComponent />}
         />
         <Route exact path="/signup" component={() => <SignupComponent />} />
         <Route exact path="/login" component={() => <LoginComponent />} />
