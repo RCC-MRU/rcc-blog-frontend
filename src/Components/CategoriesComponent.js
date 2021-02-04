@@ -13,12 +13,13 @@ class CategoriesComponent extends Component {
               <div className="category-grey">- Nov 20 , 2020</div>
             </div>
             <h3>Add This to your workout routine</h3>
-             {/* <img
-              src="./assets/images/pexels-li-sun-2294361 (1).jpg"
+              <img
+              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
               width="770px"
               height="513px"
               className="img-fluid"
-            />  */}
+              alt="categories"
+            />  
 
             <div className="blog-text">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -89,7 +90,7 @@ class CategoriesComponent extends Component {
               width="770px"
               height="513px"
               className="img-fluid"
-              alt="pic"
+              alt="workOut"
             />
 
             <div className="blog-text">
@@ -127,7 +128,7 @@ class CategoriesComponent extends Component {
                 width="auto"
                 height="227px"
                 className="img-fluid"
-                alt="pic"
+                alt="fitness"
               />
               <p style={{fontFamily: "'Red Hat Text', sans-serif"}}>
                 I am x y z <br />
@@ -172,8 +173,8 @@ class CategoriesComponent extends Component {
               </div>
               <div className="row-md-4">
                 <img
-                  src="./assets/images/pexels-li-sun-2294361 (1).jpg"
-                  className="img-fluid" alt="pic"
+                  src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"} 
+                  className="img-fluid" alt="work-out"
                 />
                 <div className="textblock"><span>health</span></div>
               </div>
@@ -187,7 +188,7 @@ class CategoriesComponent extends Component {
                   <img
                     src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}          
                      className="img-fluid"
-                     alt="img-latest-post"
+                     alt="latest-post"
                   />
                 </div>
                 <div className="col-md-6">
