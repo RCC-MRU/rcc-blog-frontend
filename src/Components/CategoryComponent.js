@@ -41,9 +41,9 @@ class CategoryComponent extends Component {
               </div>
               <div className="col-md-3"><i className="far fa-heart"></i></div>
               <div className="col-md-3">
-                <i className="fab fa-facebook-f"></i>
-                <i className="fab fa-twitter"></i>
-                <i className="far fa-envelope"></i>
+                <i className="fa fa-facebook-f"></i>
+                <i className="fa fa-twitter"></i>
+                <i className="fa fa-envelope"></i>
               </div>
             </div>
             <hr style={{marginTop : "-20px"}} />
@@ -75,7 +75,7 @@ class CategoryComponent extends Component {
               <div className="col-md-6">
                 <p>Kunal Arora</p>
               </div>
-              <div className="col-md-3"><i className="far fa-heart"></i></div>
+              <div className="col-md-3"><i className="fa fa-heart"></i></div>
               <div className="col-md-3">
                 <i className="fa fa-facebook-f"></i>
                 <i className="fa fa-twitter"></i>

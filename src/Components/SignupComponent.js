@@ -10,10 +10,7 @@ class SignupComponent extends Component {
               <div className="col-5">
                 <div className="row pt-5">
                   <div className="col-6">
-                    <h1 className="company pl-5">
-                      {" "}
-                      <span className="com">Com</span>Pany
-                    </h1>
+                    <h1 className="company pl-5">Health&Fitness</h1>
                   </div>
 
                   <div className="col-6 d-flex pl-5 pt-2">

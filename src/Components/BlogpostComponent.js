@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 
 class BlogpostComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-state = {value: "Leave a comment"};
-
-handleChange = e => {
-this.setState({value: e.target.value});
-};
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
 
   render() {
     return (
@@ -99,12 +106,12 @@ this.setState({value: e.target.value});
                   <p>Kunal Arora</p>
                 </div>
                 <div className="col-md-3">
-                  <i className="far fa-heart"></i>
+                  <i className="fa fa-heart"></i>
                 </div>
                 <div className="col-md-3">
-                  <i className="fab fa-facebook-f"></i>
-                  <i className="fab fa-twitter"></i>
-                  <i className="far fa-envelope"></i>
+                  <i className="fa fa-facebook-f"></i>
+                  <i className="fa fa-twitter"></i>
+                  <i className="fa fa-envelope"></i>
                 </div>
               </div>
 
@@ -112,7 +119,11 @@ this.setState({value: e.target.value});
                 <hr style={{ marginTop: "-20px" }} />
                 <hr style={{ marginTop: "-14px" }} />
                 <form>
-                  <textarea value={this.state.value} onChange={this.handleChange} />
+                  <textarea
+                    placeholder="Leave a Comment"
+                    onChange={this.handleChange}
+                  />
+                  {console.log(this.state.value)}
                   <div className="Post-btn">
                     <input type="submit" value="Post" />
                   </div>
@@ -153,19 +164,19 @@ this.setState({value: e.target.value});
                 </h4>
                 <div className="social-blogpost">
                   <div>
-                    <i className="fab fa-facebook-f"></i>
+                    <i className="fa fa-facebook-f"></i>
                   </div>
                   <div>
-                    <i className="fab fa-instagram"></i>
+                    <i className="fa fa-instagram"></i>
                   </div>
                   <div>
-                    <i className="fab fa-google-plus"></i>
+                    <i className="fa fa-google-plus"></i>
                   </div>
                   <div>
-                    <i className="fab fa-twitter"></i>
+                    <i className="fa fa-twitter"></i>
                   </div>
                   <div>
-                    <i className="fas fa-rss-square"></i>
+                    <i className="fa fa-rss-square"></i>
                   </div>
                 </div>
               </div>
