@@ -6,7 +6,7 @@ class SignupComponent extends Component {
       <React.Fragment>
         <section>
         <div className="container mt-5">
-        <div className="row">
+        <div className="row box-shadow">
         <div className="col-md-6 col-12 left-side">
           <div className="row pt-5">
             <div className="col-6 ">
@@ -46,12 +46,12 @@ class SignupComponent extends Component {
               </div>
               <div className="form-group form-check pt-4">
                 <input type="checkbox" className="form-check-input " id="exampleCheck1" />
-                <label className="form-check-label" for="exampleCheck1">
+                <label className="form-check-label" htmlFor="exampleCheck1">
                   <p className="check"> By clicking sign up, You agree to our Terms of use and knowledge that you have read
                     our Privacy Policy</p>
                 </label>
-              </div>
               <button type="submit" className="btn btn-col"><span className="log-txt-for">Signup</span></button>
+              </div>
             
             </form>
 
