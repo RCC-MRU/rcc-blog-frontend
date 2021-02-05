@@ -7,10 +7,10 @@ class LoginComponent extends Component {
         <section>
           <div className="container box ">
             <div className="row w-100">
-              <div className="col-5">
+              <div className="col-5 col-sm-6">
                 <div className="row pt-5">
                   <div className="col-6">
-                    <h1 className="company pl-5">
+                    <h1 className="company pl-5 col-md-3 ">
                       <strong>Com</strong> Pany
                     </h1>
                   </div>
@@ -69,11 +69,11 @@ class LoginComponent extends Component {
                 </div>
               </div>
 
-              <div className=" col-7">
+              <div className=" col-7 col-sm-6">
                 <img
                   src={process.env.PUBLIC_URL + "images/login.svg"}
                   alt="login"
-                  className="login-img"
+                  className="login-img col-md-12 col-sm-12" 
                 />
               </div>
             </div>

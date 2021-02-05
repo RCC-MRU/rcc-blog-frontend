@@ -77,7 +77,7 @@ class SignupComponent extends Component {
                 <img
                   src={process.env.PUBLIC_URL + "images/signup.svg"}
                   alt="signup"
-                  className="login-img"
+                  className="login-img "
                 />
               </div>
             </div>
