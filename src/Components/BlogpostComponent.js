@@ -1,6 +1,20 @@
 import React, { Component } from "react";
 
 class BlogpostComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -92,12 +106,12 @@ class BlogpostComponent extends Component {
                   <p>Kunal Arora</p>
                 </div>
                 <div className="col-md-3">
-                  <i className="far fa-heart"></i>
+                  <i className="fa fa-heart"></i>
                 </div>
                 <div className="col-md-3">
-                  <i className="fab fa-facebook-f"></i>
-                  <i className="fab fa-twitter"></i>
-                  <i className="far fa-envelope"></i>
+                  <i className="fa fa-facebook-f"></i>
+                  <i className="fa fa-twitter"></i>
+                  <i className="fa fa-envelope"></i>
                 </div>
               </div>
 
@@ -105,7 +119,11 @@ class BlogpostComponent extends Component {
                 <hr style={{ marginTop: "-20px" }} />
                 <hr style={{ marginTop: "-14px" }} />
                 <form>
-                  <textarea name="comment"> Leave a comment</textarea>
+                  <textarea
+                    placeholder="Leave a Comment"
+                    onChange={this.handleChange}
+                  />
+                  {console.log(this.state.value)}
                   <div className="Post-btn">
                     <input type="submit" value="Post" />
                   </div>
@@ -130,7 +148,7 @@ class BlogpostComponent extends Component {
                 </p>
                 <h5
                   style={{
-                    fontFamily: "Red Hat Text",
+                    fontFamily: "'Red Hat Text', sans-serif",
                     size: "23px",
                     color: "rgba(0, 0, 0, 0.7)",
                   }}
@@ -146,19 +164,19 @@ class BlogpostComponent extends Component {
                 </h4>
                 <div className="social-blogpost">
                   <div>
-                    <i className="fab fa-facebook-f"></i>
+                    <i className="fa fa-facebook-f"></i>
                   </div>
                   <div>
-                    <i className="fab fa-instagram"></i>
+                    <i className="fa fa-instagram"></i>
                   </div>
                   <div>
-                    <i className="fab fa-google-plus"></i>
+                    <i className="fa fa-google-plus"></i>
                   </div>
                   <div>
-                    <i className="fab fa-twitter"></i>
+                    <i className="fa fa-twitter"></i>
                   </div>
                   <div>
-                    <i className="fas fa-rss-square"></i>
+                    <i className="fa fa-rss-square"></i>
                   </div>
                 </div>
               </div>
