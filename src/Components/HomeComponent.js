@@ -20,18 +20,21 @@ class HomeComponent extends Component {
               <div className="row">
                 <div className="col-12 col-md-6 my-1 px-1">
                   <div className="banner-img-left">
+                
                     <div className="centered">
                     <img
               src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
               className="img-fluid"
               alt="categories"
-            />  
+            /> 
+                   
               <button className="btn btn-black btn-sm text-white">
                         workout
                       </button>
             
                       <p className="card-text font-format">Add This to your Daily 20 Min Workout Routine</p>
                       <p className="card-text format-text-para">Kunal - Nov 20, 2020</p>
+              
                     </div>
                   </div>
                 </div>
@@ -41,7 +44,7 @@ class HomeComponent extends Component {
                       <div className="banner-img-right">
                         <div className="centered">
                         <img
-              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
+              src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
               width="770px"
               height="513px"
               className="img-fluid"
@@ -59,7 +62,7 @@ class HomeComponent extends Component {
                       <div className="banner-img-right">
                         <div className="centered">
                         <img
-              src={process.env.PUBLIC_URL + "images/pexels-li-sun-2294361 (1).jpg"}
+              src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
               width="770px"
               height="513px"
               className="img-fluid"
@@ -93,7 +96,7 @@ class HomeComponent extends Component {
                   <div className="card border-0">
                     <img
                       className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL +"images/plate_food.jpg"}
+                      src={process.env.PUBLIC_URL +"images/exercise2.jpg"}
                       alt="home"
                     />
                     <div className="card-body text-center">
@@ -110,7 +113,7 @@ class HomeComponent extends Component {
                   <div className="card border-0">
                     <img
                       className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL +"images/plate_food.jpg"}
+                      src={process.env.PUBLIC_URL +"images/exercise2.jpg"}
                       alt="home"
                     />
                     <div className="card-body text-center">
@@ -127,7 +130,7 @@ class HomeComponent extends Component {
                   <div className="card border-0">
                     <img
                       className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL +"images/plate_food.jpg"}
+                      src={process.env.PUBLIC_URL +"images/exercise2.jpg"}
                       alt="home"
                     />
                     <div className="card-body text-center">
@@ -144,7 +147,7 @@ class HomeComponent extends Component {
                   <div className="card border-0">
                     <img
                       className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL +"images/plate_food.jpg"}
+                      src={process.env.PUBLIC_URL +"images/exercise2.jpg"}
                       alt="home"
                     />
                     <div className="card-body text-center">
