@@ -5,12 +5,7 @@ class HomeComponent extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <div className="container text-center my-4 ">
-            <p className="format-heading">
-              Health <span className="red-col"> & </span> Fitness
-            </p>
-            <p className="small-heading">How To Live a Healthy and Fit Life?</p>
-          </div>
+         
 
           <section className="spacing-section">
 
