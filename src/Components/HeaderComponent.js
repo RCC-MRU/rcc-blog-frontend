@@ -70,6 +70,7 @@ class HeaderComponent extends Component {
                 Categories
                 <img
                         src={process.env.PUBLIC_URL + "images/icons8-expand-arrow-24.png"}
+                        
                         className="img-fluid"
                         alt="wk-route"
                       />
