@@ -68,7 +68,11 @@ class HeaderComponent extends Component {
             <li className="nav-item dropdown active">
               <a className="nav-link format-main-menubar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
                 Categories
-                <img src="./assets/images/icons8-expand-arrow-24.png" width="10" />
+                <img
+                        src={process.env.PUBLIC_URL + "images/icons8-expand-arrow-24.png"}
+                        className="img-fluid"
+                        alt="wk-route"
+                      />
               </a>
               <div className="dropdown-menu w-75 mx-auto dropdown-menu-center" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item format-main-menubar" href="./categories.html">Fitness</a>
