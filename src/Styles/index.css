@@ -1,14 +1,13 @@
 /* font libraries */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/5.4.0/css/font-awesome.min.css');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/5.4.0/css/font-awesome.min.css");
 
 /*===== globals =====*/
-@import url('https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
 .bg-color-black {
   background-color: #000000 !important;
 }
@@ -356,7 +355,6 @@ text-align: center; */
   box-shadow: 0px 4px 99px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   width: 71%;
- 
 }
 
 .company {
@@ -408,7 +406,6 @@ text-align: center; */
   color: #ffffff;
 }
 
-
 /* Sign up page styling */
 
 .head-sign {
@@ -420,29 +417,28 @@ text-align: center; */
 
   color: rgba(0, 0, 0, 0.68);
 }
-.right-side{
+.right-side {
   background: linear-gradient(
     to right,
     rgba(218, 50, 50, 1) 50%,
     rgba(206, 105, 73, 1) 100%
   );
 }
-.box-shadow{
+.box-shadow {
   box-shadow: 2px 4px 99px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 768px) {
- .right-side{
-   display: none;
- }
- .pl-5{
-   padding-left: 1% !important;
- }
- .btn-col{
-  margin-bottom: 20% !important;
- }
+  .right-side {
+    display: none;
+  }
+  .pl-5 {
+    padding-left: 1% !important;
+  }
+  .btn-col {
+    margin-bottom: 20% !important;
+  }
 }
-
 
 .sign-up-page {
   font-family: Roboto;
@@ -643,66 +639,65 @@ textarea {
   margin-left: -10px;
   margin-right: -10px;
 }
-.rectangle-nav{
+.rectangle-nav {
   position: absolute;
-width: 100%;
-height: 100px;
-left: 0px;
-/* top: 390px; */
-background: rgba(196, 196, 196, 0.22);
-border: 1px solid rgba(0, 0, 0, 0.32);
-box-sizing: border-box;
-
+  width: 100%;
+  height: 100px;
+  left: 0px;
+  /* top: 390px; */
+  background: rgba(196, 196, 196, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  box-sizing: border-box;
 }
-.fitness-rectangle{
+.fitness-rectangle {
   /* position: absolute;
 width: 118px;
 height: 40px;
 left: 662px;
 top: 320px; */
 
-font-family: Red Rose;
-font-style: normal;
-font-weight: bold;
-font-size: 32px;
-line-height: 20px;
-/* identical to box height */
-
-display: flex;
-align-items: center;
-
-color: #000000;
- justify-content: center;
-}
-.category-rectangle{
   font-family: Red Rose;
-font-style: normal;
-font-weight: normal;
-font-size: 17px;
-line-height: 30px;
-display: flex;
-align-items: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 20px;
+  /* identical to box height */
 
-color: #991414;
-justify-content: center;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+  justify-content: center;
 }
-.category-with-date{
+.category-rectangle {
+  font-family: Red Rose;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+
+  color: #991414;
+  justify-content: center;
+}
+.category-with-date {
   font-family: Nova Cut;
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 23px;
-display: flex;
-align-items: center;
-text-align: center;
-justify-content: center;
-padding-bottom: 1vh;
-color: #991414;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 1vh;
+  color: #991414;
 }
-.category-grey{
+.category-grey {
   color: rgba(0, 0, 0, 0.37);
 }
-.readmore-button span{
+.readmore-button span {
   display: flex;
   font-family: "Nova Cut", cursive;
   font-size: 19px;
@@ -711,16 +706,14 @@ color: #991414;
   justify-content: center;
   background-color: #000000;
   padding: 0.8vh;
-
 }
-.readmore-button{
+.readmore-button {
   display: flex;
-align-items: center;
-text-align: center;
-justify-content: center;
-  align-items: center ;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   /* padding: 2vh; */
-  
 }
 @media screen and (max-width: 766px) {
   .blog-like .col-md-3 {
@@ -910,4 +903,48 @@ font-family: 'Red Rose', cursive;
   .footer-connect-text {
     font-size: 1rem;
   }
+}
+/* footer css by harsh 09/02/21 */
+
+.footer-main {
+  background-color: #000000;
+}
+.footer-title-heading {
+  color: white;
+  font-family: "Nova Cut";
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.fh {
+  background: linear-gradient(90deg, #ff0000 0.1%, #696969 50%);
+  width: 100%;
+  height: 1px;
+}
+
+.discrip-footer {
+  color: #ffffff;
+  font-family: Red Hat Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+}
+.footer-social-media {
+  display: flex;
+}
+.social-media {
+  width: 64px;
+  height: 64px;
+
+  color: #ffffff;
+}
+.fa {
+  font-size: 32px;
+}
+.footer-location {
+  display: flex;
+  color: #ffffff;
 }
