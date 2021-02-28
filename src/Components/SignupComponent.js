@@ -16,7 +16,7 @@ class SignupComponent extends Component {
                   </div>
 
                   <div className="col-6 d-flex pl-5 pt-2">
-                    <h5 className="head-sign"> LOGIN </h5>
+                   <a href="/login"><h5 className="head-sign"> LOGIN </h5></a>
                     <h5 className="sign-up-page">SIGNUP</h5>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ class SignupComponent extends Component {
                     </div>
                     <div className="form-group">
                       <input
-                        type="password"
+                        type="email"
                         placeholder="Email"
                         className=" inp no-outline pt-4"
                         id="exampleInputPassword1"
