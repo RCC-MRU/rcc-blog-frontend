@@ -312,8 +312,8 @@ text-align: center; */
 .login-img {
   /* position: absolute; */
 
-  height: 676px;
-  width: 643px;
+  height: 100%;
+  width: 100%;
   padding-top: 1.7rem;
 
   /* padding-left: 1.2rem; */
@@ -361,7 +361,7 @@ text-align: center; */
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 29px;
+  font-size: 4vh;
   line-height: 34px;
   /* identical to box height */
 
@@ -428,7 +428,7 @@ text-align: center; */
   box-shadow: 2px 4px 99px rgba(0, 0, 0, 0.25);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .right-side {
     display: none;
   }
@@ -439,7 +439,14 @@ text-align: center; */
     margin-bottom: 20% !important;
   }
 }
-
+@media screen and (max-width: 426px) {
+.head{
+display: none;
+}
+.sign-up{
+  display: none;
+}
+}
 .sign-up-page {
   font-family: Roboto;
   font-style: normal;
@@ -530,7 +537,7 @@ font-family: 'Redressed', cursive;
 textarea {
   position: relative;
   width: 100%;
-  height: 294px;
+  height: 200px;
   font-family: "Red Rose", cursive;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.62);

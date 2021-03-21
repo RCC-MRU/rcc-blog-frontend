@@ -1,27 +1,30 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class SignupComponent extends Component {
   render() {
     return (
       <React.Fragment>
         <section>
-          <div className="container mt-5">
+          <div className="container mt-5 mb-5">
             <div className="row box-shadow">
               <div className="col-md-6 col-12 left-side">
                 <div className="row pt-5">
                   <div className="col-6 ">
-                    <h1 className="company pl-5">
+                    <h1 className="company pl-3">
                       <span className="com">Health&Fitness</span>
                     </h1>
                   </div>
 
                   <div className="col-6 d-flex pl-5 pt-2">
-                   <a href="/login"><h5 className="head-sign"> LOGIN </h5></a>
+                    <Link to="/login" style={{textDecoration: "none"}}>
+                      <h5 className="head-sign"> LOGIN </h5>
+                    </Link>
                     <h5 className="sign-up-page">SIGNUP</h5>
                   </div>
                 </div>
                 <div
-                  className="pl-5"
+                  className="pl-3"
                   style={{
                     display: "flex",
                     justifyContent: "center",
@@ -73,7 +76,7 @@ class SignupComponent extends Component {
                           knowledge that you have read our Privacy Policy
                         </p>
                       </label>
-                      <button type="submit" className="btn btn-col">
+                      <button type="submit" className="btn btn-col mb-5">
                         <span className="log-txt-for">Signup</span>
                       </button>
                     </div>
@@ -85,7 +88,7 @@ class SignupComponent extends Component {
                 <img
                   src={process.env.PUBLIC_URL + "images/signup.svg"}
                   alt="login"
-                  class="login-img"
+                  className="login-img"
                 />
               </div>
             </div>

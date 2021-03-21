@@ -1,19 +1,35 @@
 import React, { Component } from "react";
-
+import PopularCard from "./PopularCard";
+import HealthCard from "./HealthCard";
 class HomeComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
+      healthTitle: "Mood Depends On Food",
+      healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy text
+      ever since the 1500s, when an unknown printer took a galley of
+      type and scrambled it to make a type specimen book. It has
+      survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. .`,
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
         <div className="container">
-         
-
           <section className="spacing-section">
-
-          {/* first three pics  */}
+            {/* first three pics  */}
             <div className="container">
               <div className="row">
                 <div className="col-12 col-md-6 my-1 px-1">
-                  <div className="banner-img-left" style={{backgroundImage: "url('images/exercise1.jpg')"}}>
+                  <div
+                    className="banner-img-left"
+                    style={{ backgroundImage: "url('images/exercise1.jpg')" }}
+                  >
                     <div className="centered">
                       <button className="btn btn-black btn-sm text-white">
                         workout
@@ -26,7 +42,12 @@ class HomeComponent extends Component {
                 <div className="col-12 col-md-6 my-1">
                   <div className="row">
                     <div className="col-6 px-2">
-                      <div className="banner-img-right" style={{backgroundImage: "url('images/exercise2.jpg')"}}>
+                      <div
+                        className="banner-img-right"
+                        style={{
+                          backgroundImage: "url('images/exercise2.jpg')",
+                        }}
+                      >
                         <div className="centered">
                           <button className="btn btn-black btn-sm text-white">
                             workout
@@ -37,7 +58,12 @@ class HomeComponent extends Component {
                       </div>
                     </div>
                     <div className="col-6 px-2">
-                      <div className="banner-img-right" style={{backgroundImage: "url('images/exercise2.jpg')"}}>
+                      <div
+                        className="banner-img-right"
+                        style={{
+                          backgroundImage: "url('images/exercise2.jpg')",
+                        }}
+                      >
                         <div className="centered">
                           <button className="btn btn-black btn-sm text-white">
                             workout
@@ -51,7 +77,6 @@ class HomeComponent extends Component {
                 </div>
               </div>
             </div>
-
 
             {/* <!-- After Most popular card --> */}
             <div>
@@ -63,74 +88,10 @@ class HomeComponent extends Component {
 
             <div className="container">
               <div className="row">
-                <div className="col-12 col-sm-3 d-flex justify-content-center">
-                  <div className="card border-0">
-                    <img
-                      className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
-                      alt="home"
-                    />
-                    <div className="card-body text-center">
-                      <h4 className="card-title format-text-popular">
-                        Fitness
-                      </h4>
-                      <p className="card-text format-text-para">
-                        Lorem Ipsum dolor
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-sm-3 d-flex justify-content-center">
-                  <div className="card border-0">
-                    <img
-                      className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
-                      alt="home"
-                    />
-                    <div className="card-body text-center">
-                      <h4 className="card-title format-text-popular">
-                        Fitness
-                      </h4>
-                      <p className="card-text format-text-para">
-                        Lorem Ipsum dolor
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-sm-3 d-flex justify-content-center">
-                  <div className="card border-0">
-                    <img
-                      className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
-                      alt="home"
-                    />
-                    <div className="card-body text-center">
-                      <h4 className="card-title format-text-popular">
-                        Fitness
-                      </h4>
-                      <p className="card-text format-text-para">
-                        Lorem Ipsum dolor
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-sm-3 d-flex justify-content-center">
-                  <div className="card border-0">
-                    <img
-                      className="card-img-top format-card-image"
-                      src={process.env.PUBLIC_URL + "images/exercise2.jpg"}
-                      alt="home"
-                    />
-                    <div className="card-body text-center">
-                      <h4 className="card-title format-text-popular">
-                        Fitness
-                      </h4>
-                      <p className="card-text format-text-para">
-                        Lorem Ipsum dolor
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <PopularCard cardTitle="Fitness1" cardText="Lorem Ipsum" />
+                <PopularCard cardTitle="Fitness2" cardText="Lorem Ipsum" />
+                <PopularCard cardTitle="Fitness3" cardText="Lorem Ipsum" />
+                <PopularCard cardTitle="Fitness4" cardText="Lorem Ipsum" />
               </div>
             </div>
 
@@ -154,69 +115,17 @@ class HomeComponent extends Component {
               <div className="section-spacing-1">
                 <div className="container">
                   <div className="row">
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
+                    
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
                   </div>
                 </div>
               </div>
@@ -240,66 +149,17 @@ class HomeComponent extends Component {
               <div className="section-spacing-1">
                 <div className="container">
                   <div className="row">
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
+                    
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
                   </div>
                 </div>
               </div>
@@ -323,66 +183,17 @@ class HomeComponent extends Component {
               <div className="section-spacing-1">
                 <div className="container">
                   <div className="row">
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6 d-flex justify-content-center">
-                      <div className="card border-0">
-                        <img
-                          className="card-img-top health-section img-fluid"
-                          src={process.env.PUBLIC_URL + "images/plate_food.jpg"}
-                          alt="home"
-                        />
-                        <div className="card-body text-center">
-                          <h6 className="format-text-health">
-                            <span className="color-health"> Health</span> - Nov
-                            20, 2020
-                          </h6>
-                          <h4 className="card-title format-text-health-1">
-                            Mood Depends On Food
-                          </h4>
-
-                          <hr className="temp-line-format" />
-                          <p className="card-text font-format">
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
+                    
+                    <HealthCard
+                      healthImg={this.state.healthImg}
+                      healthTitle={this.state.healthTitle}
+                      healthText={this.state.healthText}
+                    />
                   </div>
                 </div>
               </div>
