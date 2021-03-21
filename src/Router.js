@@ -14,7 +14,7 @@ class Router extends Component {
   render() {
     return (
       <React.Fragment>
-        <HeaderComponent/>
+        <HeaderComponent />
         <Switch>
           <Route path="/home" component={() => <HomeComponent />} />
           <Route exact path="/blog" component={() => <BlogpostComponent />} />
@@ -27,7 +27,7 @@ class Router extends Component {
           <Route exact path="/login" component={() => <LoginComponent />} />
           <Redirect to="/home" />
         </Switch>
-        <FooterComponent/>
+        <FooterComponent />
       </React.Fragment>
     );
   }

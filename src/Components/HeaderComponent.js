@@ -44,11 +44,12 @@ class HeaderComponent extends Component {
               </div>
               <div className="col-12 col-sm-6">
                 <ul className="navbar-nav top-right-btns">
-                  <li className="nav-item px-1">
-                    <a className="nav-link text-white" href="/#">
-                      <i className="fa fa-search"></i> Search
+                  <li className="nav-item active px-1">
+                    <a className="nav-link" href="/#">
+                    <i className="fas fa-search"></i> Search
                     </a>
                   </li>
+                  
                   <li className="nav-item px-1">
                     <Link to="/signup" className="nav-link text-white">
                       Signup
@@ -88,10 +89,7 @@ class HeaderComponent extends Component {
             <div className="collapse navbar-collapse" id="ft-nav">
               <ul className="navbar-nav w-100 main-menubar">
                 <li className="nav-item active">
-                  <Link
-                    to="/"
-                    className="nav-link format-main-menubar"
-                  >
+                  <Link to="/" className="nav-link format-main-menubar">
                     Home
                   </Link>
                 </li>
@@ -132,10 +130,7 @@ class HeaderComponent extends Component {
                   </div>
                 </li>
                 <li className="nav-item active">
-                  <Link
-                    to="/blog"
-                    className="nav-link format-main-menubar"
-                  >
+                  <Link to="/blog" className="nav-link format-main-menubar">
                     blogPost
                   </Link>
                 </li>

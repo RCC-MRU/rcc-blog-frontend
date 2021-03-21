@@ -52,6 +52,7 @@ class HomeComponent extends Component {
               </div>
             </div>
 
+
             {/* <!-- After Most popular card --> */}
             <div>
               <p className="format-heading-2">Most Popular</p>

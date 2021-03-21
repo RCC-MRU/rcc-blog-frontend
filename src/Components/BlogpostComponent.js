@@ -123,7 +123,6 @@ class BlogpostComponent extends Component {
                     placeholder="Leave a Comment"
                     onChange={this.handleChange}
                   />
-                  {console.log(this.state.value)}
                   <div className="Post-btn">
                     <input type="submit" value="Post" />
                   </div>

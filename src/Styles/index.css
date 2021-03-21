@@ -802,7 +802,7 @@ font-family: 'Red Rose', cursive;
   background-color: rgba(255, 255, 255, 0.25);
   color: white;
   border: 0px;
-  width: 90%;
+  width: 95%;
   border-radius: 0px;
 }
 
@@ -816,14 +816,14 @@ font-family: 'Red Rose', cursive;
   color: white;
   border: 0px;
   height: 100%;
-  width: 90%;
+  width: 95%;
   display: flex;
   justify-content: center;
 }
 
 .submit-btn {
   background: #991414;
-  width: 90%;
+  width: 95%;
   text-align: center;
   font-family: Red Rose;
   color: #ffffff;
@@ -903,48 +903,4 @@ font-family: 'Red Rose', cursive;
   .footer-connect-text {
     font-size: 1rem;
   }
-}
-/* footer css by harsh 09/02/21 */
-
-.footer-main {
-  background-color: #000000;
-}
-.footer-title-heading {
-  color: white;
-  font-family: "Nova Cut";
-  margin-top: 10px;
-  font-size: 22px;
-}
-
-.fh {
-  background: linear-gradient(90deg, #ff0000 0.1%, #696969 50%);
-  width: 100%;
-  height: 1px;
-}
-
-.discrip-footer {
-  color: #ffffff;
-  font-family: Red Hat Text;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-}
-.footer-social-media {
-  display: flex;
-}
-.social-media {
-  width: 64px;
-  height: 64px;
-
-  color: #ffffff;
-}
-.fa {
-  font-size: 32px;
-}
-.footer-location {
-  display: flex;
-  color: #ffffff;
 }

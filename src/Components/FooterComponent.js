@@ -1,103 +1,109 @@
 import React, { Component } from "react";
 
+let date = new Date();
+
 class FooterComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: "",
+    };
+  }
   render() {
     return (
       <React.Fragment>
-        <div className="row">
-          <div className="container-fluid footer-main d-flex">
-            <div className="col-lg-4">
-              <div className="footer-title-heading">About Us</div>
-              <div className="fh"></div>
-              <p className="discrip-footer mt-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-              <div className="footer-social-media">
-                <div className=" social-media ">
-                  {" "}
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </div>
-                <div className="social-media">
-                  {" "}
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </div>
-                <div className=" social-media">
-                  {" "}
-                  <i class="fa fa-youtube" aria-hidden="true"></i>
-                </div>
-                <div className=" social-media">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="footer-title-heading">Address</div>
-              <div className="fh"></div>
+        <section id="footer">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12 col-md-4 my-1">
+                <div className="row-md-9">
+                  <h4 className="footer-title">
+                    About Us
+                    <hr />
+                  </h4>
 
-              <div className="footer-location mt-5 ml-4">
-                <div>
-                  {" "}
-                  <i class="fa fa-map-marker " aria-hidden="true"></i>
+                  <div className="footer-about-text">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged.
+                  </div>
                 </div>
-                <p style={{ marginLeft: "30px", color: "#ffffff" }}>
-                  Faridabad,Haryana
-                </p>
-              </div>
-              <div className="footer-location mt-4 ml-4">
-                <div>
-                  {" "}
-                  <i class="fa fa-phone" aria-hidden="true"></i>
+
+                <div className="row-md-3 footer-social">
+                  <i className="fab fa-instagram fa-lg"></i>
+                  <i className="fab fa-facebook fa-lg"></i>
+                  <i className="fab fa-twitter fa-lg"></i>
+                  <i className="fab fa-youtube fa-lg"></i>
                 </div>
-                <p style={{ marginLeft: "30px", color: "#ffffff" }}>
-                  +91-9876543210
-                </p>
               </div>
-              <div className="footer-location mt-4 ml-4">
-                <div>
-                  {" "}
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
+
+              <div className="col-12 col-md-4 my-1">
+                <h4 className="footer-title">
+                  Address
+                  <hr />
+                </h4>
+
+                <div className="footer-connect-text">
+                  <div className="footer-icon-gap">
+                    <i className="fa fa-map-marker-alt fa-lg mr-3"></i>{" "}
+                    Faridabad, Haryana
+                  </div>
+                  <div className="footer-icon-gap">
+                    <i className="fa fa-phone-alt fa-lg mr-3"></i> +91 -
+                    9812345678
+                  </div>
+                  <div className="footer-icon-gap">
+                    <i className="fa fa-envelope fa-lg mr-3"></i>{" "}
+                    abc@example.com
+                  </div>
                 </div>
-                <p style={{ marginLeft: "30px", color: "#ffffff" }}>
-                  @email.com
-                </p>
               </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="footer-title-heading">Contact Us</div>
-              <div className="fh"></div>
-              <form>
-                <label style={{ color: "#FFFFFF" }}>Email:</label>
-                <br />
-                <input
-                  type="text"
-                  name="name"
-                  style={{
-                    backgroundColor: "#333333",
-                  }}
-                />
-                <label>Message:</label>
-                <input
-                  type="text"
-                  name="message"
-                  style={{
-                    width: "100%",
-                    height: "150px",
-                    backgroundColor: "#333333",
-                  }}
-                />
-              </form>
+
+              <div className="col-12 col-md-4 my-1">
+                <h4 className="footer-title">
+                  Contact Us
+                  <hr />
+                </h4>
+                
+                <form className="form-center">
+                  <div className="footer-form-group">
+                    <label htmlFor="exampleInputEmail">Email*</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div className="footer-form-group">
+                    <label htmlFor="exampleInputMessage">Message*</label>
+                    <br />
+                    <textarea
+                      name="message"
+                      cols="10"
+                      rows="5"
+                      defaultValue={this.state.value}
+                    />
+                  </div>
+                  <div className="footer-form-group">
+                    <button type="submit" className="btn submit-btn">
+                      SEND
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="copyrights">
-          <hr />
-          <p>Copywright @ Health and fitness 2020</p>
-        </div>
+          <div className="copyrights">
+            <hr />
+            <p>Copywright @ Health and fitness {date.getFullYear()}</p>
+          </div>
+        </section>
       </React.Fragment>
     );
   }
