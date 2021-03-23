@@ -14,6 +14,7 @@ class HomeComponent extends Component {
       type and scrambled it to make a type specimen book. It has
       survived not only five centuries, but also the leap into
       electronic typesetting, remaining essentially unchanged. .`,
+      healthDate: "Nov 20, 2020"
     };
   }
 
@@ -119,12 +120,14 @@ class HomeComponent extends Component {
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                     
                     <HealthCard
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                   </div>
                 </div>
@@ -153,12 +156,14 @@ class HomeComponent extends Component {
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                     
                     <HealthCard
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                   </div>
                 </div>
@@ -187,12 +192,14 @@ class HomeComponent extends Component {
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                     
                     <HealthCard
                       healthImg={this.state.healthImg}
                       healthTitle={this.state.healthTitle}
                       healthText={this.state.healthText}
+                      healthDate={this.state.healthDate}
                     />
                   </div>
                 </div>

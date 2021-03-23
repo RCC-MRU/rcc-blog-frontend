@@ -1,6 +1,6 @@
 import React from "react";
 
-const HealthCard = ({healthImg, healthTitle, healthText}) => {
+const HealthCard = ({healthImg, healthTitle, healthText, healthDate}) => {
   return (
     <React.Fragment>
       <div className="col-12 col-md-6 d-flex justify-content-center">
@@ -13,7 +13,7 @@ const HealthCard = ({healthImg, healthTitle, healthText}) => {
 
           <div className="card-body text-center">
             <h6 className="format-text-health">
-              <span className="color-health"> Health</span> - Nov 20, 2020
+              <span className="color-health"> Health</span> - {healthDate}
             </h6>
             <h4 className="card-title format-text-health-1">
               {healthTitle}
