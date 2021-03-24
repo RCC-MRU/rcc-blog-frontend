@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PopularCard from "./PopularCard";
 import HealthCard from "./HealthCard";
+import LatestPost from "./LatestPost"
 class HomeComponent extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,13 @@ class HomeComponent extends Component {
       type and scrambled it to make a type specimen book. It has
       survived not only five centuries, but also the leap into
       electronic typesetting, remaining essentially unchanged. .`,
-      healthDate: "Nov 20, 2020"
+      healthDate: "Nov 20, 2020",
+      postCategory:'workout',
+      postAuthor: 'Kunal',
+      postDate: 'Nov 20, 2020',
+      postTitle: 'Add This to your Daily 20 Min Workout Routine',
+      postImage: process.env.PUBLIC_URL + "images/exercise2.jpg",
+      postImage2: process.env.PUBLIC_URL + "images/exercise1.jpg"
     };
   }
 
@@ -24,60 +31,15 @@ class HomeComponent extends Component {
         <div className="container">
           <section className="spacing-section">
             {/* first three pics  */}
-            <div className="container">
-              <div className="row">
-                <div className="col-12 col-md-6 my-1 px-1">
-                  <div
-                    className="banner-img-left"
-                    style={{ backgroundImage: "url('images/exercise1.jpg')" }}
-                  >
-                    <div className="centered">
-                      <button className="btn btn-black btn-sm text-white">
-                        workout
-                      </button>
-                      <p>Add This to your Daily 20 Min Workout Routine</p>
-                      <p className="edit-font">Kunal - Nov 20, 2020</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6 my-1">
-                  <div className="row">
-                    <div className="col-6 px-2">
-                      <div
-                        className="banner-img-right"
-                        style={{
-                          backgroundImage: "url('images/exercise2.jpg')",
-                        }}
-                      >
-                        <div className="centered">
-                          <button className="btn btn-black btn-sm text-white">
-                            workout
-                          </button>
-                          <p>Add This to your Daily 20 Min Workout Routine</p>
-                          <p className="edit-font">Kunal - Nov 20, 2020</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6 px-2">
-                      <div
-                        className="banner-img-right"
-                        style={{
-                          backgroundImage: "url('images/exercise2.jpg')",
-                        }}
-                      >
-                        <div className="centered">
-                          <button className="btn btn-black btn-sm text-white">
-                            workout
-                          </button>
-                          <p>Add This to your Daily 20 Min Workout Routine</p>
-                          <p className="edit-font">Kunal - Nov 20, 2020</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            <LatestPost 
+                      postCategory={this.state.postCategory}
+                      postTitle={this.state.postTitle}
+                      postAuthor={this.state.postAuthor}
+                      postDate={this.state.postDate}
+                      postImage={this.state.postImage}
+                      postImage2={this.state.postImage2}
+                    />
 
             {/* <!-- After Most popular card --> */}
             <div>
