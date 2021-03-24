@@ -1,6 +1,20 @@
 import React, { Component } from "react";
+import CategoryType from "./CategoryType"
 
 class CategoryComponent extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      categoryName: 'Fitness',
+      categoryDate: 'Nov 20, 2020',
+      categoryText: `Lorem Ipsum is simply dummy text of the printing and
+      typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the`,
+      categoryAuthor: 'Kunal',
+      categoryTitle: 'Add This to your workout routine',
+      categoryImage: process.env.PUBLIC_URL + "images/plate_food.jpg"
+    };
+  }
   render() {
     return (
       <React.Fragment>
@@ -17,46 +31,14 @@ class CategoryComponent extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-9">
-                <div className="category-with-date">
-                  Fitness
-                  <div className="category-grey">- Nov 20 , 2020</div>
-                </div>
-                <h3>Add This to your workout routine</h3>
-                <img
-                  src={process.env.PUBLIC_URL + "images/exercise1.jpg"}
-                  width="770px"
-                  height="513px"
-                  className="img-fluid"
-                  alt="categories"
+                <CategoryType 
+                  categoryName={this.state.categoryName}
+                  categoryTitle={this.state.categoryTitle}
+                  categoryAuthor={this.state.categoryAuthor}
+                  categoryDate={this.state.categoryDate}
+                  categoryImage={this.state.categoryImage}
+                  categoryText={this.state.categoryText}
                 />
-
-                <div className="blog-text">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the
-                </div>
-
-                <div className="readmore-button">
-                  <span> Read More </span>
-                </div>
-
-                <hr />
-                <div className="blog-like row">
-                  <div className="col-md-6">
-                    <p>Kunal Arora</p>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="far fa-heart"></i>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fa fa-facebook-f"></i>
-                    <i className="fa fa-twitter"></i>
-                    <i className="fa fa-envelope"></i>
-                  </div>
-                </div>
-                <hr style={{ marginTop: "-20px" }} />
-                <hr style={{ marginTop: "-14px" }} />
-
                 <div className="category-with-date">
                   Fitness
                   <div className="category-grey">- Nov 20 , 2020</div>
