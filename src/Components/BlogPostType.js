@@ -1,8 +1,12 @@
 import React from 'react';
 
-const BlogPostType = ({blogPostImage, blogPostText, blogPostAuthor})=>{
+const BlogPostType = ({blogPostImage, blogPostText, blogPostAuthor, blogPostCategory, blogPostTitle})=>{
     return(
         <React.Fragment>
+        <div className="fitness-title">
+            <span> {blogPostCategory} </span>
+          </div>
+          <h3>{blogPostTitle}</h3>
             <img
                 src={blogPostImage}
                 width="770px"
@@ -24,8 +28,8 @@ const BlogPostType = ({blogPostImage, blogPostText, blogPostAuthor})=>{
                   <i className="fa fa-heart"></i>
                 </div>
                 <div className="col-md-3">
-                  <i className="fa fa-facebook-f"></i>
-                  <i className="fa fa-twitter"></i>
+                  <i className="fab fa-facebook-f"></i>
+                  <i className="fab fa-twitter"></i>
                   <i className="fa fa-envelope"></i>
                 </div>
               </div>

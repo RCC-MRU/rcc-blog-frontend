@@ -4,9 +4,8 @@ const CategoryType = ({categoryName,categoryDate, categoryImage, categoryText, c
     return(
         <React.Fragment>
             <div className="category-with-date">
-                  {categoryName}
+                  {categoryName}<span className="category-grey">- {categoryDate}</span>
                 </div>
-                <div className="category-grey">- {categoryDate}</div>
                   <h3>{categoryTitle}</h3>
                   <img
                   src={categoryImage}
@@ -30,8 +29,8 @@ const CategoryType = ({categoryName,categoryDate, categoryImage, categoryText, c
                     <i className="far fa-heart"></i>
                   </div>
                   <div className="col-md-3">
-                    <i className="fa fa-facebook-f"></i>
-                    <i className="fa fa-twitter"></i>
+                    <i className="fab fa-facebook-f"></i>
+                    <i className="fab fa-twitter"></i>
                     <i className="fa fa-envelope"></i>
                   </div>
                 </div>

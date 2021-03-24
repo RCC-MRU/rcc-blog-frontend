@@ -17,7 +17,7 @@ const RightMenu=({authorPicture, aboutAuthor, authorName, moreCategoryName, more
                   />
                   <p style={{ fontFamily: "'Red Hat Text', sans-serif" }}>
                     I am {authorName} <br />
-                    {aboutAuthor}
+                    <span>{aboutAuthor}</span>
                   </p>
                   <h5
                     style={{
@@ -36,16 +36,16 @@ const RightMenu=({authorPicture, aboutAuthor, authorName, moreCategoryName, more
                   </h4>
                   <div className="social-blogpost">
                     <div>
-                      <i className="fa fa-facebook-f socials"></i>
+                      <i className="fab fa-facebook-f socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-instagram socials"></i>
+                      <i className="fab fa-instagram socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-google-plus socials"></i>
+                      <i className="fab fa-google-plus socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-twitter socials"></i>
+                      <i className="fab fa-twitter socials"></i>
                     </div>
                     <div>
                       <i className="fa fa-rss-square"></i>

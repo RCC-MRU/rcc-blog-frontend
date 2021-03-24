@@ -584,7 +584,7 @@ textarea {
 }
 .socials{
   /* background :#000000; */
-  color:black;
+  color:black !important; 
 }
 .connectAndFollow-title {
   margin-bottom: 28px;

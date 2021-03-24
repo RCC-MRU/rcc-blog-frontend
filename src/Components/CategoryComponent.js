@@ -16,7 +16,7 @@ class CategoryComponent extends Component {
       categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
       authorPicture: process.env.PUBLIC_URL + "images/exercise2.jpg",
       authorName: 'Kunal',
-      authorAbout: 'Lorem ipsum dolor set amet sity',
+      aboutAuthor: 'Lorem ipsum dolor set amet sity',
       moreCategoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
       latestPostDate: '20 Nov, 2020',
       latestPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
@@ -71,7 +71,7 @@ class CategoryComponent extends Component {
               <RightMenu 
                 authorPicture={this.state.authorPicture}
                 authorName={this.state.authorName}
-                authorAbout={this.state.authorName}
+                aboutAuthor={this.state.aboutAuthor}
                 moreCategoryImage={this.state.moreCategoryImage}
                 latestPostDate={this.state.latestPostDate}
                 latestPostImage={this.state.latestPostImage}
