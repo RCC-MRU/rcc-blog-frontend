@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CategoryType from "./CategoryType"
+import RightMenu from './RightSideMenu'
 
 class CategoryComponent extends Component {
   constructor(props){
@@ -12,7 +13,15 @@ class CategoryComponent extends Component {
       standard dummy text ever since the`,
       categoryAuthor: 'Kunal',
       categoryTitle: 'Add This to your workout routine',
-      categoryImage: process.env.PUBLIC_URL + "images/plate_food.jpg"
+      categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+      authorPicture: process.env.PUBLIC_URL + "images/exercise2.jpg",
+      authorName: 'Kunal',
+      authorAbout: 'Lorem ipsum dolor set amet sity',
+      moreCategoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+      latestPostDate: '20 Nov, 2020',
+      latestPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+      moreCategoryName: 'fitness',
+      latestPostName:'Add this to your Daily work routine.'
     };
   }
   render() {
@@ -39,89 +48,37 @@ class CategoryComponent extends Component {
                   categoryImage={this.state.categoryImage}
                   categoryText={this.state.categoryText}
                 />
-                <div className="category-with-date">
-                  Fitness
-                  <div className="category-grey">- Nov 20 , 2020</div>
-                </div>
-                <h3>Add This to your workout routine</h3>
-                <img
-                  src={process.env.PUBLIC_URL + "images/exercise1.jpg"}
-                  width="770px"
-                  height="513px"
-                  className="img-fluid"
-                  alt="work-out"
+                <CategoryType 
+                  categoryName={this.state.categoryName}
+                  categoryTitle={this.state.categoryTitle}
+                  categoryAuthor={this.state.categoryAuthor}
+                  categoryDate={this.state.categoryDate}
+                  categoryImage={this.state.categoryImage}
+                  categoryText={this.state.categoryText}
                 />
-
-                <div className="blog-text">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the
-                </div>
-
-                <div className="readmore-button">
-                  <span> Read More </span>
-                </div>
-
-                <hr />
-                <div className="blog-like row">
-                  <div className="col-md-6">
-                    <p>Kunal Arora</p>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fa fa-heart"></i>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fa fa-facebook-f"></i>
-                    <i className="fa fa-twitter"></i>
-                    <i className="fa fa-envelope"></i>
-                  </div>
-                </div>
-                <hr style={{ marginTop: "-20px" }} />
-                <hr style={{ marginTop: "-14px" }} />
-
-                <div className="category-with-date">
-                  Fitness
-                  <div className="category-grey">- Nov 20 , 2020</div>
-                </div>
-                <h3>Add This to your workout routine</h3>
-                <img
-                  src={process.env.PUBLIC_URL + "images/exercise1.jpg"}
-                  width="770px"
-                  height="513px"
-                  className="img-fluid"
-                  alt="workOut"
+                <CategoryType 
+                  categoryName={this.state.categoryName}
+                  categoryTitle={this.state.categoryTitle}
+                  categoryAuthor={this.state.categoryAuthor}
+                  categoryDate={this.state.categoryDate}
+                  categoryImage={this.state.categoryImage}
+                  categoryText={this.state.categoryText}
                 />
-
-                <div className="blog-text">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the
-                </div>
-
-                <div className="readmore-button">
-                  <span> Read More </span>
-                </div>
-
-                <hr />
-                <div className="blog-like row">
-                  <div className="col-md-6">
-                    <p>Kunal Arora</p>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fa fa-heart"></i>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fa fa-facebook-f"></i>
-                    <i className="fa fa-twitter"></i>
-                    <i className="fa fa-envelope"></i>
-                  </div>
-                </div>
-                <hr style={{ marginTop: "-20px" }} />
-                <hr style={{ marginTop: "-14px" }} />
+                
               </div>
 
               <div className="col-md-3">
-                <div className="row-md-3">
+              <RightMenu 
+                authorPicture={this.state.authorPicture}
+                authorName={this.state.authorName}
+                authorAbout={this.state.authorName}
+                moreCategoryImage={this.state.moreCategoryImage}
+                latestPostDate={this.state.latestPostDate}
+                latestPostImage={this.state.latestPostImage}
+                latestPostName={this.state.latestPostName}
+                moreCategoryName={this.state.moreCategoryName}
+              />
+                {/* <div className="row-md-3">
                   <hr />
                   <h4 className="border">About</h4>
                   <img
@@ -147,33 +104,33 @@ class CategoryComponent extends Component {
                   >
                     Read More
                   </h5>
-                </div>
+                </div> */}
 
-                <div className="row-md-3">
+                {/* <div className="row-md-3">
                   <hr />
                   <h4 className="connectAndFollow-title border">
                     Connect And Follow
                   </h4>
                   <div className="social-blogpost">
                     <div>
-                      <i className="fa fa-facebook-f"></i>
+                      <i className="fa fa-facebook-f socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-instagram"></i>
+                      <i className="fa fa-instagram socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-google-plus"></i>
+                      <i className="fa fa-google-plus socials"></i>
                     </div>
                     <div>
-                      <i className="fa fa-twitter"></i>
+                      <i className="fa fa-twitter socials"></i>
                     </div>
                     <div>
                       <i className="fa fa-rss-square"></i>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="categories row-md-3">
+                {/* <div className="categories row-md-3">
                   <hr />
                   <h4 className="categories-title border">Categories</h4>
                   <div className="row-md-4">
@@ -206,9 +163,9 @@ class CategoryComponent extends Component {
                       <span>health</span>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="latestPosts row-md-3">
+                {/* <div className="latestPosts row-md-3">
                   <hr />
                   <h4 className="latestPosts-title border">Latest Posts</h4>
                   <div className="row-md-4">
@@ -252,7 +209,7 @@ class CategoryComponent extends Component {
                       <p>NOV 26 , 2020</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

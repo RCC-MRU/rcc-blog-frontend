@@ -582,7 +582,10 @@ textarea {
   display: flex;
   justify-content: space-between;
 }
-
+.socials{
+  /* background :#000000; */
+  color:black;
+}
 .connectAndFollow-title {
   margin-bottom: 28px;
 }
@@ -704,6 +707,7 @@ top: 320px; */
 .category-grey {
   color: rgba(0, 0, 0, 0.37);
 }
+
 .readmore-button span {
   display: flex;
   font-family: "Nova Cut", cursive;
