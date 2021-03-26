@@ -1,0 +1,127 @@
+.fitness-title span {
+    font-family: "Nova Cut", cursive;
+    font-size: 19px;
+    color: #e5e5e5;
+    background-color: #991414;
+  }
+  .blog-text {
+    size: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+  .blog-like {
+    margin-top: -10px;
+    margin-left: 60px;
+    padding-bottom: 1%;
+    display: flex;
+  }
+  
+  .blog-like .col-md-6 p {
+    color: #991414;
+    font-family: "Red Rose", cursive;
+  }
+  
+  .blog-like .col-md-6 p::before {
+    content: "By - ";
+    color: rgba(0, 0, 0, 0.39);
+  }
+  
+  .blog-like .fab {
+    margin-right: 8px;
+  }
+  
+  .blog-like .col-md-3 {
+    display: flex;
+  }
+  
+  .blog-like .col-md-3 .far.fa-heart::after {
+    content: " 10 ";
+    color: #000000;
+  }
+  .Post-btn input {
+    font-family: "Nova Cut", cursive;
+    background-color: #991414;
+    color: #e5e5e5;
+    font-size: 19px;
+    padding: 6px 23px 6px 23px;
+    width: auto !important;
+    border: 0;
+  }
+  
+  .Post-btn {
+    position: relative;
+    text-align: right;
+    margin-top: -55px;
+    z-index: 1 !important;
+    margin-right: 10px;
+  }
+  .connectAndFollow-title {
+    margin-bottom: 28px;
+  }
+  .social-blogpost {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .socials {
+    color: black !important;
+  }
+  .categories .row-md-4 {
+    margin-bottom: 100px !important;
+  }
+  
+  .categories .row-md-4 img {
+    height: 120px !important;
+  }
+  
+  .categories-title {
+    margin-bottom: 60px;
+  }
+  .textblock {
+    margin-top: -80px;
+    font-family: "Redressed", cursive;
+  }
+  
+  .textblock span {
+    background-color: white;
+    padding: 1px 25px 1px 25px;
+  }
+  .latestPosts-title {
+    margin-bottom: 37px;
+  }
+  
+  .latestPosts hr {
+    margin-top: 150px;
+  }
+  
+  .latestPosts .row-md-4 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px !important;
+  }
+  
+  .latestPosts .row-md-4 .col-md-6 img {
+    height: 110px !important;
+  }
+  
+  .latestPosts .row-md-4 .col-md-6 h6 {
+    font-family: "Red Rose", cursive;
+    size: 17px;
+    font-weight: 400px;
+    text-align: left;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  
+  .latestPosts .row-md-4 .col-md-6 p {
+    color: rgba(0, 0, 0, 0.68);
+    font-family: "Red Rose", cursive;
+    font-weight: 400px;
+    size: 12px !important;
+    text-align: left;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+   

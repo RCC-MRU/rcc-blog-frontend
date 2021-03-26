@@ -262,7 +262,7 @@
 
 /* Styling of login form */
 
-.box {
+/* .box {
   height: 672px;
   width: 1128px;
   margin-top: 10rem;
@@ -275,118 +275,22 @@
     rgba(218, 50, 50, 1) 50%,
     rgba(206, 105, 73, 1) 100%
   );
-}
+} */
 
-.login-img {
-  height: 100%;
-  width: 100%;
-  padding-top: 1.7rem;
-}
-
-.com {
-  font-weight: bold;
-}
-
-.login {
-  font-family: Righteous;
-  font-weight: normal;
-  font-size: 2rem;
-  text-align: left;
-  color: #000000;
-}
-
-.inp {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove;
-  border-bottom-color: #da3232;
-  border-bottom-width: 2px;
-  width: 80%;
-}
-
-.no-outline:focus {
-  outline: none;
-}
-
-.btn-col {
-  background: #da3232;
-  box-shadow: 0px 4px 99px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
-  width: 71%;
-}
-
-.company {
-  padding-left: 1rem;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 2rem;
-  color: #da3232;
-}
-
-.head {
+/* .head {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   color: #da3232;
-}
-
+} */
+/* 
 .com {
   font-weight: bolder;
-}
+} */
 
-.sign-up {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-}
-
-.log-txt-for {
-  font-family: Roboto Condensed;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 29px;
-  color: #ffffff;
-}
 
 /* Sign up page styling */
-
-.head-sign {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-
-  color: rgba(0, 0, 0, 0.68);
-}
-
-.right-side {
-  background: linear-gradient(
-    to right,
-    rgba(218, 50, 50, 1) 50%,
-    rgba(206, 105, 73, 1) 100%
-  );
-}
-
-.box-shadow {
-  box-shadow: 2px 4px 99px rgba(0, 0, 0, 0.25);
-}
-
-@media screen and (max-width: 769px) {
-  .right-side {
-    display: none;
-  }
-
-  .pl-5 {
-    padding-left: 1% !important;
-  }
-
-  .btn-col {
-    margin-bottom: 20% !important;
-  }
-}
 
 @media screen and (max-width: 426px) {
   .head {
@@ -397,16 +301,6 @@
     display: none;
   }
 }
-
-.sign-up-page {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  color: #da3232;
-  padding-left: 30px;
-}
-
 .check {
   font-family: Roboto;
   font-style: normal;
@@ -428,12 +322,6 @@ font-family: 'Redressed', cursive;
 #blogPost .container {
   margin-bottom: 30px;
 }
-.fitness-title span {
-  font-family: "Nova Cut", cursive;
-  font-size: 19px;
-  color: #e5e5e5;
-  background-color: #991414;
-}
 
 #blogPost .container h3 {
   font-family: "Red Rose", cursive;
@@ -441,47 +329,13 @@ font-family: 'Redressed', cursive;
   font-weight: bold;
 }
 
-.blog-text {
-  size: 16px;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-left: 0px;
-  padding-right: 50px;
-}
+
 
 #blogPost .container .col-md-9 hr {
   border: 0.5px solid rgba(0, 0, 0, 0.12);
 }
 
-.blog-like {
-  margin-top: -10px;
-  margin-left: 60px;
-  padding-bottom: 1%;
-  display: flex;
-}
 
-.blog-like .col-md-6 p {
-  color: #991414;
-  font-family: "Red Rose", cursive;
-}
-
-.blog-like .col-md-6 p::before {
-  content: "By - ";
-  color: rgba(0, 0, 0, 0.39);
-}
-
-.blog-like .fab {
-  margin-right: 8px;
-}
-
-.blog-like .col-md-3 {
-  display: flex;
-}
-
-.blog-like .col-md-3 .far.fa-heart::after {
-  content: " 10 ";
-  color: #000000;
-}
 
 textarea {
   position: relative;
@@ -494,23 +348,7 @@ textarea {
   box-sizing: border-box;
 }
 
-.Post-btn input {
-  font-family: "Nova Cut", cursive;
-  background-color: #991414;
-  color: #e5e5e5;
-  font-size: 19px;
-  padding: 6px 23px 6px 23px;
-  width: auto !important;
-  border: 0;
-}
 
-.Post-btn {
-  position: relative;
-  text-align: right;
-  margin-top: -55px;
-  z-index: 1 !important;
-  margin-right: 10px;
-}
 
 .row-md-3 hr {
   border: 0.5px solid #991414;
@@ -527,79 +365,6 @@ textarea {
   font-family: "Red Hat Text", sans-serif;
   size: 26px;
 }
-
-.social-blogpost {
-  display: flex;
-  justify-content: space-between;
-}
-
-.socials {
-  color: black !important;
-}
-
-.connectAndFollow-title {
-  margin-bottom: 28px;
-}
-
-.categories .row-md-4 {
-  margin-bottom: 100px !important;
-}
-
-.categories .row-md-4 img {
-  height: 120px !important;
-}
-
-.categories-title {
-  margin-bottom: 60px;
-}
-
-.textblock {
-  margin-top: -80px;
-  font-family: "Redressed", cursive;
-}
-
-.textblock span {
-  background-color: white;
-  padding: 1px 25px 1px 25px;
-}
-
-.latestPosts-title {
-  margin-bottom: 37px;
-}
-
-.latestPosts hr {
-  margin-top: 150px;
-}
-
-.latestPosts .row-md-4 {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px !important;
-}
-
-.latestPosts .row-md-4 .col-md-6 img {
-  height: 110px !important;
-}
-
-.latestPosts .row-md-4 .col-md-6 h6 {
-  font-family: "Red Rose", cursive;
-  size: 17px;
-  font-weight: 400px;
-  text-align: left;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-.latestPosts .row-md-4 .col-md-6 p {
-  color: rgba(0, 0, 0, 0.68);
-  font-family: "Red Rose", cursive;
-  font-weight: 400px;
-  size: 12px !important;
-  text-align: left;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
 .rectangle-nav {
   position: absolute;
   width: 100%;
