@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class SignupComponent extends Component {
   render() {
@@ -10,72 +9,88 @@ class SignupComponent extends Component {
             <div className="row box-shadow">
               <div className="col-md-6 col-12 left-side">
                 <div className="row pt-5">
-                  <div className="col-6 ">
-                    <h1 className="company pl-3">
-                      <span className="com">Health&Fitness</span>
-                    </h1>
-                  </div>
-
-                  <div className="col-6 d-flex pl-5 pt-2">
-                    <Link to="/login" style={{textDecoration: "none"}}>
-                      <h5 className="head-sign"> LOGIN </h5>
-                    </Link>
-                    <h5 className="sign-up-page">SIGNUP</h5>
+                  <div className="col-8">
+                    <h1 className="company">Health & Fitness</h1>
                   </div>
                 </div>
+
                 <div
                   className="pl-3"
                   style={{
                     display: "flex",
-                    justifyContent: "center",
-                    height: "100%",
-                    alignItems: "left",
                     flexDirection: "column",
+                    justifyContent: "flex-start",
+                    height: "100%",
+                    padding: "0 0 0 1rem",
                   }}
                 >
                   <h1 className="login">SIGN UP</h1>
-
                   <p>Sign up to continue to our application </p>
-                  <form>
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="inp no-outline pt-4"
-                        placeholder="Name   "
-                      />
+                  <form method="POST" action="/blog">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="fname"
+                          name="fname"
+                          placeholder="Enter firstname"
+                          className="inp no-outline pt-3"
+                          required
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input
+                          type="name"
+                          class="form-control"
+                          id="lname"
+                          name="lname"
+                          placeholder="Enter lastname"
+                          className="inp no-outline pt-3"
+                          required
+                        />
+                      </div>
                     </div>
+
                     <div className="form-group">
                       <input
                         type="email"
-                        placeholder="Email"
-                        className=" inp no-outline pt-4"
-                        id="exampleInputPassword1"
+                        placeholder="Enter Email"
+                        className=" inp no-outline pt-3"
+                        id="email"
+                        required
                       />
                     </div>
                     <div className="form-group">
                       <input
                         type="password"
-                        placeholder=" .........."
-                        className=" inp no-outline pt-4"
-                        id="exampleInputPassword1"
+                        placeholder="Enter Password"
+                        className=" inp no-outline pt-3"
+                        id="password"
+                        required
                       />
                     </div>
-                    <div className="form-group form-check pt-4">
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        className=" inp no-outline pt-3"
+                        id="confirm-password"
+                        required
+                      />
+                    </div>
+                    <div class="custom-control custom-checkbox">
                       <input
                         type="checkbox"
-                        className="form-check-input "
-                        id="exampleCheck1"
+                        class="custom-control-input"
+                        id="confirm-box"
+                        required
                       />
-                      <label
-                        className="form-check-label"
-                        htmlFor="exampleCheck1"
-                      >
-                        <p className="check">
-                          {" "}
-                          By clicking sign up, You agree to our Terms of use and
-                          knowledge that you have read our Privacy Policy
-                        </p>
+                      <label class="custom-control-label" for="confirm-box">
+                        Terms & Conditions
                       </label>
+                    </div>
+                    <div className="form-group form-check pt-4">
                       <button type="submit" className="btn btn-col mb-5">
                         <span className="log-txt-for">Signup</span>
                       </button>

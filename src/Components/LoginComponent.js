@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class LoginComponent extends Component {
   render() {
@@ -10,16 +9,8 @@ class LoginComponent extends Component {
             <div className="row box-shadow">
               <div className="col-md-6 col-12 left-side">
                 <div className="row pt-5">
-                  <div className="col-6">
-                    <h1 className="company pl-3">
-                      <span className="com">Health&Fitness</span>
-                    </h1>
-                  </div>
-                  <div className="col-6 d-flex pt-2 pl-5">
-                    <h5 className="head">LOGIN</h5>
-                    <Link to="/signup" style={{textDecoration: "none"}}>
-                      <h5 className="sign-up">SIGNUP</h5>
-                    </Link>
+                  <div className="col-8">
+                    <h1 className="company">Health & Fitness</h1>
                   </div>
                 </div>
 
@@ -27,29 +18,32 @@ class LoginComponent extends Component {
                   className="pl-3"
                   style={{
                     display: "flex",
-                    justifyContent: "center",
-                    height: "100%",
-                    alignItems: "left",
                     flexDirection: "column",
+                    justifyContent: "flex-start",
+                    height: "100%",
+                    padding: "0 0 0 1rem",
                   }}
                 >
                   <h1 className="login">LOG IN </h1>
                   <p>Sign in to continue to our application</p>
 
-                  <form>
+                  <form method="POST" action="/blog">
                     <div className="form-group">
                       <input
-                        type="text"
+                        type="email"
+                        placeholder="Enter Email"
                         className="inp no-outline pt-4"
-                        placeholder="username/Email"
+                        id="email"
+                        required
                       />
                     </div>
                     <div className="form-group">
                       <input
                         type="password"
-                        placeholder=" .........."
+                        placeholder="Enter Password"
                         className=" inp no-outline pt-4"
-                        id="exampleInputPassword1"
+                        id="password"
+                        required
                       />
                     </div>
                     <div className="form-group form-check pt-4">
@@ -66,7 +60,7 @@ class LoginComponent extends Component {
                       </label>
                     </div>
                     <button type="submit" className="btn btn-col mt-4 mb-5">
-                      <span className="log-txt-for">LOGIN</span>
+                      <span className="log-txt-for">Login</span>
                     </button>
                   </form>
                 </div>

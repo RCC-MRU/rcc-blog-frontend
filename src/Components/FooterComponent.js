@@ -69,7 +69,7 @@ class FooterComponent extends Component {
                   Contact Us
                   <hr />
                 </h4>
-                
+
                 <form className="form-center">
                   <div className="footer-form-group">
                     <label htmlFor="exampleInputEmail">Email*</label>

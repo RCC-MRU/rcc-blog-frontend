@@ -12,7 +12,7 @@ Admin (Author)(acess by admin only)
 	11. commentApprove
 
 User ( Acess by user after login)
-	1. regiter
+	1. register
 	2, login
 	3. like	
 	4. comment
