@@ -25,7 +25,7 @@ const NavbarComponent = (props) => {
         <Container>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar className="main-menubar">
+            <Nav className="mr-auto main-menubar" navbar >
               <NavItem className="format-main-menubar">
                 <NavLink href="/">Home</NavLink>
               </NavItem>
