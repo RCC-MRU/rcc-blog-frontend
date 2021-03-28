@@ -24,18 +24,22 @@ const NavbarComponent = (props) => {
       <Navbar light expand="md" id="ftco-navbar">
         <Container>
           <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto main-menubar" navbar >
+          <Collapse
+            isOpen={isOpen}
+            navbar
+            className=" d-flex justify-content-around"
+          >
+            <Nav className="mr-auto main-menubar" navbar>
               <NavItem className="format-main-menubar">
                 <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem className="format-main-menubar">
-                <NavLink href="/blog" >All Feed</NavLink>
+                <NavLink href="/blog">All Feed</NavLink>
               </NavItem>
               <NavItem className="format-main-menubar">
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                   Categories
+                    Categories
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>Header</DropdownItem>
@@ -45,10 +49,13 @@ const NavbarComponent = (props) => {
                 </UncontrolledDropdown>
               </NavItem>
               <NavItem className="format-main-menubar">
-                <NavLink href="/category">Fitness</NavLink>
+                <NavLink href="/home#health">Health</NavLink>
               </NavItem>
               <NavItem className="format-main-menubar">
-                <NavLink href="/category">Health</NavLink>
+                <NavLink href="/home#fitness">Fitness</NavLink>
+              </NavItem>
+              <NavItem className="format-main-menubar">
+                <NavLink href="/home#workout">Workout</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
