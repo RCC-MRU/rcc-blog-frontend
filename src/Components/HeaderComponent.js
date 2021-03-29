@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import NavbarComponent from "./NavbarComponent";
 
 class HeaderComponent extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand navbar-dark bg-color-black">
+        {/* <nav className="navbar navbar-expand navbar-dark bg-color-black">
           <div className="container-fluid mx-4">
             <div className="row w-100">
               <div className="col-12 col-sm-6 temp-2">
@@ -51,7 +51,7 @@ class HeaderComponent extends Component {
                     </a>
                   </li>
 
-                  {/* FIXME: add a if else for switching from login or logout */}
+
                   <li className="nav-item px-1">
                     <Link to="/signup" className="nav-link text-white">
                       Signup
@@ -66,7 +66,9 @@ class HeaderComponent extends Component {
               </div>
             </div>
           </div>
-        </nav>
+        </nav> */}
+                  {/* FIXME: add a if else for switching from login or logout */}
+
 
         <div className="container text-center my-4">
           <p className="format-heading">
