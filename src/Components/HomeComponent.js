@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PopularCard from "./PopularCard";
 import LatestPost from "./LatestPost";
 import HomeCategory from "./HomeCategoryType";
+// import Slider from "react-slick";
 
 class HomeComponent extends Component {
   constructor(props) {
@@ -46,8 +47,18 @@ class HomeComponent extends Component {
       ],
     };
   }
-
+  
   render() {
+    // const renderCards=()=>{
+    //   this.state.data.map((data) => {
+    //     return (
+    //       <PopularCard
+    //         cardTitle={data.cardTitle}
+    //         cardText={data.cardText}
+    //       />
+    //     );
+    //   })
+    // }
     return (
       <React.Fragment>
         <div className="container">
@@ -77,6 +88,12 @@ class HomeComponent extends Component {
 
             <div className="container">
               <div className="row">
+              {/* <Slider
+                dots={false}
+                slidesToShow={4}
+                slidesToScroll={2}
+                autoplay={true}
+                autoplaySpeed={3000}>
                 {this.state.data.map((data) => {
                   return (
                     <PopularCard
@@ -85,6 +102,24 @@ class HomeComponent extends Component {
                     />
                   );
                 })}
+                </Slider> */}
+                {this.state.data.map((data) => {
+                  return (
+                    <PopularCard
+                      cardTitle={data.cardTitle}
+                      cardText={data.cardText}
+                    />
+                  );
+                })}
+                {/* <Slider
+                dots={false}
+                slidesToShow={4}
+                slidesToScroll={2}
+                autoplay={true}
+                autoplaySpeed={3000}>
+                {renderCards()}
+                </Slider> */}
+
               </div>
             </div>
 
