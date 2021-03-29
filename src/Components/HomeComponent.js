@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import PopularCard from "./PopularCard";
-import HealthCard from "./HealthCard";
+// import HealthCard from "./HealthCard";
 import LatestPost from "./LatestPost";
+import HomeCategory from "./HomeCategoryType";
+
 class HomeComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-      healthTitle: "Mood Depends On Food",
-      healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text
-      ever since the 1500s, when an unknown printer took a galley of
-      type and scrambled it to make a type specimen book. It has
-      survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. .`,
-      healthDate: "Nov 20, 2020",
       postCategory: "workout",
       postAuthor: "Kunal",
       postDate: "Nov 20, 2020",
       postTitle: "Add This to your Daily 20 Min Workout Routine",
       postImage: process.env.PUBLIC_URL + "images/exercise2.jpg",
       postImage2: process.env.PUBLIC_URL + "images/exercise1.jpg",
+      CategoryData: [
+        {
+          homeCategoryName: "Health"
+        }, 
+        {
+          homeCategoryName: "Fitness"
+        }, 
+        {
+          homeCategoryName: "Workout"
+        }],
       data: [
         {
           cardTitle: "Fitness1",
@@ -39,7 +42,6 @@ class HomeComponent extends Component {
           cardTitle: "Fitness4",
           cardText: "abcdefg",
         },
-       
       ],
     };
   }
@@ -79,13 +81,16 @@ class HomeComponent extends Component {
                     />
                   );
                 })}
-                
               </div>
             </div>
 
             {/*  <!-- After health div --> */}
 
-            <div className="format-div" id="health">
+            {this.state.CategoryData.map((CategoryData) => {
+              return <HomeCategory homeCategoryName={CategoryData.homeCategoryName} />;
+            })}
+
+            {/* <div className="format-div" id="health">
               <div className="container">
                 <div className="row">
                   <div className="col-4 col-sm-5">
@@ -119,9 +124,9 @@ class HomeComponent extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="format-div" id="fitness">
+            {/* <div className="format-div" id="fitness">
               <div className="container">
                 <div className="row">
                   <div className="col-4 col-sm-5">
@@ -191,7 +196,7 @@ class HomeComponent extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
       </React.Fragment>
