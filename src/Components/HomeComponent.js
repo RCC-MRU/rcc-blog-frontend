@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PopularCard from "./PopularCard";
-// import HealthCard from "./HealthCard";
 import LatestPost from "./LatestPost";
 import HomeCategory from "./HomeCategoryType";
 
@@ -17,15 +16,16 @@ class HomeComponent extends Component {
       postImage2: process.env.PUBLIC_URL + "images/exercise1.jpg",
       CategoryData: [
         {
-          homeCategoryName: "Health"
-        }, 
+          homeCategoryName: "Health",
+        },
         {
-          homeCategoryName: "Fitness"
-        }, 
+          homeCategoryName: "Fitness",
+        },
         {
-          homeCategoryName: "Workout"
-        }],
-        CategoryData1: [],
+          homeCategoryName: "Workout",
+        },
+      ],
+      CategoryData1: [],
       data: [
         {
           cardTitle: "Fitness1",
@@ -46,22 +46,7 @@ class HomeComponent extends Component {
       ],
     };
   }
-randomCategory(){
-  let n=2;
-      for( var i=0 ; i<n ; i++){
-        var print =Math.floor(Math.random() * this.state.CategoryData.length);
-        if(this.state.CategoryData1===null){
-            this.state.CategoryData1.push(this.state.CategoryData[print]); 
-        }
-        else if(this.state.CategoryData1[0]===this.state.CategoryData[print]){
-            n = n+1;
-            continue;
-        }
-        else{
-            this.state.CategoryData1.push(this.state.CategoryData[print]);
-        }
-      }
-}
+
   render() {
     return (
       <React.Fragment>
@@ -103,7 +88,11 @@ randomCategory(){
             {/*  <!-- After health div --> */}
 
             {this.state.CategoryData.map((CategoryData1) => {
-              return <HomeCategory homeCategoryName={CategoryData1.homeCategoryName} />;
+              return (
+                <HomeCategory
+                  homeCategoryName={CategoryData1.homeCategoryName}
+                />
+              );
             })}
           </section>
         </div>
