@@ -1,10 +1,10 @@
 import React from 'react';
 
-const CategoryType = ({categoryName,categoryDate, categoryImage, categoryText, categoryAuthor, categoryTitle})=>{
+const CategoryType = ({categoryDate, categoryImage, categoryText, categoryAuthor, categoryTitle})=>{
     return(
         <React.Fragment>
             <div className="category-with-date">
-                  {categoryName}<span className="category-grey">- {categoryDate}</span>
+                  posted on<span className="category-grey">- {categoryDate}</span>
                 </div>
                   <h3>{categoryTitle}</h3>
                   <img
@@ -18,23 +18,30 @@ const CategoryType = ({categoryName,categoryDate, categoryImage, categoryText, c
                   {categoryText}
                 </div>
                 <div className="readmore-button">
-                  <span> Read More </span>
+                  <span><a href="/blog"> Read More </a></span>
                 </div>
                 <hr />
-                <div className="blog-like row">
-                  <div className="col-md-6">
-                    <p>{categoryAuthor}</p>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="far fa-heart"></i>
-                  </div>
-                  <div className="col-md-3">
-                    <i className="fab fa-facebook-f"></i>
-                    <i className="fab fa-twitter"></i>
-                    <i className="fa fa-envelope"></i>
-                  </div>
-                </div>
-                <hr style={{ marginTop: "-20px" }} />
+                <div className="blog-like">
+        <div className="row">
+          <div className="col-12 col-md-6 py-2">
+            <div className="row">
+              <div className="col-6">
+                <span className="shadow-text">By:</span> {categoryAuthor}
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-12 col-md-6 py-2"
+            style={{ display: "flex", justifyContent: "space-evenly" }}
+          >
+            <i className="fa fa-heart">20</i>
+            <i className="fab fa-facebook-f fa-lg"></i>
+            <i className="fab fa-twitter fa-lg"></i>
+            <i className="fa fa-envelope fa-lg"></i>
+          </div>
+        </div>
+      </div>
+                <hr style={{ marginTop: "-10px"}} />
                 <hr style={{ marginTop: "-14px" }} />
         </React.Fragment>
     );

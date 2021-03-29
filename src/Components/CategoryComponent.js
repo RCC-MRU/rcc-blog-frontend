@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import CategoryType from "./CategoryType"
-import RightMenu from './RightSideMenu'
+import RightSideMenuBot from './RightSideMenuBot'
 
 class CategoryComponent extends Component {
   constructor(props){
     super(props);
     this.state={
-      categoryName: 'Fitness',
       categoryDate: 'Nov 20, 2020',
       categoryText: `Lorem Ipsum is simply dummy text of the printing and
       typesetting industry. Lorem Ipsum has been the industry's
@@ -14,9 +13,6 @@ class CategoryComponent extends Component {
       categoryAuthor: 'Kunal',
       categoryTitle: 'Add This to your workout routine',
       categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
-      authorPicture: process.env.PUBLIC_URL + "images/exercise2.jpg",
-      authorName: 'Kunal',
-      aboutAuthor: 'Lorem ipsum dolor set amet sity',
       moreCategoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
       latestPostDate: '20 Nov, 2020',
       latestPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
@@ -41,7 +37,6 @@ class CategoryComponent extends Component {
             <div className="row">
               <div className="col-md-9">
                 <CategoryType 
-                  categoryName={this.state.categoryName}
                   categoryTitle={this.state.categoryTitle}
                   categoryAuthor={this.state.categoryAuthor}
                   categoryDate={this.state.categoryDate}
@@ -49,7 +44,6 @@ class CategoryComponent extends Component {
                   categoryText={this.state.categoryText}
                 />
                 <CategoryType 
-                  categoryName={this.state.categoryName}
                   categoryTitle={this.state.categoryTitle}
                   categoryAuthor={this.state.categoryAuthor}
                   categoryDate={this.state.categoryDate}
@@ -57,7 +51,6 @@ class CategoryComponent extends Component {
                   categoryText={this.state.categoryText}
                 />
                 <CategoryType 
-                  categoryName={this.state.categoryName}
                   categoryTitle={this.state.categoryTitle}
                   categoryAuthor={this.state.categoryAuthor}
                   categoryDate={this.state.categoryDate}
@@ -68,10 +61,7 @@ class CategoryComponent extends Component {
               </div>
 
               <div className="col-md-3">
-              <RightMenu 
-                authorPicture={this.state.authorPicture}
-                authorName={this.state.authorName}
-                aboutAuthor={this.state.aboutAuthor}
+              <RightSideMenuBot 
                 moreCategoryImage={this.state.moreCategoryImage}
                 latestPostDate={this.state.latestPostDate}
                 latestPostImage={this.state.latestPostImage}

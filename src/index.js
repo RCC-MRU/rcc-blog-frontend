@@ -5,8 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+/*import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";*/
 
 // Custom CSS imports
 import "./Styles/index.css";

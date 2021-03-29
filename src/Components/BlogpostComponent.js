@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BlogPostType from "./BlogPostType";
-import RightMenu from './RightSideMenu';
+import RightSideMenuTop from './RightSideMenuTop';
+import RightSideMenuBot from './RightSideMenuBot'
 
 class BlogpostComponent extends Component {
   constructor(props) {
@@ -114,10 +115,12 @@ class BlogpostComponent extends Component {
 
             <div className="col-md-3">
               
-            <RightMenu 
+            <RightSideMenuTop 
                 authorPicture={this.state.authorPicture}
                 authorName={this.state.authorName}
                 aboutAuthor={this.state.aboutAuthor}
+              />
+              <RightSideMenuBot 
                 moreCategoryImage={this.state.moreCategoryImage}
                 latestPostDate={this.state.latestPostDate}
                 latestPostImage={this.state.latestPostImage}

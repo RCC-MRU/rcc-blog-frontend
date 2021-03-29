@@ -31,7 +31,6 @@ const BlogPostType = ({
             <div className="row">
               <div className="col-6">
                 <span className="shadow-text">By:</span> {blogPostAuthor}
-                {"  "}
               </div>
               <div className="col-6">
                 <span className="shadow-text">On:</span> {blogDate}
