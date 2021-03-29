@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -14,130 +13,87 @@ import {
   Container,
 } from "reactstrap";
 
-const NavbarComponent = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+class NavbarComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const toggle = () => setIsOpen(!isOpen);
+    this.state = {
+      isOpen: false,
+      navData: [
+        {
+          id: 1,
+          categoryName: "Fitness",
+          categoryUrl: "/home#fitness",
+        },
+        {
+          id: 2,
+          categoryName: "Health",
+          categoryUrl: "/home#health",
+        },
+        {
+          id: 3,
+          categoryName: "Workout",
+          categoryUrl: "/home#workout",
+        },
+      ],
+    };
 
-  return (
-    <React.Fragment>
-      <Navbar light expand="md" id="ftco-navbar">
-        <Container>
-          <NavbarToggler onClick={toggle} />
-          <Collapse
-            isOpen={isOpen}
-            navbar
-            className=" d-flex justify-content-around"
-          >
-            <Nav className="mr-auto main-menubar" navbar>
-              <NavItem className="format-main-menubar">
-                <NavLink href="/">Home</NavLink>
-              </NavItem>
-              <NavItem className="format-main-menubar">
-                <NavLink href="/blog">All Feed</NavLink>
-              </NavItem>
-              <NavItem className="format-main-menubar">
-                <UncontrolledDropdown nav inNavbar>
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar light expand="md">
+          <Container>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse
+              isOpen={this.state.isOpen}
+              className="main-menubar"
+              navbar
+            >
+              <Nav navbar>
+                <NavItem className="format-main-menubar">
+                  <NavLink href="/home">Home</NavLink>
+                </NavItem>
+                <NavItem className="format-main-menubar">
+                  <NavLink href="/blog">All Feeds</NavLink>
+                </NavItem>
+                <UncontrolledDropdown
+                  nav
+                  inNavbar
+                  className="format-main-menubar"
+                >
                   <DropdownToggle nav caret>
                     Categories
                   </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem>Header</DropdownItem>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
+                  <DropdownMenu right>
+                    <DropdownItem href="/category">Category 1</DropdownItem>
+                    <DropdownItem>Category 2</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-              </NavItem>
-              <NavItem className="format-main-menubar">
-                <NavLink href="/home#health">Health</NavLink>
-              </NavItem>
-              <NavItem className="format-main-menubar">
-                <NavLink href="/home#fitness">Fitness</NavLink>
-              </NavItem>
-              <NavItem className="format-main-menubar">
-                <NavLink href="/home#workout">Workout</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Container>
-      </Navbar>
-      {/* <nav className="navbar navbar-expand-md navbar-light" id="ftco-navbar">
-        <div className="container">
-          <button
-            className="navbar-toggler text-center mx-auto"
-            type="button"
-            data-toggle="collapse"
-            data-target="#ft-nav"
-            aria-controls="ftco-nav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <strong> Menu </strong>
-          </button>
-          <div className="collapse navbar-collapse" id="ft-nav">
-            <ul className="navbar-nav w-100 main-menubar">
-              <li className="nav-item active">
-                <Link to="/" className="nav-link format-main-menubar">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item dropdown active">
-                <a
-                  className="nav-link format-main-menubar"
-                  href="/#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                >
-                  Categories
-                  <img
-                    src={
-                      process.env.PUBLIC_URL +
-                      "images/icons8-expand-arrow-24.png"
-                    }
-                    className="img-fluid"
-                    alt="wk-route"
-                  />
-                </a>
-                <div
-                  className="dropdown-menu w-75 mx-auto dropdown-menu-center"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <a
-                    className="dropdown-item format-main-menubar"
-                    href="./categories.html"
-                  >
-                    Fitness
-                  </a>
-                  <a className="dropdown-item format-main-menubar" href="/#">
-                    Health
-                  </a>
-                  <a className="dropdown-item format-main-menubar" href="/#">
-                    Workout
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item active">
-                <Link to="/blog" className="nav-link format-main-menubar">
-                  blogPost
-                </Link>
-              </li>
-              <li className="nav-item active">
-                <Link to="/category" className="nav-link format-main-menubar">
-                  Fitness
-                </Link>
-              </li>
-              <li className="nav-item active">
-                <a href="/#" className="nav-link format-main-menubar">
-                  Health
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav> */}
-    </React.Fragment>
-  );
-};
+                {this.state.navData.map((data) => {
+                  return (
+                    <NavItem className="format-main-menubar" key={data.id}>
+                      <NavLink href={data.categoryUrl}>
+                        {data.categoryName}
+                      </NavLink>
+                    </NavItem>
+                  );
+                })}
+              </Nav>
+            </Collapse>
+          </Container>
+        </Navbar>
+      </React.Fragment>
+    );
+  }
+}
 
 export default NavbarComponent;

@@ -79,9 +79,7 @@ class HomeComponent extends Component {
                     />
                   );
                 })}
-                {/* <PopularCard cardTitle="Fitness2" cardText="Lorem Ipsum" />
-                <PopularCard cardTitle="Fitness3" cardText="Lorem Ipsum" />
-                <PopularCard cardTitle="Fitness4" cardText="Lorem Ipsum" /> */}
+                
               </div>
             </div>
 

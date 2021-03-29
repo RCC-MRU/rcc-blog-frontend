@@ -6,9 +6,9 @@ class BlogpostComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "",
       blogPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
       blogPostAuthor:"Kunal Arora",
+      blogDate: "31 Mar, 2021",
       blogPostText: `Why do we use it?
       It is a long established fact that a reader will be distracted
       by the readable content of a page when looking at its layout.
@@ -73,14 +73,13 @@ class BlogpostComponent extends Component {
       blogPostTitle: 'Add this to your daily workroutine',
       blogPostCategory: 'fitness'
     };
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (e) => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
+  // handleChange = (e) => {
+  //   this.setState({
+  //     value: e.target.value,
+  //   });
+  // };
 
   render() {
     return (
@@ -90,7 +89,7 @@ class BlogpostComponent extends Component {
           <div className="row">
             <div className="col-md-9">
               <BlogPostType 
-              blogPostName={this.state.blogPostName}
+              blogDate={this.state.blogDate}
               blogPostImage={this.state.blogPostImage}
               blogPostAuthor={this.state.blogPostAuthor}
               blogPostText={this.state.blogPostText}
@@ -98,7 +97,7 @@ class BlogpostComponent extends Component {
               blogPostCategory={this.state.blogPostCategory}
               />
 
-              <div className="form">
+              {/* <div className="form">
                 <hr style={{ marginTop: "-20px" }} />
                 <hr style={{ marginTop: "-14px" }} />
                 <form>
@@ -110,7 +109,7 @@ class BlogpostComponent extends Component {
                     <input type="submit" value="Post" />
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
 
             <div className="col-md-3">
