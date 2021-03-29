@@ -25,6 +25,7 @@ class HomeComponent extends Component {
         {
           homeCategoryName: "Workout"
         }],
+        CategoryData1: [],
       data: [
         {
           cardTitle: "Fitness1",
@@ -45,7 +46,22 @@ class HomeComponent extends Component {
       ],
     };
   }
-
+randomCategory(){
+  let n=2;
+      for( var i=0 ; i<n ; i++){
+        var print =Math.floor(Math.random() * this.state.CategoryData.length);
+        if(this.state.CategoryData1===null){
+            this.state.CategoryData1.push(this.state.CategoryData[print]); 
+        }
+        else if(this.state.CategoryData1[0]===this.state.CategoryData[print]){
+            n = n+1;
+            continue;
+        }
+        else{
+            this.state.CategoryData1.push(this.state.CategoryData[print]);
+        }
+      }
+}
   render() {
     return (
       <React.Fragment>
@@ -86,117 +102,9 @@ class HomeComponent extends Component {
 
             {/*  <!-- After health div --> */}
 
-            {this.state.CategoryData.map((CategoryData) => {
-              return <HomeCategory homeCategoryName={CategoryData.homeCategoryName} />;
+            {this.state.CategoryData.map((CategoryData1) => {
+              return <HomeCategory homeCategoryName={CategoryData1.homeCategoryName} />;
             })}
-
-            {/* <div className="format-div" id="health">
-              <div className="container">
-                <div className="row">
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                  <div className="col-4 col-sm-2">
-                    <p className="format-health">Health</p>
-                  </div>
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section-spacing-1">
-                <div className="container">
-                  <div className="row">
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="format-div" id="fitness">
-              <div className="container">
-                <div className="row">
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                  <div className="col-4 col-sm-2">
-                    <p className="format-health">Fitness</p>
-                  </div>
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section-spacing-1">
-                <div className="container">
-                  <div className="row">
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="format-div" id="workout">
-              <div className="container">
-                <div className="row">
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                  <div className="col-4 col-sm-2">
-                    <p className="format-health">Workout</p>
-                  </div>
-                  <div className="col-4 col-sm-5">
-                    <div className="homepage-line-design"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="section-spacing-1">
-                <div className="container">
-                  <div className="row">
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-
-                    <HealthCard
-                      healthImg={this.state.healthImg}
-                      healthTitle={this.state.healthTitle}
-                      healthText={this.state.healthText}
-                      healthDate={this.state.healthDate}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </section>
         </div>
       </React.Fragment>
