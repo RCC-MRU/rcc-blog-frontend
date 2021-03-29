@@ -53,7 +53,10 @@ class HomeComponent extends Component {
         <div className="container">
           <section className="spacing-section">
             {/* first three pics  */}
-            <h1 className="format-heading-2 text-left">Featured blogs</h1>
+            <h1 className="format-heading-2">Featured blogs</h1>
+            <div>
+                <hr className="line-class" />
+              </div>
 
             <LatestPost
               postCategory={this.state.postCategory}
