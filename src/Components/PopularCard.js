@@ -1,9 +1,9 @@
 import React from "react";
 
-const PopularCard = ({cardTitle, cardText, cardImg}) => {
+const PopularCard = ({ cardID, cardTitle, cardText, cardImg }) => {
   return (
     <React.Fragment>
-      <div className="col-12 d-flex justify-content-center">
+      <div className="col-12 d-flex justify-content-center" key={cardID} style={{backgroundColor: "##CAD5E2"}}>
         <div className="card border-0">
           <img
             className="card-img-top format-card-image"

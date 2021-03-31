@@ -13,6 +13,8 @@ import {
   Container,
 } from "reactstrap";
 
+import { CatData } from "./HomeComponent";
+
 class NavbarComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -78,11 +80,11 @@ class NavbarComponent extends React.Component {
                     <DropdownItem>Category 2</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
-                {this.state.navData.map((data) => {
+                {CatData.map((data) => {
                   return (
                     <NavItem className="format-main-menubar" key={data.id}>
-                      <NavLink href={data.categoryUrl}>
-                        {data.categoryName}
+                      <NavLink href={data.homecategoryUrl}>
+                        {data.homeCategoryName}
                       </NavLink>
                     </NavItem>
                   );
