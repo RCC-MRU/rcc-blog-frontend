@@ -76,8 +76,7 @@ class NavbarComponent extends React.Component {
                     Categories
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem href="/category">Category 1</DropdownItem>
-                    <DropdownItem>Category 2</DropdownItem>
+                    <DropdownItem href="/category">Fitness</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
                 {CatData.map((data) => {

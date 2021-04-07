@@ -38,8 +38,8 @@ class HomeCategory extends Component {
       cardData1: [],
       cardData: [
         {
-          healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-          healthTitle: "Mood Depends On Food - 1",
+          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          healthTitle: "Fitness Card - 1",
           healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
@@ -49,8 +49,8 @@ class HomeCategory extends Component {
           healthDate: "Nov 20, 2020",
         },
         {
-          healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-          healthTitle: "Mood Depends On Food - 2",
+          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          healthTitle: "Fitness Card - 2",
           healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
@@ -60,8 +60,8 @@ class HomeCategory extends Component {
           healthDate: "Nov 20, 2020",
         },
         {
-          healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-          healthTitle: "Mood Depends On Food - 3",
+          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
+          healthTitle: "Workout Card - 1",
           healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
@@ -71,8 +71,8 @@ class HomeCategory extends Component {
           healthDate: "Nov 20, 2020",
         },
         {
-          healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-          healthTitle: "Mood Depends On Food - 4",
+          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
+          healthTitle: "Workout Card - 2",
           healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
@@ -82,8 +82,19 @@ class HomeCategory extends Component {
           healthDate: "Nov 20, 2020",
         },
         {
-          healthImg: process.env.PUBLIC_URL + "images/plate_food.jpg",
-          healthTitle: "Mood Depends On Food - 5",
+          healthImg: `https://source.unsplash.com/1920x1080/?health`,
+          healthTitle: "Health Card - 1",
+          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of
+                    type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. .`,
+          healthDate: "Nov 20, 2020",
+        },
+        {
+          healthImg: `https://source.unsplash.com/1920x1080/?health`,
+          healthTitle: "Health Card - 2",
           healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
