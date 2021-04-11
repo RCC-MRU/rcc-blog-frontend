@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import BlogPostType from "./BlogPostType";
-import RightSideMenuTop from "./RightSideMenuTop";
-import RightSideMenuBot from "./RightSideMenuBot";
+import BlogPostType from "./SubComponents/BlogPostType";
+import RightSideMenuTop from "./RightSide/RightSideMenuTop";
+import RightSideMenuBot from "./RightSide/RightSideMenuBot";
 
 class BlogpostComponent extends Component {
   constructor(props) {

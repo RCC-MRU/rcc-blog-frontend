@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import PopularCard from "./PopularCard";
-import LatestPost from "./LatestPost";
-import HomeCategory from "./HomeCategoryType";
+import PopularCard from "./HomePageComponents/PopularCard";
+import LatestPost from "./HomePageComponents/LatestPost";
+import HomeCategory from "./HomePageComponents/HomeCategoryType";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CategoryType from "./CategoryType"
-import RightSideMenuBot from './RightSideMenuBot'
+import CategoryType from "./SubComponents/CategoryType"
+import RightSideMenuBot from './RightSide/RightSideMenuBot'
 
 class CategoryComponent extends Component {
   constructor(props){
