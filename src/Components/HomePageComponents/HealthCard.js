@@ -8,7 +8,7 @@ const HealthCard = ({healthImg, healthTitle, healthText, healthDate}) => {
           <img
             className="card-img-top health-section img-fluid"
             src={healthImg}
-            alt="home"
+            alt={healthTitle}
           />
 
           <div className="card-body text-center">

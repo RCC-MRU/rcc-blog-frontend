@@ -26,16 +26,19 @@ class NavbarComponent extends React.Component {
           id: 1,
           categoryName: "Fitness",
           categoryUrl: "/home#fitness",
+          pageUrl: "/category"
         },
         {
           id: 2,
           categoryName: "Health",
           categoryUrl: "/home#health",
+          pageUrl: "/category"
         },
         {
           id: 3,
           categoryName: "Workout",
           categoryUrl: "/home#workout",
+          pageUrl: "/category"
         },
       ],
     };
@@ -76,13 +79,17 @@ class NavbarComponent extends React.Component {
                     Categories
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem href="/category">Fitness</DropdownItem>
+                    {this.state.navData.map((data) => {
+                      return (
+                        <DropdownItem href={data.pageUrl}>{data.categoryName}</DropdownItem>
+                      );
+                    })}
                   </DropdownMenu>
                 </UncontrolledDropdown>
                 {CatData.map((data) => {
                   return (
                     <NavItem className="format-main-menubar" key={data.id}>
-                      <NavLink href={data.homecategoryUrl}>
+                      <NavLink href={data.homecategoryUrl} >
                         {data.homeCategoryName}
                       </NavLink>
                     </NavItem>

@@ -15,6 +15,7 @@ class CategoryComponent extends Component {
           latestPostName:'Add this to your Daily work routine.'
         }
       ],
+
       categoryData:[
         {
           categoryDate: 'Nov 20, 2020',
@@ -27,7 +28,7 @@ class CategoryComponent extends Component {
           
         },
         {
-          categoryDate: 'Nov 20, 2020',
+          categoryDate: 'Nov 30, 2020',
           categoryText: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
@@ -37,7 +38,7 @@ class CategoryComponent extends Component {
           
         },
         {
-          categoryDate: 'Nov 20, 2020',
+          categoryDate: 'Dec 10, 2020',
           categoryText: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
@@ -46,7 +47,7 @@ class CategoryComponent extends Component {
           categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          categoryDate: 'Nov 20, 2020',
+          categoryDate: 'Dec 20, 2020',
           categoryText: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
@@ -56,7 +57,7 @@ class CategoryComponent extends Component {
           
         },
         {
-          categoryDate: 'Nov 20, 2020',
+          categoryDate: 'Dec 30, 2020',
           categoryText: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
@@ -76,11 +77,8 @@ class CategoryComponent extends Component {
           <p className="category-rectangle">Category</p>
           <p className="fitness-rectangle">Fitness</p>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+       
+
         <section id="blogPost">
           <div className="container">
             <div className="row">
