@@ -14,19 +14,3 @@ class App extends React.Component {
 
 export default App;
 
-/**
- * Enpoints list:
- * /home
- * /blog
- * /categories
- * /signup
- * /login
- */
-
-// HomeComponent Srijan
-// LoginComponent: Arsh
-// SignupComponent: Kunal
-// BlogpostComponent: Khushi
-// CategoriesComponent: Nipun
-
-//bugsFixer && Manager: Harsh && Sanchit

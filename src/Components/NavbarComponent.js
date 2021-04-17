@@ -12,8 +12,8 @@ import {
   DropdownItem,
   Container,
 } from "reactstrap";
-
 import { CatData } from "./HomeComponent";
+import HomeCategory from "./HomePageComponents/HomeCategoryType";
 
 class NavbarComponent extends React.Component {
   constructor(props) {
@@ -21,26 +21,6 @@ class NavbarComponent extends React.Component {
 
     this.state = {
       isOpen: false,
-      navData: [
-        {
-          id: 1,
-          categoryName: "Fitness",
-          categoryUrl: "/home#fitness",
-          pageUrl: "/category"
-        },
-        {
-          id: 2,
-          categoryName: "Health",
-          categoryUrl: "/home#health",
-          pageUrl: "/category"
-        },
-        {
-          id: 3,
-          categoryName: "Workout",
-          categoryUrl: "/home#workout",
-          pageUrl: "/category"
-        },
-      ],
     };
 
     this.toggle = this.toggle.bind(this);
@@ -79,9 +59,11 @@ class NavbarComponent extends React.Component {
                     Categories
                   </DropdownToggle>
                   <DropdownMenu right>
-                    {this.state.navData.map((data) => {
+                    {CatData.map((data) => {
                       return (
-                        <DropdownItem href={data.pageUrl}>{data.categoryName}</DropdownItem>
+                        <DropdownItem href="/category">
+                          {data.homeCategoryName}
+                        </DropdownItem>
                       );
                     })}
                   </DropdownMenu>
@@ -89,7 +71,16 @@ class NavbarComponent extends React.Component {
                 {CatData.map((data) => {
                   return (
                     <NavItem className="format-main-menubar" key={data.id}>
-                      <NavLink href={data.homecategoryUrl} >
+                      <NavLink
+                        href={"/home#" + data.homecategoryUrl}
+                        onClick={() => {
+                          return (
+                            <HomeCategory
+                              homeUrihomecategoryUrl={data.homecategoryUrl}
+                            />
+                          );
+                        }}
+                      >
                         {data.homeCategoryName}
                       </NavLink>
                     </NavItem>

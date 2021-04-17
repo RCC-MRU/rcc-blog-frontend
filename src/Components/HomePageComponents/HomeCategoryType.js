@@ -203,22 +203,20 @@ class HomeCategory extends Component {
           healthDate: "Nov 20, 2020",
         },
       ],
-      kuchbhi: props.homeCategoryName,
     };
   }
 
   render() {
     return (
       <React.Fragment>
-        <div className="format-div" id="health">
+        <div className="format-div" id={this.props.homecategoryUrl}>
           <div className="container">
             <div className="row">
               <div className="col-4 col-sm-5">
                 <div className="homepage-line-design"></div>
               </div>
               <div className="col-4 col-sm-2">
-                <p className="format-health">{this.state.kuchbhi}</p>
-                
+                <p className="format-health">{this.props.homeCategoryName}</p>
               </div>
               <div className="col-4 col-sm-5">
                 <div className="homepage-line-design"></div>
@@ -235,21 +233,20 @@ class HomeCategory extends Component {
                 />
               </div>
 
-                            <div className="readmore-button">
-                      <span>
-                        <a
-                          href="/category"
-                          style={{
-                            textDecoration: "none",
-                            listStyle: "none",
-                            color: "white",
-                          }}
-                        >
-                          Read More
-                        </a>
-                      </span>
-                    </div>
-
+              <div className="readmore-button">
+                <span>
+                  <a
+                    href="/category"
+                    style={{
+                      textDecoration: "none",
+                      listStyle: "none",
+                      color: "white",
+                    }}
+                  >
+                    Read More
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>

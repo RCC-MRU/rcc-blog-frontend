@@ -1,45 +1,8 @@
 import React, { Component } from "react";
-import PopularCard from "./HomePageComponents/PopularCard";
+
 import LatestPost from "./HomePageComponents/LatestPost";
 import HomeCategory from "./HomePageComponents/HomeCategoryType";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        background: "black",
-        padding: "1px",
-        borderRadius: "50px",
-      }}
-      onClick={onClick}
-    />
-  );
-};
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        display: "block",
-        background: "black",
-        padding: "1px",
-        borderRadius: "50px",
-      }}
-      onClick={onClick}
-    />
-  );
-};
+import SlickSlider from "./SlickSlider";
 
 class HomeComponent extends Component {
   constructor(props) {
@@ -70,67 +33,66 @@ class HomeComponent extends Component {
         {
           id: 1,
           homeCategoryName: "Health",
-          homecategoryUrl: "/home#fitness",
+          homecategoryUrl: "health",
         },
         {
           id: 2,
           homeCategoryName: "Fitness",
-          homecategoryUrl: "/home#health",
+          homecategoryUrl: "fitness",
         },
         {
           id: 3,
           homeCategoryName: "Workout",
-          categoryUrl: "/home#workout",
+          homecategoryUrl: "workout",
         },
       ],
-      CategoryData1: [],
       data: [
         {
           cardID: 1,
           cardTitle: "Fitness1",
-          cardText: "abcdefg",
+          cardText: "Post 1",
           cardImg: `https://source.unsplash.com/1080x1920/?fitness`,
         },
         {
           cardID: 2,
           cardTitle: "Fitness2",
-          cardText: "defgh",
+          cardText: "Post 2",
           cardImg: `https://source.unsplash.com/1080x1920/?health`,
         },
         {
           cardID: 3,
           cardTitle: "Fitness3",
-          cardText: "abcdefg",
+          cardText: "Post 3",
           cardImg: `https://source.unsplash.com/1080x1920/?workout`,
         },
         {
           cardID: 4,
           cardTitle: "Fitness4",
-          cardText: "abcdefg",
+          cardText: "Post 4",
           cardImg: `https://source.unsplash.com/1080x1920/?excersize`,
         },
         {
           cardID: 5,
           cardTitle: "Fitness5",
-          cardText: "abcdefg",
+          cardText: "Post 5",
           cardImg: `https://source.unsplash.com/1080x1920/?yoga`,
         },
         {
           cardID: 6,
           cardTitle: "Fitness6",
-          cardText: "abcdefg",
+          cardText: "Post 6",
           cardImg: `https://source.unsplash.com/1080x1920/?workout`,
         },
         {
           cardID: 7,
           cardTitle: "Fitness7",
-          cardText: "abcdefg",
+          cardText: "Post 7",
           cardImg: `https://source.unsplash.com/random`,
         },
         {
           cardID: 8,
           cardTitle: "Fitness8",
-          cardText: "abcdefg",
+          cardText: "Post 8",
           cardImg: `https://source.unsplash.com/aerobic`,
         },
       ],
@@ -138,33 +100,6 @@ class HomeComponent extends Component {
   }
 
   render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-      centerPadding: "60px",
-      responsive: [
-        {
-          breakpoint: 769,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    };
-
     return (
       <React.Fragment>
         <div className="container">
@@ -193,26 +128,16 @@ class HomeComponent extends Component {
             </div>
 
             <div className="container">
-              <Slider {...settings} className="card border-0">
-                {this.state.data.map((data) => {
-                  return (
-                    <PopularCard
-                      cardID={data.cardID}
-                      cardTitle={data.cardTitle}
-                      cardText={data.cardText}
-                      cardImg={data.cardImg}
-                    />
-                  );
-                })}
-              </Slider>
+              <SlickSlider popularCardData={this.state.data} />
             </div>
 
             {/*  <!-- After health div --> */}
 
-            {this.state.CategoryData.map((CategoryData1) => {
+            {this.state.CategoryData.map((Cate) => {
               return (
                 <HomeCategory
-                  homeCategoryName={CategoryData1.homeCategoryName}
+                  homeCategoryName={Cate.homeCategoryName}
+                  homecategoryUrl={Cate.homecategoryUrl}
                 />
               );
             })}
@@ -225,7 +150,5 @@ class HomeComponent extends Component {
 
 export default HomeComponent;
 
-
 const obj = new HomeComponent();
-console.log("224 line", obj.state.CategoryData);
 export const CatData = obj.state.CategoryData;
