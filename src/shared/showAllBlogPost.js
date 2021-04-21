@@ -29,7 +29,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "8 Yoga Poses for a Strong Core",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_125340167.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_125340167.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
@@ -52,7 +53,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "Do This 20-Minute HIIT Workout Routine",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_125340167.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_125340167.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously 
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely.
@@ -76,7 +78,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "A First Timer’s Marathon Training Plan",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/christopher-campbell-33030-scaled.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/christopher-campbell-33030-scaled.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously outside 
                   crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
@@ -126,7 +129,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "Healthy No-Bake Strawberry Mug Cakes Served",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_654900490.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_654900490.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
@@ -149,7 +153,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "A Low Effort Ab Burn Out Plan",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_695214214-1024x682.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_695214214-1024x682.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously 
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely.
@@ -173,7 +178,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "7 Lessons to Crush Your Next Running Goal",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/martine-jacobsen-343530.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/martine-jacobsen-343530.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously outside 
                   crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
@@ -223,7 +229,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "Healthy Grain Bowls to Rescue",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_737674996.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_737674996.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
@@ -246,7 +253,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "No-Running Cardio Workout",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/Death_to_Stock_Chasing_Sunrise_9.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/Death_to_Stock_Chasing_Sunrise_9.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously 
                   outside crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely.
@@ -270,7 +278,8 @@ export const blogDetails = [
     userId: 2,
     preference: "good",
     blogTitle: "Cold Weather Running Warm Up Mistakes",
-    blogImg: "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_498434587.jpg",
+    blogImg:
+      "https://cheerup.theme-sphere.com/fitness/wp-content/uploads/sites/11/2016/05/shutterstock_498434587.jpg",
     likes: 10,
     blogContent: `More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously outside 
                   crud mightily rigorous negative one inside gorilla and drew humbly shot tortoise inside opaquely. Crud much 
