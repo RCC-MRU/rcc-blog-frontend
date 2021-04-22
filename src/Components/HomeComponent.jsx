@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import LatestPost from "./HomePageComponents/LatestPost";
+import LatestCard from "./HomePageComponents/LatestCard";
 import HomeCategory from "./HomePageComponents/HomeCategoryType";
-import SlickSlider from "./SlickSlider";
+import SlickSlider from "./HomePageComponents/SlickSlider";
 
 class HomeComponent extends Component {
   constructor(props) {
@@ -11,22 +11,22 @@ class HomeComponent extends Component {
     this.state = {
       feature: [
         {
-          postID: 1,
-          postCategory: "workout1",
+          blogId: 1,
+          category: "workblog",
           postAuthor: "Kunal",
-          postDate: "Nov 20, 2020",
-          postTitle: "Add This to your Daily 20 Min Workout Routine",
-          postImage: process.env.PUBLIC_URL + "images/exercise2.jpg",
-          postImage2: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          createdAt: "Nov 20, 2020",
+          blogTitle: "Add This to your Daily 20 Min Workout Routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise2.jpg",
+          blogImg2: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          postID: 2,
-          postCategory: "workout2",
+          blogId: 2,
+          category: "workout2",
           postAuthor: "Kunal",
-          postDate: "Nov 20, 2020",
-          postTitle: "Add This to your Daily 20 Min Workout Routine",
-          postImage: process.env.PUBLIC_URL + "images/exercise2.jpg",
-          postImage2: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          createdAt: "Nov 20, 2020",
+          blogTitle: "Add This to your Daily 20 Min Workout Routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise2.jpg",
+          blogImg2: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
       ],
       CategoryData: [
@@ -48,52 +48,52 @@ class HomeComponent extends Component {
       ],
       data: [
         {
-          cardID: 1,
-          cardTitle: "Fitness1",
-          cardText: "Post 1",
-          cardImg: `https://source.unsplash.com/1080x1920/?fitness`,
+          blogId: 1,
+          blogTitle: "Fitness1",
+          category: "Fitness",
+          blogImg: `https://source.unsplash.com/1080x1920/?fitness`,
         },
         {
-          cardID: 2,
-          cardTitle: "Fitness2",
-          cardText: "Post 2",
-          cardImg: `https://source.unsplash.com/1080x1920/?health`,
+          blogId: 2,
+          blogTitle: "Fitness2",
+          category: "Fitness",
+          blogImg: `https://source.unsplash.com/1080x1920/?health`,
         },
         {
-          cardID: 3,
-          cardTitle: "Fitness3",
-          cardText: "Post 3",
-          cardImg: `https://source.unsplash.com/1080x1920/?workout`,
+          blogId: 3,
+          blogTitle: "Health1",
+          category: "Health",
+          blogImg: `https://source.unsplash.com/1080x1920/?workout`,
         },
         {
-          cardID: 4,
-          cardTitle: "Fitness4",
-          cardText: "Post 4",
-          cardImg: `https://source.unsplash.com/1080x1920/?excersize`,
+          blogId: 4,
+          blogTitle: "Workout1",
+          category: "Workout",
+          blogImg: `https://source.unsplash.com/1080x1920/?excersize`,
         },
         {
-          cardID: 5,
-          cardTitle: "Fitness5",
-          cardText: "Post 5",
-          cardImg: `https://source.unsplash.com/1080x1920/?yoga`,
+          blogId: 5,
+          blogTitle: "Fitness3",
+          category: "Fitness",
+          blogImg: `https://source.unsplash.com/1080x1920/?yoga`,
         },
         {
-          cardID: 6,
-          cardTitle: "Fitness6",
-          cardText: "Post 6",
-          cardImg: `https://source.unsplash.com/1080x1920/?workout`,
+          blogId: 6,
+          blogTitle: "Workout2",
+          category: "Workout",
+          blogImg: `https://source.unsplash.com/1080x1920/?workout`,
         },
         {
-          cardID: 7,
-          cardTitle: "Fitness7",
-          cardText: "Post 7",
-          cardImg: `https://source.unsplash.com/random`,
+          blogId: 7,
+          blogTitle: "Health3",
+          category: "Health",
+          blogImg: `https://source.unsplash.com/random`,
         },
         {
-          cardID: 8,
-          cardTitle: "Fitness8",
-          cardText: "Post 8",
-          cardImg: `https://source.unsplash.com/aerobic`,
+          blogId: 8,
+          blogTitle: "Workout3",
+          category: "Workout",
+          blogImg: `https://source.unsplash.com/aerobic`,
         },
       ],
     };
@@ -110,13 +110,13 @@ class HomeComponent extends Component {
               <hr className="line-class" />
             </div>
 
-            <LatestPost
-              postCategory={this.state.feature[0].postCategory}
-              postTitle={this.state.feature[0].postTitle}
+            <LatestCard
+              category={this.state.feature[0].category}
+              blogTitle={this.state.feature[0].blogTitle}
               postAuthor={this.state.feature[0].postAuthor}
-              postDate={this.state.feature[0].postDate}
-              postImage={this.state.feature[0].postImage}
-              postImage2={this.state.feature[0].postImage2}
+              createdAt={this.state.feature[0].createdAt}
+              blogImg={this.state.feature[0].blogImg}
+              blogImg2={this.state.feature[0].blogImg2}
             />
 
             {/* <!-- After Most popular card --> */}

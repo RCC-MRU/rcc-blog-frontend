@@ -1,5 +1,5 @@
 import React from "react";
-import PopularCard from "./HomePageComponents/PopularCard";
+import PopularCard from "./PopularCard";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -73,10 +73,10 @@ const SlickSlider = (props) => {
         {props.popularCardData.map((data) => {
           return (
             <PopularCard
-              cardID={data.cardID}
-              cardTitle={data.cardTitle}
-              cardText={data.cardText}
-              cardImg={data.cardImg}
+              blogID={data.blogID}
+              blogTitle={data.blogTitle}
+              category={data.category}
+              blogImg={data.blogImg}
             />
           );
         })}

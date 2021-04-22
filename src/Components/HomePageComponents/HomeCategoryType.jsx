@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HealthCard from "./HealthCard";
+import DisplayCard from "./DisplayCard";
 
 function RandomCategory({ cardData, cardData1 }) {
   let n = 2;
@@ -19,11 +19,12 @@ function RandomCategory({ cardData, cardData1 }) {
     <React.Fragment>
       {cardData1.map((data) => {
         return (
-          <HealthCard
-            healthImg={data.healthImg}
-            healthDate={data.healthDate}
-            healthText={data.healthText}
-            healthTitle={data.healthTitle}
+          <DisplayCard
+            blogImg={data.blogImg}
+            createdAt={data.createdAt}
+            blogText={data.blogText}
+            blogTitle={data.blogTitle}
+            category={data.category}
           />
         );
       })}
@@ -38,169 +39,184 @@ class HomeCategory extends Component {
       cardData1: [],
       cardData: [
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
-          healthTitle: "Fitness Card - 1",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          blogTitle: "Fitness Card - 1",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
                   survived not only five centuries, but also the leap into
                   electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Fitness"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
-          healthTitle: "Fitness Card - 2",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          blogTitle: "Fitness Card - 2",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
                   survived not only five centuries, but also the leap into
                   electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Fitness"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
-          healthTitle: "Fitness Card - 3",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          blogTitle: "Fitness Card - 3",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
                   survived not only five centuries, but also the leap into
                   electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Fitness"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
-          healthTitle: "Fitness Card - 4",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          blogTitle: "Fitness Card - 4",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
                   survived not only five centuries, but also the leap into
                   electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Fitness"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?fitness`,
-          healthTitle: "Fitness Card - 5",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
+          blogTitle: "Fitness Card - 5",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
                   survived not only five centuries, but also the leap into
                   electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Fitness"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
-          healthTitle: "Workout Card - 1",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?workout`,
+          blogTitle: "Workout Card - 1",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Workout"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
-          healthTitle: "Workout Card - 2",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?workout`,
+          blogTitle: "Workout Card - 2",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Workout"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
-          healthTitle: "Workout Card - 3",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?workout`,
+          blogTitle: "Workout Card - 3",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Workout"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
-          healthTitle: "Workout Card - 4",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?workout`,
+          blogTitle: "Workout Card - 4",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Workout"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?workout`,
-          healthTitle: "Workout Card - 5",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?workout`,
+          blogTitle: "Workout Card - 5",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Workout"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?health`,
-          healthTitle: "Health Card - 1",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?health`,
+          blogTitle: "Health Card - 1",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Health"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?health`,
-          healthTitle: "Health Card - 2",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?health`,
+          blogTitle: "Health Card - 2",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Health"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?health`,
-          healthTitle: "Health Card - 3",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?health`,
+          blogTitle: "Health Card - 3",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Health"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?health`,
-          healthTitle: "Health Card - 4",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?health`,
+          blogTitle: "Health Card - 4",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Health"
         },
         {
-          healthImg: `https://source.unsplash.com/1920x1080/?health`,
-          healthTitle: "Health Card - 5",
-          healthText: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogImg: `https://source.unsplash.com/1920x1080/?health`,
+          blogTitle: "Health Card - 5",
+          blogText: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
                     survived not only five centuries, but also the leap into
                     electronic typesetting, remaining essentially unchanged. .`,
-          healthDate: "Nov 20, 2020",
+          createdAt: "Nov 20, 2020",
+          category: "Health"
         },
       ],
     };

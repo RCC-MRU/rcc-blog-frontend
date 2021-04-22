@@ -1,12 +1,12 @@
 import React from "react";
-
-const LatestPost = ({
-  postCategory,
-  postTitle,
+// todo
+const LatestCard = ({
+  category,
+  blogTitle,
   postAuthor,
-  postDate,
-  postImage,
-  postImage2,
+  createdAt,
+  blogImg,
+  blogImg2,
 }) => {
   return (
     <React.Fragment>
@@ -15,15 +15,15 @@ const LatestPost = ({
           <div className="col-12 col-md-6 my-1 px-1">
             <div
               className="banner-img-left"
-              style={{ backgroundImage: `url(${postImage2})` }}
+              style={{ backgroundImage: `url(${blogImg2})` }}
             >
               <div className="centered">
                 <button className="btn btn-black btn-sm text-white">
-                  {postCategory}
+                  {category}
                 </button>
-                <p>{postTitle}</p>
+                <p>{blogTitle}</p>
                 <p className="edit-font">
-                  {postAuthor} - {postDate}
+                  {postAuthor} - {createdAt}
                 </p>
               </div>
             </div>
@@ -33,15 +33,15 @@ const LatestPost = ({
             <div className="col-6 px-2">
               <div
                 className="banner-img-right"
-                style={{ backgroundImage: `url(${postImage})` }}
+                style={{ backgroundImage: `url(${blogImg})` }}
               >
                 <div className="centered">
                   <button className="btn btn-black btn-sm text-white">
-                    {postCategory}
+                    {category}
                   </button>
-                  <p>{postTitle}</p>
+                  <p>{blogTitle}</p>
                   <p className="edit-font">
-                    {postAuthor} - {postDate}
+                    {postAuthor} - {createdAt}
                   </p>
                 </div>
               </div>
@@ -49,15 +49,15 @@ const LatestPost = ({
             <div className="col-6 px-2">
               <div
                 className="banner-img-right"
-                style={{ backgroundImage: `url(${postImage})` }}
+                style={{ backgroundImage: `url(${blogImg})` }}
               >
                 <div className="centered">
                   <button className="btn btn-black btn-sm text-white">
-                    {postCategory}
+                    {category}
                   </button>
-                  <p>{postTitle}</p>
+                  <p>{blogTitle}</p>
                   <p className="edit-font">
-                    {postAuthor} - {postDate}
+                    {postAuthor} - {createdAt}
                   </p>
                 </div>
               </div>
@@ -69,4 +69,4 @@ const LatestPost = ({
     </React.Fragment>
   );
 };
-export default LatestPost;
+export default LatestCard;
