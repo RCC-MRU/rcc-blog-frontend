@@ -73,6 +73,7 @@ const SlickSlider = (props) => {
         {props.popularCardData.map((data) => {
           return (
             <PopularCard
+              key={data.blogID}
               blogID={data.blogID}
               blogTitle={data.blogTitle}
               category={data.category}
