@@ -1,26 +1,26 @@
 import React from "react";
 
 const CategoryType = ({
-  categoryDate,
-  categoryImage,
-  categoryText,
+  createdAt,
+  blogImg,
+  blogContentShorted,
   categoryAuthor,
-  categoryTitle,
+  blogTitle,
 }) => {
   return (
     <React.Fragment>
       <div className="category-with-date">
-        Posted on<span className="category-grey">- {categoryDate}</span>
+        Posted on<span className="category-grey">- {createdAt}</span>
       </div>
-      <h3>{categoryTitle}</h3>
+      <h3>{blogTitle}</h3>
       <img
-        src={categoryImage}
+        src={blogImg}
         width="770px"
         height="513px"
         className="img-fluid"
         alt="categories"
       />
-      <div className="blog-text">{categoryText}</div>
+      <div className="blog-text">{blogContentShorted}</div>
       <div className="readmore-button">
         <span>
           <a

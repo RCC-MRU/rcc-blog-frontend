@@ -20,49 +20,49 @@ class CategoryComponent extends Component {
 
       categoryData: [
         {
-          categoryDate: "Nov 20, 2020",
-          categoryText: `Lorem Ipsum is simply dummy text of the printing and
+          createdAt: "Nov 20, 2020",
+          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
-          categoryTitle: "Add This to your workout routine",
-          categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogTitle: "Add This to your workout routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          categoryDate: "Nov 30, 2020",
-          categoryText: `Lorem Ipsum is simply dummy text of the printing and
+          createdAt: "Nov 30, 2020",
+          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
-          categoryTitle: "Add This to your workout routine",
-          categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogTitle: "Add This to your workout routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          categoryDate: "Dec 10, 2020",
-          categoryText: `Lorem Ipsum is simply dummy text of the printing and
+          createdAt: "Dec 10, 2020",
+          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
-          categoryTitle: "Add This to your workout routine",
-          categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogTitle: "Add This to your workout routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          categoryDate: "Dec 20, 2020",
-          categoryText: `Lorem Ipsum is simply dummy text of the printing and
+          createdAt: "Dec 20, 2020",
+          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
-          categoryTitle: "Add This to your workout routine",
-          categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogTitle: "Add This to your workout routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
-          categoryDate: "Dec 30, 2020",
-          categoryText: `Lorem Ipsum is simply dummy text of the printing and
+          createdAt: "Dec 30, 2020",
+          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
-          categoryTitle: "Add This to your workout routine",
-          categoryImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogTitle: "Add This to your workout routine",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
       ],
     };
@@ -83,11 +83,11 @@ class CategoryComponent extends Component {
                 {this.state.categoryData.map((categoryData) => {
                   return (
                     <CategoryType
-                      categoryTitle={categoryData.categoryTitle}
+                    blogTitle={categoryData.blogTitle}
                       categoryAuthor={categoryData.categoryAuthor}
-                      categoryDate={categoryData.categoryDate}
-                      categoryImage={categoryData.categoryImage}
-                      categoryText={categoryData.categoryText}
+                      createdAt={categoryData.createdAt}
+                      blogImg={categoryData.blogImg}
+                      blogContentShorted={categoryData.blogContentShorted}
                     />
                   );
                 })}

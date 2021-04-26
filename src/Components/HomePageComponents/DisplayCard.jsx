@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayCard = ({blogImg, blogTitle, blogText, createdAt, category}) => {
+const DisplayCard = ({blogImg, blogTitle, blogTextShorted, createdAt, category}) => {
   return (
     <React.Fragment>
       <div className="col-12 col-md-6 d-flex justify-content-center">
@@ -21,7 +21,7 @@ const DisplayCard = ({blogImg, blogTitle, blogText, createdAt, category}) => {
 
             <hr className="temp-line-format" />
             <p className="card-text font-format">
-              {blogText}
+              {blogTextShorted}
             </p>
           </div>
         </div>
