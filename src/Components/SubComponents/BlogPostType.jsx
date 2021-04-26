@@ -1,28 +1,28 @@
 import React from "react";
 
 const BlogPostType = ({
-  blogDate,
-  blogPostImage,
+  createdAt,
+  blogImg,
   blogPostAuthor,
-  blogPostText,
-  blogPostTitle,
-  blogPostCategory
+  blogContent,
+  blogTitle,
+  category
 }) => {
   return (
     <React.Fragment>
       <div className="fitness-title">
-        <span> {blogPostCategory} </span>
+        <span> {category} </span>
       </div>
-      <h3>{blogPostTitle}</h3>
+      <h3>{blogTitle}</h3>
       <img
-        src={blogPostImage}
+        src={blogImg}
         width="770px"
         height="513px"
         className="img-fluid"
         alt="exercise1"
       />
 
-      <div className="blog-text">{blogPostText}</div>
+      <div className="blog-text">{blogContent}</div>
 
       <hr />
       <div className="blog-like">
@@ -33,7 +33,7 @@ const BlogPostType = ({
                 <span className="shadow-text">By:</span> {blogPostAuthor}
               </div>
               <div className="col-6">
-                <span className="shadow-text">On:</span> {blogDate}
+                <span className="shadow-text">On:</span> {createdAt}
               </div>
             </div>
           </div>
@@ -41,13 +41,15 @@ const BlogPostType = ({
             className="col-12 col-md-6 py-2"
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
-            <i className="fa fa-heart">20</i>
+            {/* <i className="fa fa-heart">20</i> */}
             <i className="fab fa-facebook-f fa-lg"></i>
             <i className="fab fa-twitter fa-lg"></i>
             <i className="fa fa-envelope fa-lg"></i>
           </div>
         </div>
       </div>
+      <hr style={{ marginTop: "-10px" }} />
+      <hr style={{ marginTop: "-14px" }} />
     </React.Fragment>
   );
 };

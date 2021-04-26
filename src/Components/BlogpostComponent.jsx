@@ -10,10 +10,10 @@ class BlogpostComponent extends Component {
       blogInfo: [
         {
           blogId: 0,
-          blogPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
+          blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
           blogPostAuthor: "Kunal Arora",
-          blogDate: "31 Mar, 2021",
-          blogPostText: `Why do we use it?
+          createdAt: "31 Mar, 2021",
+          blogContent: `Why do we use it?
       It is a long established fact that a reader will be distracted
       by the readable content of a page when looking at its layout.
       The point of using Lorem Ipsum is that it has a more-or-less
@@ -74,16 +74,16 @@ class BlogpostComponent extends Component {
           latestPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
           moreCategoryName: "fitness",
           latestPostName: "Add this to your Daily work routine.",
-          blogPostTitle: "Add this to your daily work routine",
-          blogPostCategory: "fitness",
+          blogTitle: "Add this to your daily work routine",
+          category: "fitness",
         },
 
         {
           blogId: 1,
-          blogPostImage: process.env.PUBLIC_URL + "images/exercise2.jpg",
+          blogImg: process.env.PUBLIC_URL + "images/exercise2.jpg",
           blogPostAuthor: "Sanchit Bajaj",
-          blogDate: "31 Mar, 2021",
-          blogPostText: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
+          createdAt: "31 Mar, 2021",
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
           authorPicture: process.env.PUBLIC_URL + "images/exercise2.jpg",
           authorName: "Kunal",
           aboutAuthor: "Lorem ipsum dolor set amet sity",
@@ -92,8 +92,8 @@ class BlogpostComponent extends Component {
           latestPostImage: process.env.PUBLIC_URL + "images/exercise1.jpg",
           moreCategoryName: "fitness",
           latestPostName: "Add this to your Daily work routine.",
-          blogPostTitle: "Add this to your daily work routine",
-          blogPostCategory: "fitness",
+          blogTitle: "Add this to your daily work routine",
+          category: "fitness",
         },
       ],
     };
@@ -106,7 +106,7 @@ class BlogpostComponent extends Component {
   // };
 
   render() {
-    let value = 1;
+    let value = 0;
     return (
       <React.Fragment>
         <div className="container">
@@ -119,12 +119,12 @@ class BlogpostComponent extends Component {
                 .map((data) => {
                   return (
                     <BlogPostType
-                      blogDate={data.blogDate}
-                      blogPostImage={data.blogPostImage}
+                    createdAt={data.createdAt}
+                      blogImg={data.blogImg}
                       blogPostAuthor={data.blogPostAuthor}
-                      blogPostText={data.blogPostText}
-                      blogPostTitle={data.blogPostTitle}
-                      blogPostCategory={data.blogPostCategory}
+                      blogContent={data.blogContent}
+                      blogTitle={data.blogTitle}
+                      category={data.category}
                     />
                   );
                 })}
