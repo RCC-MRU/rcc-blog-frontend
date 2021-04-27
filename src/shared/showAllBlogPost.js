@@ -1,6 +1,6 @@
 export const blogDetails = [
   {
-    blogId: `001`,
+    blogId: 1,
     userId: 1,
     preference: "good",
     blogTitle: "Your Mood Depends on The Food",
@@ -25,7 +25,7 @@ export const blogDetails = [
     viewCounter: 10,
   },
   {
-    blogId: `002`,
+    blogId: 2,
     userId: 2,
     preference: "good",
     blogTitle: "8 Yoga Poses for a Strong Core",
