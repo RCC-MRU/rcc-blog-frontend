@@ -20,6 +20,7 @@ function RandomCategory({ cardData, cardData1 }) {
       {cardData1.map((data) => {
         return (
           <DisplayCard
+          key={data.blogId}
             blogImg={data.blogImg}
             createdAt={data.createdAt}
             blogContent={data.blogContent}
@@ -39,6 +40,7 @@ class HomeCategory extends Component {
       cardData1: [],
       cardData: [
         {
+          blogId: 0,
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 1",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -51,6 +53,7 @@ class HomeCategory extends Component {
           category: "Fitness"
         },
         {
+          blogId: 1,
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 2",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -63,6 +66,7 @@ class HomeCategory extends Component {
           category: "Fitness"
         },
         {
+          blogId: 2,
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 3",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -75,6 +79,7 @@ class HomeCategory extends Component {
           category: "Fitness"
         },
         {
+          blogId: 3,
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 4",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -87,6 +92,7 @@ class HomeCategory extends Component {
           category: "Fitness"
         },
         {
+          blogId: 4,
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 5",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -99,6 +105,7 @@ class HomeCategory extends Component {
           category: "Fitness"
         },
         {
+          blogId: 5,
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 1",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -111,6 +118,7 @@ class HomeCategory extends Component {
           category: "Workout"
         },
         {
+          blogId: 6,
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 2",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -123,6 +131,7 @@ class HomeCategory extends Component {
           category: "Workout"
         },
         {
+          blogId: 7,
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 3",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -135,6 +144,7 @@ class HomeCategory extends Component {
           category: "Workout"
         },
         {
+          blogId: 8,
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 4",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -147,6 +157,7 @@ class HomeCategory extends Component {
           category: "Workout"
         },
         {
+          blogId: 9,
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 5",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -159,6 +170,7 @@ class HomeCategory extends Component {
           category: "Workout"
         },
         {
+          blogId: 10,
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 1",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -171,6 +183,7 @@ class HomeCategory extends Component {
           category: "Health"
         },
         {
+          blogId: 11,
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 2",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -183,6 +196,7 @@ class HomeCategory extends Component {
           category: "Health"
         },
         {
+          blogId: 12,
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 3",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -195,6 +209,7 @@ class HomeCategory extends Component {
           category: "Health"
         },
         {
+          blogId: 13,
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 4",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -207,6 +222,7 @@ class HomeCategory extends Component {
           category: "Health"
         },
         {
+          blogId: 14,
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 5",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -20,6 +20,7 @@ class CategoryComponent extends Component {
 
       categoryData: [
         {
+          blogId: 0,
           createdAt: "Nov 20, 2020",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
@@ -29,6 +30,7 @@ class CategoryComponent extends Component {
           blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
+          blogId: 1,
           createdAt: "Nov 30, 2020",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
@@ -38,6 +40,7 @@ class CategoryComponent extends Component {
           blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
+          blogId: 2,
           createdAt: "Dec 10, 2020",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
@@ -47,6 +50,7 @@ class CategoryComponent extends Component {
           blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
+          blogId: 3,
           createdAt: "Dec 20, 2020",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
@@ -56,6 +60,7 @@ class CategoryComponent extends Component {
           blogImg: process.env.PUBLIC_URL + "images/exercise1.jpg",
         },
         {
+          blogId: 4,
           createdAt: "Dec 30, 2020",
           blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
@@ -83,6 +88,7 @@ class CategoryComponent extends Component {
                 {this.state.categoryData.map((categoryData) => {
                   return (
                     <CategoryType
+                    key={categoryData.blogId}
                     blogTitle={categoryData.blogTitle}
                       categoryAuthor={categoryData.categoryAuthor}
                       createdAt={categoryData.createdAt}

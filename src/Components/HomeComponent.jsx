@@ -136,6 +136,7 @@ class HomeComponent extends Component {
             {this.state.CategoryData.map((Cate) => {
               return (
                 <HomeCategory
+                key={Cate.id}
                   homeCategoryName={Cate.homeCategoryName}
                   homecategoryUrl={Cate.homecategoryUrl}
                 />

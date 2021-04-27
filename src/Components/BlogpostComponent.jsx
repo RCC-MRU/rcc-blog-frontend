@@ -118,7 +118,7 @@ class BlogpostComponent extends Component {
                 })
                 .map((data) => {
                   return (
-                    <BlogPostType
+                    <BlogPostType key={data.blogId}
                     createdAt={data.createdAt}
                       blogImg={data.blogImg}
                       blogPostAuthor={data.blogPostAuthor}
