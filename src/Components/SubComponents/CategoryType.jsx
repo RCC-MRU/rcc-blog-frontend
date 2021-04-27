@@ -1,9 +1,10 @@
 import React from "react";
+import { createDescription, stripHTML } from '../../Util/StringUtil'
 
 const CategoryType = ({
   createdAt,
   blogImg,
-  blogContentShorted,
+  blogContent,
   categoryAuthor,
   blogTitle,
 }) => {
@@ -20,7 +21,7 @@ const CategoryType = ({
         className="img-fluid"
         alt="categories"
       />
-      <div className="blog-text">{blogContentShorted}</div>
+      <div className="blog-text">{createDescription(stripHTML(blogContent), 100)}</div>
       <div className="readmore-button">
         <span>
           <a

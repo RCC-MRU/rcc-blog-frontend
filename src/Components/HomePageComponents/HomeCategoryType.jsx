@@ -22,7 +22,7 @@ function RandomCategory({ cardData, cardData1 }) {
           <DisplayCard
             blogImg={data.blogImg}
             createdAt={data.createdAt}
-            blogTextShorted={data.blogTextShorted}
+            blogContent={data.blogContent}
             blogTitle={data.blogTitle}
             category={data.category}
           />
@@ -41,7 +41,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 1",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
@@ -53,7 +53,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 2",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
@@ -65,7 +65,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 3",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
@@ -77,7 +77,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 4",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
@@ -89,7 +89,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?fitness`,
           blogTitle: "Fitness Card - 5",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                   industry. Lorem Ipsum has been the industry's standard dummy text
                   ever since the 1500s, when an unknown printer took a galley of
                   type and scrambled it to make a type specimen book. It has
@@ -101,7 +101,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 1",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -113,7 +113,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 2",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -125,7 +125,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 3",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -137,7 +137,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 4",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -149,7 +149,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?workout`,
           blogTitle: "Workout Card - 5",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -161,7 +161,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 1",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -173,7 +173,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 2",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -185,7 +185,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 3",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -197,7 +197,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 4",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has
@@ -209,7 +209,7 @@ class HomeCategory extends Component {
         {
           blogImg: `https://source.unsplash.com/1920x1080/?health`,
           blogTitle: "Health Card - 5",
-          blogTextShorted: `Lorem Ipsum is simply dummy text of the printing and typesetting
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been the industry's standard dummy text
                     ever since the 1500s, when an unknown printer took a galley of
                     type and scrambled it to make a type specimen book. It has

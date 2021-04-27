@@ -21,7 +21,7 @@ class CategoryComponent extends Component {
       categoryData: [
         {
           createdAt: "Nov 20, 2020",
-          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
@@ -30,7 +30,7 @@ class CategoryComponent extends Component {
         },
         {
           createdAt: "Nov 30, 2020",
-          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
@@ -39,7 +39,7 @@ class CategoryComponent extends Component {
         },
         {
           createdAt: "Dec 10, 2020",
-          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
@@ -48,7 +48,7 @@ class CategoryComponent extends Component {
         },
         {
           createdAt: "Dec 20, 2020",
-          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
@@ -57,7 +57,7 @@ class CategoryComponent extends Component {
         },
         {
           createdAt: "Dec 30, 2020",
-          blogContentShorted: `Lorem Ipsum is simply dummy text of the printing and
+          blogContent: `Lorem Ipsum is simply dummy text of the printing and
           typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the`,
           categoryAuthor: "Kunal",
@@ -87,7 +87,7 @@ class CategoryComponent extends Component {
                       categoryAuthor={categoryData.categoryAuthor}
                       createdAt={categoryData.createdAt}
                       blogImg={categoryData.blogImg}
-                      blogContentShorted={categoryData.blogContentShorted}
+                      blogContent={categoryData.blogContent}
                     />
                   );
                 })}

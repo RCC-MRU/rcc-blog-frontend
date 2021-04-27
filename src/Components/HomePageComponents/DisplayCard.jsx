@@ -1,6 +1,9 @@
 import React from "react";
+import { createDescription, stripHTML } from '../../Util/StringUtil'
 
-const DisplayCard = ({blogImg, blogTitle, blogTextShorted, createdAt, category}) => {
+
+
+const DisplayCard = ({blogImg, blogTitle, blogContent, createdAt, category}) => {
   return (
     <React.Fragment>
       <div className="col-12 col-md-6 d-flex justify-content-center">
@@ -21,7 +24,8 @@ const DisplayCard = ({blogImg, blogTitle, blogTextShorted, createdAt, category})
 
             <hr className="temp-line-format" />
             <p className="card-text font-format">
-              {blogTextShorted}
+              {/* {blogContent} */}
+              {createDescription(stripHTML(blogContent), 100)}
             </p>
           </div>
         </div>
