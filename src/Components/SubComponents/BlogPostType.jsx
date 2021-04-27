@@ -1,4 +1,6 @@
 import React from "react";
+import { createDescription, stripHTML } from '../../Util/StringUtil'
+
 
 const BlogPostType = ({
   createdAt,
@@ -22,8 +24,8 @@ const BlogPostType = ({
         alt="exercise1"
       />
 
-      <div className="blog-text">{blogContent}</div>
-
+      <div className="blog-text">{createDescription(stripHTML(blogContent), 1000)}</div>
+      {/* {blogContent} */}
       <hr />
       <div className="blog-like">
         <div className="row">
