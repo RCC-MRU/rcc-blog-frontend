@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import contactArray from "../shared/contactus";
 
 let date = new Date();
+
+
+
+
 
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
     xemail: "",
     message: "",
   });
+
 
   function handleChange(event) {
     console.log(event);
@@ -20,6 +26,7 @@ const FooterComponent = () => {
     event.preventDefault();
   };
 
+  
   return (
     <React.Fragment>
       <section id="footer">
@@ -85,7 +92,8 @@ const FooterComponent = () => {
                     type="email"
                     className="form-control"
                     id="exampleInputEmail1"
-                    name="xemail"
+                    ref="xemail"
+                    placeholder="xemail"
                     defaultValue={inputVal.email}
                     onChange={handleChange}
                     required
@@ -98,7 +106,8 @@ const FooterComponent = () => {
                     id="exampleInputMessage"
                     cols="10"
                     rows="5"
-                    name="message"
+                    ref="message"
+                    placeholder="message"
                     defaultValue={inputVal.message}
                     onChange={handleChange}
                     required
@@ -119,7 +128,7 @@ const FooterComponent = () => {
         </div>
       </section>
     </React.Fragment>
-  );
+  )
 };
 
 export default FooterComponent;
