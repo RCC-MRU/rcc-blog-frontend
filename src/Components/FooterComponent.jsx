@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { contacts } from "../shared/contactus";
 
 let date = new Date();
 
@@ -8,16 +9,19 @@ const FooterComponent = () => {
     message: "",
   });
 
+  // let [contact, setContact] = useState(contacts);
+
   function handleChange(event) {
-    console.log(event);
+    // console.log(event);
+    // console.log(contact);
     const { name, value } = event.target;
-    console.log(`Name: ${name} and value: ${value}`);
+    // console.log(`Email: ${name} and value: ${value}`);
     setInputValue({ ...inputVal, [name]: value });
   }
 
   const handleSubmit = (event) => {
-    alert(`Email: ${inputVal.xemail} & Message: ${inputVal.message}`);
     event.preventDefault();
+    alert(`Email: ${inputVal.xemail} & Message: ${inputVal.message}`);
   };
 
   return (
