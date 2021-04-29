@@ -29,6 +29,21 @@ export const users = [
     createdAt: "2021-04-28 18:51:00",
     modifiedAt: "2021-04-28 18:51:00",
   },
+  {
+    UserId: 3,
+    firstName: "Khushi",
+    lastName: "Arora",
+    email: "akhushi72@gmail.com",
+    roles: 0,
+    mobileNo: 8368059827,
+    password: "password",
+    dob: "2002-23-02",	
+    isActive: 0,
+    preference: "fitness",
+    profileImg: "",	
+    createdAt: "2021-04-29 18:51:00",
+    modifiedAt: "2021-04-29 18:51:00",
+  }
 ]
 
 
