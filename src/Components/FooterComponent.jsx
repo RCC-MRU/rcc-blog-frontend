@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import axios from "axios";
 // import { contacts } from "../shared/contactus";
 
 let date = new Date();
 
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
-    xemail: "",
+    email: "",
     message: "",
   });
 
@@ -21,7 +22,19 @@ const FooterComponent = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Email: ${inputVal.xemail} & Message: ${inputVal.message}`);
+
+    axios
+      .post(`http://localhost:3001/routes/contact`, inputVal)
+      .then((res) => {
+        const persons = res.data;
+        console.log(persons);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    console.log(inputVal);
+    alert(`Email: ${inputVal.email} & Message: ${inputVal.message}`);
   };
 
   return (
@@ -89,7 +102,7 @@ const FooterComponent = () => {
                     type="email"
                     className="form-control"
                     id="exampleInputEmail1"
-                    name="xemail"
+                    name="email"
                     defaultValue={inputVal.email}
                     onChange={handleChange}
                     required
