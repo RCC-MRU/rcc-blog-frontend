@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import axios from 'axios';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
@@ -12,6 +14,8 @@ import "./Styles/index.css";
 import "./Styles/footer.css";
 import "./Styles/blog.css";
 import "./Styles/login_signup.css";
+
+axios.defaults.baseURL = "http://localhost:3001/routes/";
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 

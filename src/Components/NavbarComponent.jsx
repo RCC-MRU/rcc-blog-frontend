@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Collapse,
   Navbar,
@@ -12,13 +13,27 @@ import {
   DropdownItem,
   Container,
 } from "reactstrap";
-import { CatData } from "./HomeComponent";
 import HomeCategory from "./HomePageComponents/HomeCategoryType";
 
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [categoryData, setCategoryData] = useState([]);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  // data fetching for menu using axios
+  useEffect(() => {
+    axios
+      .get("/showCategoryMaster")
+      .then((res) => {
+        const categories = res.data;
+
+        setCategoryData(categories);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <React.Fragment>
@@ -42,29 +57,29 @@ const NavbarComponent = () => {
                   Categories
                 </DropdownToggle>
                 <DropdownMenu right>
-                  {CatData.map((data) => {
+                  {categoryData.map((data) => {
                     return (
                       <DropdownItem href="/category" key={data.id}>
-                        {data.homeCategoryName}
+                        {data.categoryValue}
                       </DropdownItem>
                     );
                   })}
                 </DropdownMenu>
               </UncontrolledDropdown>
-              {CatData.map((data) => {
+              {categoryData.map((data) => {
                 return (
                   <NavItem className="format-main-menubar" key={data.id}>
                     <NavLink
-                      href={"/home#" + data.homecategoryUrl}
+                      href={"/home#" + data.categoryValue}
                       onClick={() => {
                         return (
                           <HomeCategory
-                            homeUrihomecategoryUrl={data.homecategoryUrl}
+                            homeUrihomecategoryUrl={data.slug}
                           />
                         );
                       }}
                     >
-                      {data.homeCategoryName}
+                      {data.categoryValue}
                     </NavLink>
                   </NavItem>
                 );

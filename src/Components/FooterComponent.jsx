@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { contacts } from "../shared/contactus";
 
 let date = new Date();
 
@@ -10,7 +9,6 @@ const FooterComponent = () => {
     message: "",
   });
 
-  // let [contact, setContact] = useState(contacts);
 
   function handleChange(event) {
     // console.log(event);
@@ -24,7 +22,7 @@ const FooterComponent = () => {
     event.preventDefault();
 
     axios
-      .post(`http://localhost:3001/routes/contact`, inputVal)
+      .post(`/contact`, inputVal)
       .then((res) => {
         const persons = res.data;
         console.log(persons);
