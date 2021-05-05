@@ -18,7 +18,7 @@ const LatestCard = ({ category, blogTitle, createdAt, blogImg }) => {
         <div className="black-shadow-box">
           <div className="btn btn-black btn-sm edit-font">{category}</div>
           <p className="m-0">{blogTitle}</p>
-          <p className="m-0">Author - {new Date(createdAt).toLocaleDateString()}</p>
+          <p className="m-0 authorLatestCard">Author - {new Date(createdAt).toLocaleDateString()}</p>
         </div>
       </div>
 

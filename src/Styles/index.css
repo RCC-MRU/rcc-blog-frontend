@@ -75,12 +75,32 @@
   border-radius: 15px;
   font-size: 1.3rem;
   font-weight: bold;
-  width: 80%;
+  width: 95%;
+  height: 40%;
   position: absolute;
   bottom: 0;
   /* display: flex;
   flex-direction: column; */
 }
+.authorLatestCard{
+  /* vertical-align: text-bottom; */
+  font-size: medium;
+  position: absolute;
+	bottom: 10px;
+  /* text-align: end; */
+}
+@media screen and (max-width: 426px) {
+.black-shadow-box{
+  height: 60%;
+}
+}
+
+@media screen and (max-width: 769px) {
+  .black-shadow-box{
+    height: 50%;
+  }
+  }
+  
 
 .centered {
   padding: 0 1rem;
@@ -252,6 +272,9 @@
   font-size: 20px;
   color: #fff;
   border-radius: 10px;
+}
+.edit-font:hover{
+  color: #fff;
 }
 
 .edit-font-1 {
