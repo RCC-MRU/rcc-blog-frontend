@@ -54,7 +54,7 @@ const HomeComponent = () => {
       <div className="container">
         <section className="spacing-section">
           {/* first three pics  */}
-          <h1 className="format-heading-2">Featured blogs</h1>
+          <h1 className="format-heading-2">Latest blogs</h1>
           <div>
             <hr className="line-class" />
           </div>
@@ -62,9 +62,8 @@ const HomeComponent = () => {
           <div className="row">
             {feature.map((feature) => {
               return (
-                <div className="col-md-4 my-1 px-1" key={feature.id}>
+                <div className="col-md-4 my-1 px-1" key={feature.categoryId}>
                   <LatestCard
-                  key={feature.id}
                     category={feature.category}
                     blogTitle={feature.blogTitle}
                     createdAt={feature.createdAt}
