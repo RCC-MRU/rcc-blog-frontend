@@ -62,8 +62,9 @@ const HomeComponent = () => {
           <div className="row">
             {feature.map((feature) => {
               return (
-                <div className="col-md-4 my-1 px-1" key={feature.categoryId}>
+                <div className="col-md-4 my-1 px-1">
                   <LatestCard
+                    key={feature.categoryId}
                     category={feature.category}
                     blogTitle={feature.blogTitle}
                     createdAt={feature.createdAt}
@@ -91,7 +92,6 @@ const HomeComponent = () => {
           {categoryData.map((Cate) => {
             return (
               <HomeCategory
-                key={Cate.id}
                 homeCategoryName={Cate.categoryValue}
                 homecategoryUrl={Cate.slug}
               />
