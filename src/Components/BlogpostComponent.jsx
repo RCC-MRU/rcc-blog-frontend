@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
+import ReadingProgress from "./SubComponents/ReadingBar";
 
 class BlogpostComponent extends Component {
   constructor(props) {
@@ -107,11 +108,13 @@ class BlogpostComponent extends Component {
 
   render() {
     let value = 0;
+    const target= React.createRef();
     return (
       <React.Fragment>
+        <ReadingProgress target={target}/>
         <div className="container">
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-9" ref={target}>
               {this.state.blogInfo
                 .filter((info) => {
                   return info.blogId === value;

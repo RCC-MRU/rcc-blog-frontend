@@ -1,4 +1,5 @@
 import React from "react";
+// import ReadingProgress from "./ReadingBar";
 
 
 const BlogPostType = ({
@@ -9,8 +10,10 @@ const BlogPostType = ({
   blogTitle,
   category
 }) => {
+  // const target = React.createRef();
   return (
     <React.Fragment>
+    {/* <ReadingProgress target={target} /> */}
       <div className="fitness-title">
         <span> {category} </span>
       </div>
@@ -19,11 +22,11 @@ const BlogPostType = ({
         src={blogImg}
         width="770px"
         height="513px"
-        className="img-fluid"
+        className=""
         alt="exercise1"
       />
 
-      <div className="blog-text">{blogContent}</div>
+      <div className="blog-text" >{blogContent}</div>
       
       <hr />
       <div className="blog-like">

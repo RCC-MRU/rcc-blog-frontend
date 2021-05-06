@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import CategoryType from "./SubComponents/CategoryType";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
+// import ReadingProgress from "./SubComponents/ReadingBar";
 
 class CategoryComponent extends Component {
+  
   constructor(props) {
     super(props);
 
@@ -72,9 +74,12 @@ class CategoryComponent extends Component {
       ],
     };
   }
-
-  render() {
+  // target = React.createRef();
+  
+  render()
+  {
     return (
+      
       <React.Fragment>
         <div className="rectangle-nav">
           <p className="category-rectangle">Category</p>
@@ -82,7 +87,9 @@ class CategoryComponent extends Component {
         </div>
 
         <section id="blogPost">
+
           <div className="container">
+          {/* <ReadingProgress /> */}
             <div className="row">
               <div className="col-md-9">
                 {this.state.categoryData.map((categoryData) => {

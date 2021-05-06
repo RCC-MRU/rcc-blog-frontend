@@ -4,7 +4,7 @@ import HomeComponent from "./Components/HomeComponent";
 import LoginComponent from "./Components/LoginComponent";
 import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
-// import BlogpostComponent from "./Components/BlogpostComponent";
+import BlogpostComponent from "./Components/BlogpostComponent";
 
 // import header and footer
 import HeaderComponent from "./Components/HeaderComponent";
@@ -29,7 +29,7 @@ class Router extends Component {
         <HeaderComponent />
         <Switch>
           <Route path="/home" component={HomePage} />
-          {/* <Route exact path="/blog" component={BlogPage} /> */}
+          <Route exact path="/blog" component={BlogpostComponent} />
           <Route exact path="/category/" component={CategoryPage} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
           <Route exact path="/login" component={() => <LoginComponent />} />

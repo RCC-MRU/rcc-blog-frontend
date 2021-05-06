@@ -59,7 +59,7 @@ const NavbarComponent = () => {
                 <DropdownMenu right>
                   {categoryData.map((data) => {
                     return (
-                      <DropdownItem href="/category" key={data.categoryId}>
+                      <DropdownItem href="/category" key={data.id}>
                         {data.categoryValue}
                       </DropdownItem>
                     );
@@ -68,7 +68,7 @@ const NavbarComponent = () => {
               </UncontrolledDropdown>
               {categoryData.map((data) => {
                 return (
-                  <NavItem className="format-main-menubar" key={data.categoryId}>
+                  <NavItem className="format-main-menubar" key={data.id}>
                     <NavLink
                       href={"/home#" + data.categoryValue}
                       onClick={() => {
