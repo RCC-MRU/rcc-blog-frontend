@@ -12,7 +12,10 @@
 .bg-color-black {
   background-color: #000000 !important;
 }
-
+::selection{
+  color: #fff;
+  background-color: #991414;
+}
 .btn-black {
   background: black;
 }
