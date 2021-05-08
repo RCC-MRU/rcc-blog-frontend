@@ -10,8 +10,9 @@ const HomeComponent = () => {
   const [categoryData, setCategoryData] = useState([]);
 
   useEffect(() => {
+    // api to get featured posts
     axios
-      .get("/featuredPosts")
+      .get("/getFeaturedPost")
       .then((res) => {
         const data = res.data;
         // console.log(data);
@@ -23,6 +24,7 @@ const HomeComponent = () => {
         throw err;
       });
 
+    // api to get categories
     axios
       .get("/showCategoryMaster")
       .then((res) => {
@@ -35,6 +37,7 @@ const HomeComponent = () => {
         throw err;
       });
 
+    // api to get popular posts
     axios
       .get("/showPopular")
       .then((res) => {
@@ -64,11 +67,12 @@ const HomeComponent = () => {
               return (
                 <div className="col-md-4 my-1 px-1">
                   <LatestCard
-                    key={feature.categoryId}
+                    key={feature.blogId}
                     category={feature.category}
                     blogTitle={feature.blogTitle}
                     createdAt={feature.createdAt}
                     blogImg={feature.blogImg}
+                    authorName={feature.firstName}
                   />
                 </div>
               );

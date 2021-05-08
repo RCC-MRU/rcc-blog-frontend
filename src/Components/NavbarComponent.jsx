@@ -23,6 +23,7 @@ const NavbarComponent = () => {
 
   // data fetching for menu using axios
   useEffect(() => {
+    // api to get categories
     axios
       .get("/showCategoryMaster")
       .then((res) => {
@@ -59,7 +60,7 @@ const NavbarComponent = () => {
                 <DropdownMenu right>
                   {categoryData.map((data) => {
                     return (
-                      <DropdownItem href="/category" key={data.id}>
+                      <DropdownItem href="/category" key={data.categoryId}>
                         {data.categoryValue}
                       </DropdownItem>
                     );
@@ -68,9 +69,9 @@ const NavbarComponent = () => {
               </UncontrolledDropdown>
               {categoryData.map((data) => {
                 return (
-                  <NavItem className="format-main-menubar" key={data.id}>
+                  <NavItem className="format-main-menubar">
                     <NavLink
-                      href={"/home#" + data.categoryValue}
+                      href={"#" + data.categoryValue}
                       onClick={() => {
                         return (
                           <HomeCategory

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { createRef } from "react";
 // import { Link } from "react-router-dom";
 import NavbarComponent from "./NavbarComponent";
 
 const HeaderComponent = () => {
+
   return (
     <React.Fragment>
       {/* <nav className="navbar navbar-expand navbar-dark bg-color-black">
@@ -67,8 +68,8 @@ const HeaderComponent = () => {
       </nav> */}
       {/* FIXME: add a if else for switching from login or logout */}
 
-      <div className="container text-center my-4">
-        <p className="format-heading">
+      <div className="container text-center my-4" >
+        <p className="format-heading"  >
           Health <span className="red-col"> & </span> Fitness
         </p>
         <p className="small-heading">How To Live a Healthy and Fit Life?</p>

@@ -1,12 +1,12 @@
 import React from "react";
 // todo
 
-const LatestCard = ({ category, blogTitle, createdAt, blogImg }) => {
+const LatestCard = (props) => {
   return (
     <React.Fragment>
       <div
         className="featured-post-img"
-        style={{ backgroundImage: `url(${blogImg})` }}
+        style={{ backgroundImage: `url(${props.blogImg})` }}
       >
         {/* <div className="centered">
           <button className="btn btn-black btn-sm text-white">
@@ -16,9 +16,9 @@ const LatestCard = ({ category, blogTitle, createdAt, blogImg }) => {
           <p className="edit-font">Author - {createdAt}</p>
         </div> */}
         <div className="black-shadow-box">
-          <div className="btn btn-black btn-sm edit-font">{category}</div>
-          <p className="m-0">{blogTitle}</p>
-          <p className="m-0 authorLatestCard">Author - {new Date(createdAt).toLocaleDateString()}</p>
+          <div className="btn btn-black btn-sm edit-font">{props.category}</div>
+          <p className="m-0">{props.blogTitle}</p>
+          <p className="m-0 authorLatestCard">{props.authorName} - {new Date(props.createdAt).toLocaleDateString()}</p>
         </div>
       </div>
 

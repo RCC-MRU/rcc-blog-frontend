@@ -2,7 +2,6 @@ import React from "react";
 import { createDescription, stripHTML } from '../../Util/StringUtil'
 
 
-
 const DisplayCard = ({blogImg, blogTitle, blogContent, createdAt, category}) => {
   return (
     <React.Fragment>
