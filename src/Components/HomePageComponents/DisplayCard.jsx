@@ -1,8 +1,13 @@
 import React from "react";
-import { createDescription, stripHTML } from '../../Util/StringUtil'
+import { createDescription, stripHTML } from "../../Util/StringUtil";
 
-
-const DisplayCard = ({blogImg, blogTitle, blogContent, createdAt, category}) => {
+const DisplayCard = ({
+  blogImg,
+  blogTitle,
+  blogContent,
+  createdAt,
+  category,
+}) => {
   return (
     <React.Fragment>
       <div className="col-12 col-md-6 d-flex justify-content-center">
@@ -17,9 +22,7 @@ const DisplayCard = ({blogImg, blogTitle, blogContent, createdAt, category}) => 
             <h6 className="format-text-health">
               <span className="color-health"> {category}</span> - {createdAt}
             </h6>
-            <h4 className="card-title format-text-health-1">
-              {blogTitle}
-            </h4>
+            <h4 className="card-title format-text-health-1">{blogTitle}</h4>
 
             <hr className="temp-line-format" />
             <p className="card-text font-format">

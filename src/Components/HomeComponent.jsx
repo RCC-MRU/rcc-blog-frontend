@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LatestCard from "./HomePageComponents/LatestCard";
-import HomeCategory from "./HomePageComponents/HomeCategoryType";
+// import HomeCategory from "./HomePageComponents/HomeCategoryType";
 import SlickSlider from "./HomePageComponents/SlickSlider";
+import SomeCard from "./SomeCard";
 
 const HomeComponent = () => {
   const [feature, setFeature] = useState([]);
@@ -93,14 +94,44 @@ const HomeComponent = () => {
 
           {/*  <!-- After health div --> */}
 
-          {categoryData.map((Cate) => {
+          <div className="format-div">
+            <div className="container">
+              {categoryData.map((category) => {
+                return (
+                  <React.Fragment>
+                    <div
+                      style={{ marginTop: "20px" }}
+                      id={category.categoryValue}
+                    ></div>
+                    <div className="row" id={category.categoryValue}>
+                      <div className="col-4 col-sm-5">
+                        <div className="homepage-line-design"></div>
+                      </div>
+                      <div className="col-4 col-sm-2">
+                        <p className="format-health">{category.categoryName}</p>
+                      </div>
+                      <div className="col-4 col-sm-5">
+                        <div className="homepage-line-design"></div>
+                      </div>
+                    </div>
+                    <SomeCard
+                      cardCategory={category.categoryName}
+                      categoryID={category.categoryId}
+                    />
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* {categoryData.map((Cate) => {
             return (
               <HomeCategory
                 homeCategoryName={Cate.categoryValue}
                 homecategoryUrl={Cate.slug}
               />
             );
-          })}
+          })} */}
         </section>
       </div>
     </React.Fragment>

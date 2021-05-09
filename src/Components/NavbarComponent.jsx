@@ -13,7 +13,7 @@ import {
   DropdownItem,
   Container,
 } from "reactstrap";
-import HomeCategory from "./HomePageComponents/HomeCategoryType";
+// import HomeCategory from "./HomePageComponents/HomeCategoryType";
 
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,13 +72,13 @@ const NavbarComponent = () => {
                   <NavItem className="format-main-menubar">
                     <NavLink
                       href={"#" + data.categoryValue}
-                      onClick={() => {
-                        return (
-                          <HomeCategory
-                            homeUrihomecategoryUrl={data.slug}
-                          />
-                        );
-                      }}
+                      // onClick={() => {
+                      //   return (
+                      //     <HomeCategory
+                      //       homeUrihomecategoryUrl={data.slug}
+                      //     />
+                      //   );
+                      // }}
                     >
                       {data.categoryValue}
                     </NavLink>

@@ -9,10 +9,14 @@
 /*===== globals =====*/
 @import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
 
+* {
+  scroll-behavior: smooth;
+}
+
 .bg-color-black {
   background-color: #000000 !important;
 }
-::selection{
+::selection {
   color: #fff;
   background-color: #991414;
 }
@@ -92,25 +96,24 @@
   /* display: flex;
   flex-direction: column; */
 }
-.authorLatestCard{
+.authorLatestCard {
   /* vertical-align: text-bottom; */
   font-size: medium;
   position: absolute;
-	bottom: 10px;
+  bottom: 10px;
   /* text-align: end; */
 }
 @media screen and (max-width: 426px) {
-.black-shadow-box{
-  height: 60%;
-}
+  .black-shadow-box {
+    height: 60%;
+  }
 }
 
 @media screen and (max-width: 769px) {
-  .black-shadow-box{
+  .black-shadow-box {
     height: 50%;
   }
-  }
-  
+}
 
 .centered {
   padding: 0 1rem;
@@ -138,7 +141,7 @@
   height: 20rem;
   border-radius: 8px;
 }
-.format-card-image:hover{
+.format-card-image:hover {
   box-shadow: 0 0 2px 1px rgba(25, 25, 26, 0.5);
 }
 
@@ -227,7 +230,7 @@
   font-size: 16px;
 }
 
-.color-health {
+.color-dark-red {
   color: #991414;
 }
 
@@ -276,7 +279,7 @@
 }
 
 .section-spacing-1 {
-  padding: 3rem 0 1rem 0;
+  padding: 3rem 0 2rem 0;
 }
 
 .edit-font {
@@ -287,7 +290,7 @@
   color: #fff;
   border-radius: 10px;
 }
-.edit-font:hover{
+.edit-font:hover {
   color: #fff;
 }
 
@@ -449,27 +452,24 @@ textarea {
   color: rgba(0, 0, 0, 0.37);
 }
 
-.readmore-button span {
-  display: flex;
+.readmore-btn {
   font-family: "Nova Cut", cursive;
   font-size: 19px;
-  align-items: center;
-  justify-content: center;
   background-color: #000000;
-  padding: 0.8vh;
-}
-.readmore-button span a:hover,
-a:link {
-  color: #ffffff;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
-.readmore-button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+.readmore-btn:hover {
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 10px rgba(153, 20, 20, 0.555);
 }
+
+
 
 @media screen and (max-width: 766px) {
   .blog-like .col-md-3 {

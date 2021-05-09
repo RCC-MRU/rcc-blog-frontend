@@ -8,11 +8,11 @@
 // }
 const createDescription = (str, length) => {
     var rgxwords = new RegExp('([^ ]*[ ]{0,1}){1,'+length+'}', 'ig'); 
-    str = str.match(rgxwords)[0] + "...";
+    str = str.match(rgxwords)[0] ;
     // str = str.substring(0, length) + "...";
     return str;
 }
-
+// + "..."
 const stripHTML = (htmlStr) => {
     return htmlStr.replace(/<\/?[^>]+(>|$)/g, "");
 }
