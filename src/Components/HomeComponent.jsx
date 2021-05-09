@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LatestCard from "./HomePageComponents/LatestCard";
-// import HomeCategory from "./HomePageComponents/HomeCategoryType";
 import SlickSlider from "./HomePageComponents/SlickSlider";
-import SomeCard from "./SomeCard";
+import DisplayCard from "./HomePageComponents/DisplayCard";
 
 const HomeComponent = () => {
   const [feature, setFeature] = useState([]);
@@ -100,8 +99,9 @@ const HomeComponent = () => {
                 return (
                   <React.Fragment>
                     <div
-                      style={{ marginTop: "20px" }}
+                      style={{ height: "2rem" }}
                       id={category.categoryValue}
+                      key={category.categoryId}
                     ></div>
                     <div className="row" id={category.categoryValue}>
                       <div className="col-4 col-sm-5">
@@ -114,7 +114,7 @@ const HomeComponent = () => {
                         <div className="homepage-line-design"></div>
                       </div>
                     </div>
-                    <SomeCard
+                    <DisplayCard
                       cardCategory={category.categoryName}
                       categoryID={category.categoryId}
                     />
@@ -123,15 +123,6 @@ const HomeComponent = () => {
               })}
             </div>
           </div>
-
-          {/* {categoryData.map((Cate) => {
-            return (
-              <HomeCategory
-                homeCategoryName={Cate.categoryValue}
-                homecategoryUrl={Cate.slug}
-              />
-            );
-          })} */}
         </section>
       </div>
     </React.Fragment>

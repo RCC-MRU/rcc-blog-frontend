@@ -71,7 +71,7 @@ const NavbarComponent = () => {
                 return (
                   <NavItem className="format-main-menubar">
                     <NavLink
-                      href={"#" + data.categoryValue}
+                      href={"/home#" + data.categoryValue}
                       // onClick={() => {
                       //   return (
                       //     <HomeCategory
