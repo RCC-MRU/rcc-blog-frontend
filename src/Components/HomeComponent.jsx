@@ -12,7 +12,7 @@ const HomeComponent = () => {
   useEffect(() => {
     // api to get featured posts
     axios
-      .get("/getFeaturedPost")
+      .get("/getCategoryPost")
       .then((res) => {
         const data = res.data;
         // console.log(data);
