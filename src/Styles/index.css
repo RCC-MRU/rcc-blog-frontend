@@ -88,7 +88,7 @@
   padding: 5px;
   border-radius: 15px;
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 700;
   width: 90%;
   height: 40%;
   position: absolute;
@@ -106,12 +106,16 @@
 @media screen and (max-width: 426px) {
   .black-shadow-box {
     height: 60%;
+    font-size: 1rem;
+    font-weight: 300;
   }
 }
 
 @media screen and (max-width: 769px) {
   .black-shadow-box {
     height: 50%;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 }
 

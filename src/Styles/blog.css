@@ -1,3 +1,27 @@
+.row-md-3 hr {
+  border: 0.5px solid #991414;
+  margin-bottom: -1px;
+}
+
+.categories {
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: -15px;
+}
+
+.row-md-3 h4 {
+  font-family: "Red Hat Text", sans-serif;
+  size: 26px;
+}
+
+.social-blogpost {
+  display: flex;
+  justify-content: space-between;
+}
+
+.connectAndFollow-title {
+  margin-bottom: 28px;
+}
 .fitness-title span {
   font-family: "Nova Cut", cursive;
   font-size: 19px;

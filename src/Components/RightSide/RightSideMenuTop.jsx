@@ -3,7 +3,7 @@ import React from "react";
 const RightSideMenuTop = ({ authorPicture, aboutAuthor, authorName }) => {
   return (
     <React.Fragment>
-      <div className="row-md-3">
+      <div className="row-md-3 categories">
         <hr />
         <h4 className="border">About</h4>
         <img
@@ -27,7 +27,7 @@ const RightSideMenuTop = ({ authorPicture, aboutAuthor, authorName }) => {
           Read More
         </h5>
       </div>
-      <div className="row-md-3">
+      <div className="row-md-3 categories">
         <hr />
         <h4 className="connectAndFollow-title border">Connect And Follow</h4>
         <div className="social-blogpost">

@@ -1,4 +1,5 @@
 import React from "react";
+// import "../Styles/rightsidemenu.css";
 
 const RightSideMenuBot = ({
   moreCategoryName,
