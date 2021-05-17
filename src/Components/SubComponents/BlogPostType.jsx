@@ -22,7 +22,7 @@ const BlogPostType = ({
         src={blogImg}
         width="770px"
         height="513px"
-        className=""
+        className="img-fluid"
         alt="exercise1"
       />
 
@@ -42,7 +42,7 @@ const BlogPostType = ({
             </div>
           </div>
           <div
-            className="col-12 col-md-6 py-2"
+            className="col-12 col-md-6 py-2 mb-4"
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
             {/* <i className="fa fa-heart">20</i> */}
