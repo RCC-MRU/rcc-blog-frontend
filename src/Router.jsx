@@ -26,9 +26,9 @@ class Router extends Component {
 
     return (
       <React.Fragment>
-        {/* <HeaderComponent /> */}
+        <HeaderComponent />
         <Switch>
-          {/* <Route path="/home" component={HomePage} /> */}
+          <Route path="/home" component={HomePage} />
           <Route exact path="/blog" component={BlogpostComponent} />
           <Route exact path="/category/" component={CategoryPage} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
