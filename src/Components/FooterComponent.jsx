@@ -22,7 +22,7 @@ const FooterComponent = () => {
     event.preventDefault();
 
     axios
-      .post(`/contact`, inputVal)
+      .post(`/routes/contact`, inputVal)
       .then((res) => {
         const persons = res.data;
         console.log(persons);

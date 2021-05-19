@@ -15,7 +15,7 @@ import "./Styles/footer.css";
 import "./Styles/blog.css";
 import "./Styles/login_signup.css";
 
-axios.defaults.baseURL = "http://localhost:3001/routes/";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 

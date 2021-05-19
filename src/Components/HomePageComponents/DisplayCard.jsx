@@ -24,7 +24,7 @@ const DisplayCard = (props) => {
 
   useEffect(() => {
     axios
-      .get(`/showBlogsByCategory/${props.cardCategory}`)
+      .get(`/blogs/showBlogsByCategory/${props.cardCategory}`)
       .then((res) => {
         const data = res.data;
         // console.log(data);

@@ -25,7 +25,7 @@ const NavbarComponent = () => {
   useEffect(() => {
     // api to get categories
     axios
-      .get("/showCategoryMaster")
+      .get("/blogs/showCategoryMaster")
       .then((res) => {
         const categories = res.data;
 

@@ -12,7 +12,7 @@ const HomeComponent = () => {
   useEffect(() => {
     // api to get featured posts
     axios
-      .get("/getCategoryPost")
+      .get("/blogs/getCategoryPost")
       .then((res) => {
         const data = res.data;
         // console.log(data);
@@ -26,7 +26,7 @@ const HomeComponent = () => {
 
     // api to get categories
     axios
-      .get("/showCategoryMaster")
+      .get("/blogs/showCategoryMaster")
       .then((res) => {
         const categories = res.data;
 
@@ -39,7 +39,7 @@ const HomeComponent = () => {
 
     // api to get popular posts
     axios
-      .get("/showPopular")
+      .get("/blogs/showPopular")
       .then((res) => {
         const data = res.data;
         // console.log(data);

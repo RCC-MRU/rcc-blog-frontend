@@ -1,22 +1,22 @@
 import React from "react";
 
-const RightSideMenuTop = ({ authorPicture, aboutAuthor, authorName }) => {
+const RightSideMenuTop = (props) => {
   return (
     <React.Fragment>
       <div className="row-md-3 categories">
         <hr />
         <h4 className="border">About</h4>
         <img
-          src={authorPicture}
+          src={props.profileImg}
           width="auto"
           height="227px"
           className="img-fluid"
-          alt="fitness"
+          alt={props.firstName}
         />
-        <p style={{ fontFamily: "'Red Hat Text', sans-serif" }}>
-          I am {authorName} <br />
-          <span>{aboutAuthor}</span>
-        </p>
+        <div style={{ fontFamily: "'Red Hat Text', sans-serif" }}>
+          <h4 className="mt-2">I am {props.firstName}</h4>
+          <p>{props.about}</p>
+        </div>
         <h5
           style={{
             fontFamily: "Red Hat Text, sans-serif",
