@@ -16,6 +16,11 @@
 .bg-color-black {
   background-color: #000000 !important;
 }
+
+.bg-color-red {
+  background-color: #991414 !important;
+}
+
 ::selection {
   color: #fff;
   background-color: #991414;
@@ -26,9 +31,6 @@
   height: 8px;
   top: 0;
   background-color: #991414;
-}
-.btn-black {
-  background: black;
 }
 
 .red-col {
@@ -472,8 +474,6 @@ textarea {
   color: white;
   box-shadow: 0 0 10px rgba(153, 20, 20, 0.555);
 }
-
-
 
 @media screen and (max-width: 766px) {
   .blog-like .col-md-3 {

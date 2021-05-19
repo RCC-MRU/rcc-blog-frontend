@@ -1,7 +1,7 @@
 import React from "react";
 // todo
 
-const LatestCard = (props) => {
+const FeaturedCard = (props) => {
   return (
     <React.Fragment>
       <div
@@ -16,7 +16,7 @@ const LatestCard = (props) => {
           <p className="edit-font">Author - {createdAt}</p>
         </div> */}
         <div className="black-shadow-box">
-          <div className="btn btn-black btn-sm edit-font">{props.category}</div>
+          <div className="btn bg-color-black btn-sm edit-font">{props.category}</div>
           <p className="m-0">{props.blogTitle}</p>
           <p className="m-0 authorLatestCard">{props.authorName} - {new Date(props.createdAt).toLocaleDateString()}</p>
         </div>
@@ -83,4 +83,4 @@ const LatestCard = (props) => {
     </React.Fragment>
   );
 };
-export default LatestCard;
+export default FeaturedCard;

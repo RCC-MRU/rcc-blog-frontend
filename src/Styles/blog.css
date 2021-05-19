@@ -9,11 +9,6 @@
   margin-top: -15px;
 }
 
-.row-md-3 h4 {
-  font-family: "Red Hat Text", sans-serif;
-  size: 26px;
-}
-
 .social-blogpost {
   display: flex;
   justify-content: space-between;
@@ -22,17 +17,20 @@
 .connectAndFollow-title {
   margin-bottom: 28px;
 }
-.fitness-title span {
+.fitness-title {
   font-family: "Nova Cut", cursive;
   font-size: 19px;
   color: #e5e5e5;
-  background-color: #991414;
+}
+
+.blog-header-img {
+  width: 90%;
 }
 
 .blog-text {
-  size: 16px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  font-size: 18px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left: 0px;
   padding-right: 50px;
 }
@@ -118,7 +116,7 @@
 .latestPosts hr {
   margin-top: 150px;
 }
-
+/* 
 .latestPosts .row-md-4 {
   display: flex;
   justify-content: space-between;
@@ -146,4 +144,19 @@
   text-align: left;
   margin-left: -10px;
   margin-right: -10px;
+} */
+
+@media screen and (max-width: 768px) {
+  .blog-header-img {
+    width: 100%;
+    margin: auto;
+    padding-top: 1rem;
+    /* text-align: center; */
+  }
+
+  .blog-text {
+    padding: 0;
+    text-align: justify;
+    margin: 2rem 0;
+  }
 }

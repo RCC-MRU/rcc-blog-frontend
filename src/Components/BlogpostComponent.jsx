@@ -180,22 +180,20 @@ const BlogpostComponent = () => {
   //   return FirstName
   // }
 
-  const [category, setCtegory] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
+    // fetching data 
     axios
       .get("/showCategoryMaster")
       .then((res) => {
         const about = res.data;
 
-        setCtegory(about);
+        setCategory(about);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
 
-  let value = 1;
-  useEffect(() => {
     axios
       .get("/showAllBlogPost")
       .then((res) => {
@@ -206,8 +204,7 @@ const BlogpostComponent = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-  useEffect(() => {
+
     axios
       .get("/author/:userId")
       .then((res) => {
@@ -219,6 +216,8 @@ const BlogpostComponent = () => {
         console.log(err);
       });
   }, []);
+
+  let value = 1;
 
   // useEffect(()=> {
   //   axios
@@ -237,7 +236,7 @@ const BlogpostComponent = () => {
       {/* <ReadingProgress target={target}/> */}
       <div className="container">
         <div className="row">
-          <div className="col-md-9">
+          <div className="col-lg-9 col-md-8">
             {blogdata
               .filter((info) => {
                 return info.blogId === value;
@@ -248,7 +247,7 @@ const BlogpostComponent = () => {
                     key={data.blogId}
                     createdAt={data.createdAt}
                     blogImg={data.blogImg}
-                    // blogPostAuthor={userName}
+                    blogPostAuthor={data.userId}
                     blogContent={data.blogContent}
                     blogTitle={data.blogTitle}
                     category={data.category}
@@ -283,7 +282,7 @@ const BlogpostComponent = () => {
               </div> */}
           </div>
 
-          <div className="col-md-3">
+          <div className="col-lg-3 col-md-4">
             <RightSideMenuTop
               userId={blogdata.userId}
               authorPicture={userInfo.authorPicture}
@@ -293,8 +292,8 @@ const BlogpostComponent = () => {
             <div className="categories row-md-3">
               <hr />
               <h4 className="categories-title border">Categories</h4>
-            {category.map((category) => {
-              return (
+              {category.map((category) => {
+                return (
                   <div className="row-md-4">
                     <img
                       src={category.categoryImg}
@@ -305,8 +304,8 @@ const BlogpostComponent = () => {
                       <span>{category.categoryName}</span>
                     </div>
                   </div>
-              );
-            })}
+                );
+              })}
             </div>
             {/* <OtherCategories key={category.categoryId} 
                 categoryImg={category.categoryImg}

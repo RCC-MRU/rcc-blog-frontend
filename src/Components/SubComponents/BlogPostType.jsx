@@ -1,43 +1,36 @@
 import React from "react";
 // import ReadingProgress from "./ReadingBar";
 
-
-const BlogPostType = ({
-  createdAt,
-  blogImg,
-  blogPostAuthor,
-  blogContent,
-  blogTitle,
-  category
-}) => {
+const BlogPostType = (props) => {
   // const target = React.createRef();
   return (
     <React.Fragment>
-    {/* <ReadingProgress target={target} /> */}
-      <div className="fitness-title">
-        <span> {category} </span>
-      </div>
-      <h3>{blogTitle}</h3>
-      <img
-        src={blogImg}
-        width="770px"
-        height="513px"
-        className="img-fluid"
-        alt="exercise1"
-      />
+      {/* <ReadingProgress target={target} /> */}
 
-      <div className="blog-text" >{blogContent}</div>
-      
+      <div className="btn bg-color-red btn-sm fitness-title">
+        {props.category}
+      </div>
+      <h3>{props.blogTitle}</h3>
+      <div className="blog-header-img">
+        <img
+          src={props.blogImg}
+          // width="90%"
+          className="img-fluid"
+          alt={props.blogTitle}
+        />
+      </div>
+      <div className="blog-text">{props.blogContent}</div>
       <hr />
       <div className="blog-like">
         <div className="row">
           <div className="col-12 col-md-6 py-2">
             <div className="row">
               <div className="col-6">
-                <span className="shadow-text">By:</span> {blogPostAuthor}
+                <span className="shadow-text">By:</span> {props.blogPostAuthor}
               </div>
               <div className="col-6">
-                <span className="shadow-text">On:</span> {createdAt}
+                <span className="shadow-text">On:</span>{" "}
+                {new Date(props.createdAt).toLocaleDateString()}
               </div>
             </div>
           </div>

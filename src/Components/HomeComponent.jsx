@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import LatestCard from "./HomePageComponents/LatestCard";
+import FeaturedCard from "./HomePageComponents/FeaturedCard";
 import SlickSlider from "./HomePageComponents/SlickSlider";
 import DisplayCard from "./HomePageComponents/DisplayCard";
 
 const HomeComponent = () => {
-  const [feature, setFeature] = useState([]);
+  const [featured, setFeaturedPosts] = useState([]);
   const [popular, setPopular] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
 
@@ -17,7 +17,7 @@ const HomeComponent = () => {
         const data = res.data;
         // console.log(data);
 
-        setFeature(data);
+        setFeaturedPosts(data);
       })
       .catch((err) => {
         console.log(err);
@@ -57,16 +57,16 @@ const HomeComponent = () => {
       <div className="container">
         <section className="spacing-section">
           {/* first three pics  */}
-          <h1 className="format-heading-2">Latest blogs</h1>
+          <h1 className="format-heading-2">Featured Posts</h1>
           <div>
             <hr className="line-class" />
           </div>
 
           <div className="row">
-            {feature.map((feature) => {
+            {featured.map((feature) => {
               return (
                 <div className="col-md-4 my-1 px-1">
-                  <LatestCard
+                  <FeaturedCard
                     key={feature.blogId}
                     category={feature.category}
                     blogTitle={feature.blogTitle}
