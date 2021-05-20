@@ -5,11 +5,21 @@ import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
+// function alpha(string)
+// {
+//     var a= string;
+//     var output="";
+//     for(var x=0;x<a.length;x++)
+//             output+=String.fromCharCode(a.charCodeAt(x)>65 && a.charCodeAt(x)<90 ? a.charCodeAt(x)+32: a.charCodeAt(x))
+//             // return output;
+//     console.log(output);
+// }
 const BlogpostComponent = (props) => {
   const [blogdata, setBlogdata] = useState({});
   const [category, setCategory] = useState([]);
   const [authorData, setAuthorData] = useState([]);
-
+  const [similar, setSimilar] = useState([])
+  
   // let slug = "no-running-cardio-workout";
 
   useEffect(() => {
@@ -18,7 +28,7 @@ const BlogpostComponent = (props) => {
       .get("/blogs/showCategoryMaster")
       .then((res) => {
         const about = res.data;
-        console.log(about);
+        // console.log(about);
         setCategory(about);
       })
       .catch((err) => {
@@ -30,7 +40,7 @@ const BlogpostComponent = (props) => {
       .then((res) => {
         const blog = res.data.data;
 
-        console.log(blog);
+        // console.log(blog);
         setBlogdata(blog);
       })
       .catch((err) => {
@@ -45,7 +55,7 @@ const BlogpostComponent = (props) => {
       .get(`/routes/author/${blogdata.userId}`)
       .then((resp) => {
         const authorDetails = resp.data.details;
-        console.log(authorDetails);
+        // console.log(authorDetails);
 
         setAuthorData(authorDetails);
       })
@@ -53,6 +63,24 @@ const BlogpostComponent = (props) => {
         console.log(err);
       });
   }, [blogdata.userId]);
+
+  
+  useEffect(() => {
+    axios
+      .get(`/blogs/showSimilarPosts/${blogdata.category}`)
+      .then((resp) => {
+        const authorDetails = resp.data.detail;
+        // console.log(authorDetails);
+
+        setSimilar(authorDetails);
+        // console.log(authorDetails);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },[blogdata.category]);
+    
+    // console.log(similar);
 
   // console.log("line 53 blog", blogdata);
 
@@ -124,16 +152,44 @@ const BlogpostComponent = (props) => {
               })}
               
             </div>
-            {/* <OtherCategories key={category.categoryId} 
-                categoryImg={category.categoryImg}
-                categoryName={category.categoryName}
-              /> */}
+
+              <div className="categories row-md-3">
+              <hr />
+              <h4 className="categories-title border">Latest Posts</h4>
+
+              <div className="row">
+              {similar.map((data)=>{
+                return(
+                  <>
+                  <div className="col-md-6">
+            <img
+              src={data.blogImg}
+              className="img-fluid"
+              alt="latest-post"
+            />
+          </div>
+          <div className="col-md-6">
+            <h6>{data.blogTitle}</h6>
+            <p>{new Date(data.createdAt).toLocaleDateString()}</p>
+          </div>
+                  </>
+                );
+              })}
+              </div>
+              </div>
+                  {/* <RightSideMenuBot 
+                    createdAt={data.createdAt}
+                    blogImg={data.blogImg}
+                  /> */}
+
+
             {/* <RightSideMenuBot
                 moreCategoryImage={this.state.blogInfo[0].moreCategoryImage}
                 latestPostDate={this.state.blogInfo[0].latestPostDate}
                 latestPostImage={this.state.blogInfo[0].latestPostImage}
                 latestPostName={this.state.blogInfo[0].latestPostName}
                 moreCategoryName={this.state.blogInfo[0].moreCategoryName}
+                category={blogdata.category}
               /> */}
           </div>
         </div>

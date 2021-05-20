@@ -2,15 +2,26 @@ import React from "react";
 // import "../Styles/rightsidemenu.css";
 
 const RightSideMenuBot = ({
-  moreCategoryName,
-  moreCategoryImage,
-  latestPostName,
-  latestPostImage,
-  latestPostDate,
+  props
 }) => {
+  // const [similar, setSimilar] = useState([])
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`/routes/author/${props.category}`)
+  //     .then((resp) => {
+  //       const authorDetails = resp.data.details;
+  //       console.log(authorDetails);
+
+  //       setSimilar(authorDetails);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [props.category]);
   return (
     <React.Fragment>
-      <div className="categories row-md-3">
+      {/* <div className="categories row-md-3">
         <hr />
         <h4 className="categories-title border">Categories</h4>
         <div className="row-md-4">
@@ -31,28 +42,29 @@ const RightSideMenuBot = ({
             <span>{moreCategoryName}</span>
           </div>
         </div>
-      </div>
-      <div className="latestPosts row-md-3">
+      </div> */}
+      {/* <div className="categories row-md-3">
         <hr />
         <h4 className="latestPosts-title border">Latest Posts</h4>
-        <div className="row-md-4">
+        <div className="row-md-4"> */}
+        
           <div className="col-md-6">
             <img
-              src={latestPostImage}
+              src={props.blogImg}
               className="img-fluid"
               alt="latest-post"
             />
           </div>
           <div className="col-md-6">
-            <h6>{latestPostName}</h6>
-            <p>{latestPostDate}</p>
+            <h6>{props.latestPostName}</h6>
+            <p>{new Date(props.createdAt).toLocaleDateString()}</p>
           </div>
-        </div>
+        {/* </div> */}
 
-        <div className="row-md-4">
+        {/* <div className="row-md-4">
           <div className="col-md-6">
             <img
-              src={latestPostImage}
+              src={similar.latestPostImage}
               className="img-fluid"
               alt="workout-routine"
             />
@@ -61,9 +73,9 @@ const RightSideMenuBot = ({
             <h6>{latestPostName}</h6>
             <p>{latestPostDate}</p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="row-md-4">
+        {/* <div className="row-md-4">
           <div className="col-md-6">
             <img src={latestPostImage} className="img-fluid" alt="wk-route" />
           </div>
@@ -71,8 +83,8 @@ const RightSideMenuBot = ({
             <h6>{latestPostName}</h6>
             <p>{latestPostDate}</p>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </React.Fragment>
   );
 };
