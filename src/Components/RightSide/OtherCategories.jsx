@@ -1,17 +1,28 @@
 import React from 'react'
 
-const OtherCategories = (categoryImg, categoryName) => {
+const OtherCategories = ({category}) => {
+  // console.log(typeof category[1].categoryName);
     return (
-        <div className="row-md-4">
-                    <img
-                      src={categoryImg}
-                      className="img-fluid"
-                      alt="cat"
-                    />
-                    <div className="textblock">
-                      <span>{categoryName}</span>
-                    </div>
-                  </div>
+      <>
+
+{category.map((category) => {
+  return (
+    <div className="row-md-4" key={category.categoryId}>
+    <a href={'/category/'}>
+      <img
+        src={category.categoryImg}
+        className="img-fluid"
+        alt="cat"
+      />
+      <div className="textblock">
+        <span>{category.categoryName}</span>
+      </div>
+    </a>
+    </div>
+  );
+})}
+      </>
+      
     )
 }
 

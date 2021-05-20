@@ -37,6 +37,7 @@ const DisplayCard = (props) => {
       });
   }, [props.cardCategory]);
 
+
   // FIXME: use the random category block so that to enter the categoryCardData json into the section and then return only 2 arrays
 
   return (

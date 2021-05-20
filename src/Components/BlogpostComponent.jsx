@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
-// import OtherCategories from "./RightSide/OtherCategories";
+import OtherCategories from "./RightSide/OtherCategories";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
@@ -38,9 +38,6 @@ const BlogpostComponent = (props) => {
         console.log(err);
       });
   }, [props.match.params.slug] );
-  // console.log({blogdata});
-  // var result = Object.keys(blogdata).map((key) => [Number(blogdata), blogdata[key]]);
-  // console.log(result);
   useEffect(() => {
     axios
       .get(`/routes/author/${blogdata.userId}`)
@@ -70,7 +67,7 @@ const BlogpostComponent = (props) => {
         console.log(err);
       });
     },[blogdata.category]);
-    
+    // console.log( category[0].categoryName);
     // console.log(similar);
 
   // console.log("line 53 blog", blogdata);
@@ -95,21 +92,6 @@ const BlogpostComponent = (props) => {
               blogTitle={blogdata.blogTitle}
               category={blogdata.category}
             />
-            {/* <BlogPostType propss={blogdata}/> */}
-
-            {/* <div className="form">
-                <hr style={{ marginTop: "-20px" }} />
-                <hr style={{ marginTop: "-14px" }} />
-                <form>
-                  <textarea
-                    placeholder="Leave a Comment"
-                    onChange={this.handleChange}
-                  />
-                  <div className="Post-btn">
-                    <input type="submit" value="Post" />
-                  </div>
-                </form>
-              </div> */}
           </div>
 
           <div className="col-lg-3 col-md-4">
@@ -128,26 +110,10 @@ const BlogpostComponent = (props) => {
             <div className="categories row-md-3">
               <hr />
               <h4 className="categories-title border">Categories</h4>
-              {category.map((category) => {
-                return (
-                  <div className="row-md-4" key={category.categoryId}>
-                    <img
-                      src={category.categoryImg}
-                      className="img-fluid"
-                      alt="cat"
-                    />
-                    <div className="textblock">
-                      <span>{category.categoryName}</span>
-                    </div>
-                  </div>
-                );
-              })}
+                  <OtherCategories category={category}    />
+                  
               
             </div>
-                  {/* <OtherCategories key={category.categoryId}
-                  categoryImg={category.categoryImg}
-                  categoryName={category.categoryName}
-                   /> */}
 
               <div className=" latestPosts row-md-3">
               <hr />
@@ -167,20 +133,6 @@ const BlogpostComponent = (props) => {
                 );
               })}
               </div>
-                  {/* <RightSideMenuBot 
-                    createdAt={data.createdAt}
-                    blogImg={data.blogImg}
-                  /> */}
-
-
-            {/* <RightSideMenuBot
-                moreCategoryImage={this.state.blogInfo[0].moreCategoryImage}
-                latestPostDate={this.state.blogInfo[0].latestPostDate}
-                latestPostImage={this.state.blogInfo[0].latestPostImage}
-                latestPostName={this.state.blogInfo[0].latestPostName}
-                moreCategoryName={this.state.blogInfo[0].moreCategoryName}
-                category={blogdata.category}
-              /> */}
           </div>
         </div>
       </div>
