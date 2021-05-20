@@ -29,7 +29,7 @@ class Router extends Component {
         <HeaderComponent />
         <Switch>
           <Route path="/home" component={HomePage} />
-          <Route exact path="/blog" component={BlogpostComponent} />
+          <Route exact path="/blog/:slug" component={BlogpostComponent} />
           <Route exact path="/category/" component={CategoryPage} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
           <Route exact path="/login" component={() => <LoginComponent />} />

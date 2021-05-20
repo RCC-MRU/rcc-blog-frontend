@@ -46,6 +46,8 @@ const DisplayCard = (props) => {
           {categoryCardData.map((cardData) => {
             return (
               <div className="col-md-6 my-3" key={cardData.blogId}>
+              <a href={'/blog/'+cardData.slug}>
+
                 <Card className="border-0">
                   <img
                     src={cardData.blogImg}
@@ -67,6 +69,7 @@ const DisplayCard = (props) => {
                     </CardText>
                   </CardBody>
                 </Card>
+              </a>
               </div>
             );
           })}

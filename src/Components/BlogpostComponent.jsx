@@ -5,12 +5,12 @@ import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
-const BlogpostComponent = () => {
-  const [blogdata, setBlogdata] = useState([]);
+const BlogpostComponent = (props) => {
+  const [blogdata, setBlogdata] = useState({});
   const [category, setCategory] = useState([]);
   const [authorData, setAuthorData] = useState([]);
 
-  let slug = "no-running-cardio-workout";
+  // let slug = "no-running-cardio-workout";
 
   useEffect(() => {
     // fetching data
@@ -24,9 +24,9 @@ const BlogpostComponent = () => {
       .catch((err) => {
         console.log(err);
       });
-
+//  const data= new Array(blogdata)
     axios
-      .get(`/blogs/showSingleBlogPost/${slug}`)
+      .get(`/blogs/showSingleBlogPost/`+props.match.params.slug)
       .then((res) => {
         const blog = res.data.data;
 
@@ -36,8 +36,10 @@ const BlogpostComponent = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [slug]);
-
+  }, [props.match.params.slug] );
+  // console.log({blogdata});
+  // var result = Object.keys(blogdata).map((key) => [Number(blogdata), blogdata[key]]);
+  // console.log(result);
   useEffect(() => {
     axios
       .get(`/routes/author/${blogdata.userId}`)
@@ -60,8 +62,13 @@ const BlogpostComponent = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-9 col-md-8">
+          {/* {result.map((blogdata)=>{
+            return(
+
+            );
+          })} */}
             <BlogPostType
-              key={blogdata.blogId}
+              // key={blogdata.blogId}
               createdAt={blogdata.createdAt}
               blogImg={blogdata.blogImg}
               blogPostAuthor={blogdata.userId}
@@ -69,6 +76,7 @@ const BlogpostComponent = () => {
               blogTitle={blogdata.blogTitle}
               category={blogdata.category}
             />
+            {/* <BlogPostType propss={blogdata}/> */}
 
             {/* <div className="form">
                 <hr style={{ marginTop: "-20px" }} />
@@ -114,6 +122,7 @@ const BlogpostComponent = () => {
                   </div>
                 );
               })}
+              
             </div>
             {/* <OtherCategories key={category.categoryId} 
                 categoryImg={category.categoryImg}
