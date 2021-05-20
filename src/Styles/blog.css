@@ -1,3 +1,42 @@
+.latestPosts-title {
+  margin-bottom: 37px;
+  /* display: flex; */
+  text-align: center;
+}
+.latestPosts hr {
+  margin-top: 150px;
+}
+
+.latestPosts .row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px !important;
+}
+
+.latestPosts .row .col-md-6 img {
+  height: 110px !important;
+}
+
+.latestPosts .row .col-md-6 h6 {
+  font-family: "Red Rose", cursive;
+  size: 17px;
+
+  font-weight: 400px;
+  text-align: left;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.latestPosts .row .col-md-6 p {
+  color: rgba(0, 0, 0, 0.68);
+  font-family: "Red Rose", cursive;
+  font-weight: 400px;
+  size: 12px !important;
+  line-height: 15px;
+  text-align: left;
+  margin-left: -10px;
+  margin-right: -10px;
+}
 .row-md-3 hr {
   border: 0.5px solid #991414;
   margin-bottom: -1px;

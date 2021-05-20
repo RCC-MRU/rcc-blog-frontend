@@ -72,12 +72,15 @@ const SlickSlider = (props) => {
       <Slider {...settings} className="card border-0">
         {props.popularCardData.map((data) => {
           return (
+            <a href={'/blog/'+data.slug}>
+
             <PopularCard
               key={data.blogId}
               blogTitle={data.blogTitle}
               category={data.category}
               blogImg={data.blogImg}
             />
+            </a>
           );
         })}
       </Slider>

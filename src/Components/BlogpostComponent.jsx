@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from "react";
 import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
-// import RightSideMenuBot from "./RightSide/RightSideMenuBot";
+import RightSideMenuBot from "./RightSide/RightSideMenuBot";
+// import OtherCategories from "./RightSide/OtherCategories";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
-// function alpha(string)
-// {
-//     var a= string;
-//     var output="";
-//     for(var x=0;x<a.length;x++)
-//             output+=String.fromCharCode(a.charCodeAt(x)>65 && a.charCodeAt(x)<90 ? a.charCodeAt(x)+32: a.charCodeAt(x))
-//             // return output;
-//     console.log(output);
-// }
 const BlogpostComponent = (props) => {
   const [blogdata, setBlogdata] = useState({});
   const [category, setCategory] = useState([]);
   const [authorData, setAuthorData] = useState([]);
   const [similar, setSimilar] = useState([])
   
-  // let slug = "no-running-cardio-workout";
 
   useEffect(() => {
     // fetching data
@@ -125,6 +116,7 @@ const BlogpostComponent = (props) => {
             {authorData.map((authData) => {
               return (
                 <RightSideMenuTop
+                key={authData.userId}
                   userId={authData.userId}
                   firstName={authData.firstName}
                   about={authData.about}
@@ -152,30 +144,28 @@ const BlogpostComponent = (props) => {
               })}
               
             </div>
+                  {/* <OtherCategories key={category.categoryId}
+                  categoryImg={category.categoryImg}
+                  categoryName={category.categoryName}
+                   /> */}
 
-              <div className="categories row-md-3">
+              <div className=" latestPosts row-md-3">
               <hr />
-              <h4 className="categories-title border">Latest Posts</h4>
+              <h4 className=" latestPosts-title border">Latest Posts</h4>
 
-              <div className="row">
               {similar.map((data)=>{
                 return(
-                  <>
-                  <div className="col-md-6">
-            <img
-              src={data.blogImg}
-              className="img-fluid"
-              alt="latest-post"
-            />
-          </div>
-          <div className="col-md-6">
-            <h6>{data.blogTitle}</h6>
-            <p>{new Date(data.createdAt).toLocaleDateString()}</p>
-          </div>
-                  </>
+                  <a href={'/blog/'+data.slug}>
+
+                  <RightSideMenuBot 
+                    key={data.blogId}
+                    blogImg={data.blogImg}
+                    blogTitle={data.blogTitle}
+                    createdAt={data.createdAt}
+                  />
+                  </a>
                 );
               })}
-              </div>
               </div>
                   {/* <RightSideMenuBot 
                     createdAt={data.createdAt}

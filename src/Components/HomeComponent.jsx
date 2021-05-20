@@ -12,11 +12,10 @@ const HomeComponent = () => {
   useEffect(() => {
     // api to get featured posts
     axios
-      .get("/blogs/getCategoryPost")
+      .get("/blogs/showFeatured")
       .then((res) => {
         const data = res.data;
         // console.log(data);
-
         setFeaturedPosts(data);
       })
       .catch((err) => {
@@ -65,15 +64,18 @@ const HomeComponent = () => {
           <div className="row">
             {featured.map((feature) => {
               return (
-                <div className="col-md-4 my-1 px-1">
+                <div className="col-md-4 my-1 px-1" key={feature.blogId}>
+                <a href={'/blog/'+feature.slug}>
+
                   <FeaturedCard
-                    key={feature.blogId}
+                    
                     category={feature.category}
                     blogTitle={feature.blogTitle}
                     createdAt={feature.createdAt}
                     blogImg={feature.blogImg}
                     authorName={feature.firstName}
                   />
+                </a>
                 </div>
               );
             })}
