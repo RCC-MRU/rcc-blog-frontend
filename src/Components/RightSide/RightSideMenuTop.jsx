@@ -20,11 +20,10 @@ const RightSideMenuTop = (props) => {
         <h5
           style={{
             fontFamily: "Red Hat Text, sans-serif",
-            size: "23px",
+            size: "20px",
             color: "rgba(0, 0, 0, 0.7)",
           }}
         >
-          Read More
         </h5>
       </div>
       <div className="row-md-3 categories">
