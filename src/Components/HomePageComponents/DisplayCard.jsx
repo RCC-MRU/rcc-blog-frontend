@@ -48,6 +48,8 @@ const DisplayCard = (props) => {
                 <Link
                   to={"/blog/" + cardData.slug}
                   style={{ textDecoration: "none", color: "#000" }}
+                  target="_blank"
+              rel="noopener noreferrer"
                 >
                   <Card className="border-0 card-effect-hover">
                     <img

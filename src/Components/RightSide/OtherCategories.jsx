@@ -10,7 +10,6 @@ const OtherCategories = ({ category }) => {
           <div className="row-md-4" key={category.categoryId}>
             <Link
               to={`/category/`}
-              target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "#000" }}
             >

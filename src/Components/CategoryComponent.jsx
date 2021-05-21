@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CategoryType from "./SubComponents/CategoryType";
 import OtherCategories from "./RightSide/OtherCategories";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CategoryComponent = () => {
   const [category, setCategory] = useState([]);
@@ -47,6 +48,13 @@ const CategoryComponent = () => {
                   //   href={"/blog/" + categoryData.slug}
                   //   key={categoryData.blogId}
                   // >
+                  <Link
+                  to={"/blog/" + categoryData.slug}
+                  style={{ textDecoration: "none", color: "#000" }}
+                  target="_blank"
+              rel="noopener noreferrer"
+                >
+
                     <CategoryType
                       blogTitle={categoryData.blogTitle}
                       categoryAuthor={categoryData.categoryAuthor}
@@ -54,6 +62,7 @@ const CategoryComponent = () => {
                       blogImg={categoryData.blogImg}
                       blogContent={categoryData.blogContent}
                     />
+                </Link>
                   // </a>
                 );
               })}

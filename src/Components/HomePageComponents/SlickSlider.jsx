@@ -1,6 +1,6 @@
 import React from "react";
 import PopularCard from "./PopularCard";
-
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -72,15 +72,21 @@ const SlickSlider = (props) => {
       <Slider {...settings} className="card border-0">
         {props.popularCardData.map((data) => {
           return (
-            <a href={'/blog/'+data.slug} key={data.blogId}>
+            <Link
+                  to={"/blog/" + data.slug}
+                  style={{ textDecoration: "none", color: "#000" }}
+                  target="_blank"
+              rel="noopener noreferrer"
+                >
 
-            <PopularCard
-              
-              blogTitle={data.blogTitle}
-              category={data.category}
-              blogImg={data.blogImg}
-            />
-            </a>
+                  <PopularCard
+                    
+                    blogTitle={data.blogTitle}
+                    category={data.category}
+                    blogImg={data.blogImg}
+                  />
+                </Link>
+
           );
         })}
       </Slider>
