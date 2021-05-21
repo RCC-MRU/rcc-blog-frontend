@@ -77,6 +77,7 @@ const SlickSlider = (props) => {
                   style={{ textDecoration: "none", color: "#000" }}
                   target="_blank"
               rel="noopener noreferrer"
+              key={data.blogId}
                 >
 
                   <PopularCard
