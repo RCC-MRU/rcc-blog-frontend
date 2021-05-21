@@ -27,7 +27,7 @@ const NavbarComponent = () => {
     axios
       .get("/blogs/showCategoryMaster")
       .then((res) => {
-        const categories = res.data;
+        const categories = res.data.data;
 
         setCategoryData(categories);
       })
@@ -69,7 +69,7 @@ const NavbarComponent = () => {
               </UncontrolledDropdown>
               {categoryData.map((data) => {
                 return (
-                  <NavItem className="format-main-menubar">
+                  <NavItem className="format-main-menubar" key={data.categoryId}>
                     <NavLink
                       href={"/home#" + data.categoryValue}
                       // onClick={() => {

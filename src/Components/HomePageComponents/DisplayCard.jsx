@@ -26,7 +26,7 @@ const DisplayCard = (props) => {
     axios
       .get(`/blogs/showBlogsByCategory/${props.cardCategory}`)
       .then((res) => {
-        const data = res.data;
+        const data = res.data.data;
         // console.log(data);
 
         setCategoryData(data);

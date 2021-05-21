@@ -14,33 +14,33 @@ const HomeComponent = () => {
     axios
       .get("/blogs/showFeatured")
       .then((res) => {
-        const data = res.data;
+        const data = res.data.data;
         // console.log(data);
         setFeaturedPosts(data);
       })
       .catch((err) => {
         console.log(err);
         throw err;
-      });
+      } , []);
 
     // api to get categories
     axios
       .get("/blogs/showCategoryMaster")
       .then((res) => {
-        const categories = res.data;
+        const categories = res.data.data;
 
         setCategoryData(categories);
       })
       .catch((err) => {
         console.log(err);
         throw err;
-      });
+      }, []);
 
     // api to get popular posts
     axios
       .get("/blogs/showPopular")
       .then((res) => {
-        const data = res.data;
+        const data = res.data.data;
         // console.log(data);
 
         setPopular(data);
@@ -99,11 +99,11 @@ const HomeComponent = () => {
             <div className="container">
               {categoryData.map((category) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={category.categoryId}>
                     <div
                       style={{ height: "2rem" }}
                       id={category.categoryValue}
-                      key={category.categoryId}
+                      
                     ></div>
                     <div className="row" id={category.categoryValue}>
                       <div className="col-4 col-sm-5">

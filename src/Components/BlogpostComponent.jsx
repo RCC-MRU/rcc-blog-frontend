@@ -18,13 +18,13 @@ const BlogpostComponent = (props) => {
     axios
       .get("/blogs/showCategoryMaster")
       .then((res) => {
-        const about = res.data;
+        const about = res.data.data;
         // console.log(about);
         setCategory(about);
       })
       .catch((err) => {
         console.log(err);
-      });
+      }, []);
 //  const data= new Array(blogdata)
     axios
       .get(`/blogs/showSingleBlogPost/`+props.match.params.slug)
@@ -121,10 +121,10 @@ const BlogpostComponent = (props) => {
 
               {similar.map((data)=>{
                 return(
-                  <a href={'/blog/'+data.slug}>
+                  <a href={'/blog/'+data.slug} key={data.blogId}>
 
                   <RightSideMenuBot 
-                    key={data.blogId}
+                    
                     blogImg={data.blogImg}
                     blogTitle={data.blogTitle}
                     createdAt={data.createdAt}
