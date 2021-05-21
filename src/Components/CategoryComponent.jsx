@@ -8,7 +8,7 @@ const CategoryComponent = () => {
   const [otherCategory, setOtherCategory] = useState([]);
   useEffect(() => {
     axios
-      .get(`/blogs/showFeatured`)
+      .get(`/blogs/showBlogsByCategory/health`)
       .then((res) => {
         const about = res.data.data;
         // console.log(about);
@@ -16,8 +16,8 @@ const CategoryComponent = () => {
       })
       .catch((err) => {
         console.log(err);
-      }, []);
-  });
+      });
+  } , []);
   useEffect(() => {
     axios
       .get("/blogs/showCategoryMaster")
@@ -27,8 +27,8 @@ const CategoryComponent = () => {
       })
       .catch((err) => {
         console.log(err);
-      }, []);
-  });
+      });
+  }, []);
   return (
     <React.Fragment>
       <div className="rectangle-nav">
