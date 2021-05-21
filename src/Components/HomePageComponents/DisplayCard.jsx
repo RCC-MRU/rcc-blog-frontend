@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
-
+import { Link } from "react-router-dom";
 import { createDescription, stripHTML } from "../../Util/StringUtil";
 
 // const RandomCategory = ({ cardData, cardData1 }) => {
@@ -28,7 +28,6 @@ const DisplayCard = (props) => {
       .then((res) => {
         const data = res.data.data;
         // console.log(data);
-
         setCategoryData(data);
       })
       .catch((err) => {
@@ -37,40 +36,44 @@ const DisplayCard = (props) => {
       });
   }, [props.cardCategory]);
 
-
   // FIXME: use the random category block so that to enter the categoryCardData json into the section and then return only 2 arrays
 
   return (
     <React.Fragment>
-      <div className="section-spacing-1">
+      <div className="section-spacing">
         <div className="row">
           {categoryCardData.map((cardData) => {
             return (
               <div className="col-md-6 my-3" key={cardData.blogId}>
-              <a href={'/blog/'+cardData.slug}>
+                <Link
+                  to={"/blog/" + cardData.slug}
+                  style={{ textDecoration: "none", color: "#000" }}
+                >
+                  <Card className="border-0 card-effect-hover">
+                    <img
+                      src={cardData.blogImg}
+                      alt={cardData.blogTitle}
+                      className="featured-post-img img-fluid"
+                    />
+                    <CardBody className="text-center">
+                      <CardSubtitle
+                        tag="h6"
+                        className="format-text-health my-2"
+                      >
+                        <span className="text-dark-red">
+                          {cardData.category}
+                        </span>{" "}
+                        - {new Date(cardData.createdAt).toLocaleDateString()}
+                      </CardSubtitle>
 
-                <Card className="border-0">
-                  <img
-                    src={cardData.blogImg}
-                    alt={cardData.blogTitle}
-                    className="featured-post-img img-fluid"
-                  />
-                  <CardBody className="text-center">
-                    <CardSubtitle tag="h6" className="format-text-health my-2">
-                      <span className="color-dark-red">
-                        {cardData.category}
-                      </span>{" "}
-                      - {new Date(cardData.createdAt).toLocaleDateString()}
-                    </CardSubtitle>
-
-                    <CardTitle tag="h5">{cardData.blogTitle}</CardTitle>
-                    <hr className="temp-line-format" />
-                    <CardText>
-                      {createDescription(stripHTML(cardData.blogContent), 40)}
-                    </CardText>
-                  </CardBody>
-                </Card>
-              </a>
+                      <CardTitle tag="h5">{cardData.blogTitle}</CardTitle>
+                      <hr className="temp-line-format" />
+                      <CardText>
+                        {createDescription(stripHTML(cardData.blogContent), 40)}
+                      </CardText>
+                    </CardBody>
+                  </Card>
+                </Link>
               </div>
             );
           })}

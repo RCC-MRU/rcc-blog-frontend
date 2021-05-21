@@ -17,14 +17,13 @@ const RightSideMenuTop = (props) => {
           <h4 className="mt-2">I am {props.firstName}</h4>
           <p>{props.about}</p>
         </div>
-        <h5
+        {/* <h5
           style={{
             fontFamily: "Red Hat Text, sans-serif",
             size: "20px",
             color: "rgba(0, 0, 0, 0.7)",
           }}
-        >
-        </h5>
+        ></h5> */}
       </div>
       <div className="row-md-3 categories">
         <hr />

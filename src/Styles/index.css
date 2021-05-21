@@ -13,18 +13,32 @@
   scroll-behavior: smooth;
 }
 
-.bg-color-black {
+/* ============ Color definitions starts ============ */
+.bg-black {
   background-color: #000000 !important;
 }
 
-.bg-color-red {
+.bg-dark-red {
   background-color: #991414 !important;
 }
 
+.text-light-red {
+  color: #ea4232 !important;
+}
+
+.text-dark-red {
+  color: #991414 !important;
+}
+/* ============ Color definitions ends ============ */
+
+/* ============ For selection color ============ */
 ::selection {
   color: #fff;
-  background-color: #991414;
+  /* background-color: #991414; */
+  background-color: rgba(153, 20, 20, 0.9);
 }
+
+/* ============ Blog Page progressbar starts ============ */
 .reading-progress-bar {
   position: sticky;
   z-index: 100;
@@ -32,24 +46,32 @@
   top: 0;
   background-color: #991414;
 }
+/* ============ Blog Page progressbar ends ============ */
 
-.red-col {
-  color: #ea4232;
-}
-
-/* header section css starts here */
-
-.top-right-btns {
-  color: white;
-  justify-content: flex-end;
-}
-
+/* ================= Page heading starts =================  */
 .format-heading {
   font-family: Boogaloo;
   font-style: normal;
   font-weight: normal;
   font-size: 80px;
   color: #000000;
+}
+
+.format-heading-2 {
+  text-align: center;
+  font-family: Nova Cut;
+  font-weight: normal;
+  font-size: 24px;
+  margin-top: 2rem;
+}
+
+/* ================= Page heading ends ================= */
+
+/* ============ Header Section starts ============ */
+
+.top-right-btns {
+  color: white;
+  justify-content: flex-end;
 }
 
 .small-heading {
@@ -71,54 +93,77 @@
   font-size: 1.2rem;
   padding: 0 1rem;
 }
+/* ============ Header Section ends ============ */
 
-/* header section css ends here */
-
-/* homepage 3 images banner section css starts here */
+/* ============ Featured Posts starts ============ */
 .featured-post-img {
   width: 100%;
-  height: 24rem;
+  height: 25rem;
   background-size: cover;
   background-position: center center;
   color: white;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.edit-font {
+  font-family: Rasa;
+  font-style: normal;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.edit-font:hover {
+  color: #fff;
+  font-weight: 600;
 }
 
 .black-shadow-box {
   background-color: rgba(0, 0, 0, 0.4);
-  margin-left: 5px;
+  width: 90%;
+  height: 30%;
+  font-size: 16px;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  /*
   margin-bottom: 10px;
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 1.3rem;
   font-weight: 700;
   width: 90%;
   height: 40%;
   position: absolute;
-  bottom: 0;
-  /* display: flex;
-  flex-direction: column; */
-}
-.authorLatestCard {
-  /* vertical-align: text-bottom; */
-  font-size: medium;
-  position: absolute;
-  bottom: 10px;
-  /* text-align: end; */
-}
-@media screen and (max-width: 426px) {
-  .black-shadow-box {
-    height: 60%;
-    font-size: 1rem;
-    font-weight: 300;
-  }
+  bottom: 0; */
 }
 
-@media screen and (max-width: 769px) {
-  .black-shadow-box {
-    height: 50%;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
+/* .authorLatestCard {
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+} */
+
+/* ============ Featured Posts ends ============ */
+
+/* ============ Category Posts starts ============ */
+
+/* Sanchit: Card effect on mouse hover */
+.card-effect-hover {
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+  padding: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-effect-hover:hover {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .centered {
@@ -133,14 +178,6 @@
 }
 
 /* homepage 3 images banner section css ends here */
-
-.format-heading-2 {
-  text-align: center;
-  font-family: Nova Cut;
-  font-weight: normal;
-  font-size: 24px;
-  margin-top: 2rem;
-}
 
 .format-card-image {
   max-width: 100%;
@@ -236,10 +273,6 @@
   font-size: 16px;
 }
 
-.color-dark-red {
-  color: #991414;
-}
-
 .format-text-health-1 {
   font-family: Red Rose;
   font-style: normal;
@@ -284,29 +317,8 @@
   padding-bottom: 0.5rem;
 }
 
-.section-spacing-1 {
+.section-spacing {
   padding: 3rem 0 2rem 0;
-}
-
-.edit-font {
-  font-family: Rasa;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  color: #fff;
-  border-radius: 10px;
-}
-.edit-font:hover {
-  color: #fff;
-}
-
-.edit-font-1 {
-  font-family: Rasa;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  align-items: center;
-  color: #ffffff;
 }
 
 .line-class {
@@ -344,23 +356,6 @@
 } */
 
 /* Sign up page styling */
-
-@media screen and (max-width: 426px) {
-  .head {
-    display: none;
-  }
-
-  .sign-up {
-    display: none;
-  }
-}
-.check {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.68);
-}
 
 /*-----------------Blog Post Page and categories page styling starts-----------------*/
 
@@ -475,14 +470,37 @@ textarea {
   box-shadow: 0 0 10px rgba(153, 20, 20, 0.555);
 }
 
-@media screen and (max-width: 766px) {
-  .blog-like .col-md-3 {
-    margin-bottom: 20px;
-  }
-  .row-md-3 {
-    margin-top: 50px;
-  }
+@media screen and (max-width: 769px) {
   .featured-post-img {
     height: 18rem;
+  }
+
+  .black-shadow-box {
+    height: 50%;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .head {
+    display: none;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .check {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  .black-shadow-box {
+    height: 60%;
+    font-size: 1rem;
   }
 }

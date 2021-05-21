@@ -139,6 +139,7 @@
 .categories-title {
   margin-bottom: 60px;
 }
+
 .textblock {
   margin-top: -80px;
   font-family: "Redressed", cursive;
@@ -146,8 +147,15 @@
 
 .textblock span {
   background-color: white;
-  padding: 1px 25px 1px 25px;
+  padding: 2px 25px 2px 25px;
+  transition: all 0.5s ease;
 }
+
+.textblock span:hover {
+  color: white;
+  background-color: #991414;
+}
+
 .latestPosts-title {
   margin-bottom: 37px;
 }

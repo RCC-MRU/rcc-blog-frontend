@@ -7,17 +7,12 @@ const BlogPostType = (props) => {
     <React.Fragment>
       {/* <ReadingProgress target={target} /> */}
 
-      <div className="btn bg-color-red btn-sm fitness-title">
+      <div className="btn bg-dark-red btn-sm edit-font mb-2">
         {props.category}
       </div>
       <h3>{props.blogTitle}</h3>
       <div className="blog-header-img">
-        <img
-          src={props.blogImg}
-          // width="90%"
-          className="img-fluid"
-          alt={props.blogTitle}
-        />
+        <img src={props.blogImg} className="img-fluid" alt={props.blogTitle} />
       </div>
       <div className="blog-text">{props.blogContent}</div>
       <hr />

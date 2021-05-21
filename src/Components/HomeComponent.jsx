@@ -4,6 +4,8 @@ import FeaturedCard from "./HomePageComponents/FeaturedCard";
 import SlickSlider from "./HomePageComponents/SlickSlider";
 import DisplayCard from "./HomePageComponents/DisplayCard";
 
+import { Link } from "react-router-dom";
+
 const HomeComponent = () => {
   const [featured, setFeaturedPosts] = useState([]);
   const [popular, setPopular] = useState([]);
@@ -21,7 +23,7 @@ const HomeComponent = () => {
       .catch((err) => {
         console.log(err);
         throw err;
-      } , []);
+      }, []);
 
     // api to get categories
     axios
@@ -64,18 +66,21 @@ const HomeComponent = () => {
           <div className="row">
             {featured.map((feature) => {
               return (
-                <div className="col-md-4 my-1 px-1" key={feature.blogId}>
-                <a href={'/blog/'+feature.slug}>
-
-                  <FeaturedCard
-                    
-                    category={feature.category}
-                    blogTitle={feature.blogTitle}
-                    createdAt={feature.createdAt}
-                    blogImg={feature.blogImg}
-                    authorName={feature.firstName}
-                  />
-                </a>
+                <div className="col-lg-4 my-1 px-2" key={feature.blogId}>
+                  <Link
+                    to={`/blog/${feature.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <FeaturedCard
+                      category={feature.category}
+                      blogTitle={feature.blogTitle}
+                      createdAt={feature.createdAt}
+                      blogImg={feature.blogImg}
+                      authorName={feature.firstName}
+                    />
+                  </Link>
                 </div>
               );
             })}
@@ -103,7 +108,6 @@ const HomeComponent = () => {
                     <div
                       style={{ height: "2rem" }}
                       id={category.categoryValue}
-                      
                     ></div>
                     <div className="row" id={category.categoryValue}>
                       <div className="col-4 col-sm-5">

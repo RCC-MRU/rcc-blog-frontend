@@ -6,7 +6,7 @@ const HeaderComponent = () => {
 
   return (
     <React.Fragment>
-      {/* <nav className="navbar navbar-expand navbar-dark bg-color-black">
+      {/* <nav className="navbar navbar-expand navbar-dark bg-black">
         <div className="container-fluid mx-4">
           <div className="row w-100">
             <div className="col-12 col-sm-6 temp-2">
@@ -70,7 +70,7 @@ const HeaderComponent = () => {
 
       <div className="container text-center my-4" >
         <p className="format-heading"  >
-          Health <span className="red-col"> & </span> Fitness
+          Health <span className="text-light-red"> & </span> Fitness
         </p>
         <p className="small-heading">How To Live a Healthy and Fit Life?</p>
       </div>
