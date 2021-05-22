@@ -82,7 +82,7 @@ const DisplayCard = (props) => {
         </div>
 
         <div className="text-center">
-          <a href="/category" type="button" className="readmore-btn">
+          <a href="/category"  type="button" className="readmore-btn">
             Read More
           </a>
         </div>

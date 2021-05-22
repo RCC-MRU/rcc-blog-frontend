@@ -4,12 +4,13 @@ import OtherCategories from "./RightSide/OtherCategories";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const CategoryComponent = () => {
+const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
+  console.log(props)
   useEffect(() => {
     axios
-      .get(`/blogs/showBlogsByCategory/health`)
+      .get(`/blogs/showBlogsByCategory/` +props.match.params.slug)
       .then((res) => {
         const about = res.data.data;
         // console.log(about);
@@ -18,7 +19,7 @@ const CategoryComponent = () => {
       .catch((err) => {
         console.log(err);
       });
-  } , []);
+  } , [props.match.params.slug]);
   useEffect(() => {
     axios
       .get("/blogs/showCategoryMaster")
@@ -34,7 +35,7 @@ const CategoryComponent = () => {
     <React.Fragment>
       <div className="rectangle-nav">
         <p className="category-rectangle">Category</p>
-        <p className="fitness-rectangle">Fitness</p>
+        <p className="fitness-rectangle" style={{textTransform : "capitalize"}}>{props.match.params.slug}</p>
       </div>
 
       <section id="blogPost">

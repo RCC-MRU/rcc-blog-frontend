@@ -12,25 +12,25 @@ import FooterComponent from "./Components/FooterComponent";
 
 class Router extends Component {
   render() {
-    const HomePage = () => {
-      return <HomeComponent />;
-    };
+    // const HomePage = () => {
+    //   return <HomeComponent />;
+    // };
 
     // const BlogPage = () => {
     //   return <BlogpostComponent />;
     // };
 
-    const CategoryPage = ({ match }) => {
-      return <CategoryComponent homeCategoryName={match.params.cateName} />;
-    };
+    // const CategoryPage = ({ match }) => {
+    //   return <CategoryComponent homeCategoryName={match.params.cateName} />;
+    // };
 
     return (
       <React.Fragment>
         <HeaderComponent />
         <Switch>
-          <Route path="/home" component={HomePage} />
+          <Route path="/home" component={() => <HomeComponent/>} />
           <Route exact path="/blog/:slug" component={BlogpostComponent} />
-          <Route exact path="/category/" component={CategoryPage} />
+          <Route exact path="/category/:slug" component={CategoryComponent} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
           <Route exact path="/login" component={() => <LoginComponent />} />
           <Redirect to="/home" />

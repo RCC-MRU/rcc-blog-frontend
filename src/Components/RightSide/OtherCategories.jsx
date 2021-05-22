@@ -9,8 +9,7 @@ const OtherCategories = ({ category }) => {
         return (
           <div className="row-md-4" key={category.categoryId}>
             <Link
-              to={`/category/`}
-              rel="noopener noreferrer"
+              to={`/category/`+category.slug}
               style={{ textDecoration: "none", color: "#000" }}
             >
               <img src={category.categoryImg} className="img-fluid" alt="cat" />
