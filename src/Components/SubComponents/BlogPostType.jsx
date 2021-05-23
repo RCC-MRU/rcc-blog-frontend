@@ -20,11 +20,11 @@ const BlogPostType = (props) => {
         <div className="row">
           <div className="col-12 col-md-6 py-2">
             <div className="row">
-              <div className="col-6">
+              {/* <div className="col-6">
                 <span className="shadow-text">By:</span> {props.blogPostAuthor}
-              </div>
-              <div className="col-6">
-                <span className="shadow-text">On:</span>{" "}
+              </div> */}
+              <div className="col-6 " >
+                <span className="shadow-text ">On:</span>{" "}
                 {new Date(props.createdAt).toLocaleDateString()}
               </div>
             </div>

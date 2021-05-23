@@ -83,7 +83,8 @@
 
 /* Shadow text of By and On */
 .shadow-text {
-  color: rgba(0, 0, 0, 0.39);
+  /* color: rgba(0, 0, 0, 0.39); */
+  color: #991414;
 }
 
 /* .blog-like .col-md-6 p {
