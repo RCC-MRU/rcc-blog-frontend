@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
+
+// const userName =() =>{
+  
+// }
+
 const BlogpostComponent = (props) => {
   const [blogdata, setBlogdata] = useState({});
   const [category, setCategory] = useState([]);
@@ -43,7 +48,7 @@ console.log(props)
       .get(`/routes/author/${blogdata.userId}`)
       .then((resp) => {
         const authorDetails = resp.data.details;
-        // console.log(authorDetails);
+        console.log(authorDetails);
 
         setAuthorData(authorDetails);
       })
@@ -51,7 +56,7 @@ console.log(props)
         console.log(err);
       });
   }, [blogdata.userId]);
-
+  // console.log(authorData[0].firstName)
   useEffect(() => {
     axios
       .get(`/blogs/showSimilarPosts/${blogdata.category}`)
