@@ -69,6 +69,8 @@ const BlogpostComponent = (props) => {
       });
   }, [blogdata.category]);
 
+  console.log(authorData[0]?.firstName)
+
   return (
     <React.Fragment>
       <div className="container">
@@ -80,6 +82,7 @@ const BlogpostComponent = (props) => {
               blogContent={blogdata.blogContent}
               blogTitle={blogdata.blogTitle}
               category={blogdata.category}
+              blogPostAuthor={authorData[0]?.firstName}
             />
           </div>
 

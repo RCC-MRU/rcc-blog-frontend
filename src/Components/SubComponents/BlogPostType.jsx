@@ -18,7 +18,11 @@ const BlogPostType = (props) => {
       <hr />
       <div className="blog-like">
         <div className="row">
-          <div className="col-12 col-md-6 py-2">
+        
+         <div className="col-md-3">
+                <span className="shadow-text">By:</span> {props.blogPostAuthor}
+              </div> 
+          <div className="col-md-3 py-2">
             <span className="shadow-text ">On:</span>{" "}
             {new Date(props.createdAt).toLocaleDateString()}
           </div>
