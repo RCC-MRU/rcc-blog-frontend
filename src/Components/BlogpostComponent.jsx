@@ -7,9 +7,8 @@ import { Link } from "react-router-dom";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
-
 // const userName =() =>{
-  
+
 // }
 
 const BlogpostComponent = (props) => {
@@ -17,32 +16,32 @@ const BlogpostComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [authorData, setAuthorData] = useState([]);
   const [similar, setSimilar] = useState([]);
-console.log(props)
+
+  console.log(props);
   useEffect(() => {
     // fetching data
     axios
       .get("/blogs/showCategoryMaster")
       .then((res) => {
         const about = res.data.data;
-        // console.log(about);
         setCategory(about);
       })
       .catch((err) => {
         console.log(err);
       }, []);
-    //  const data= new Array(blogdata)
+
     axios
       .get(`/blogs/showSingleBlogPost/` + props.match.params.slug)
       .then((res) => {
         const blog = res.data.data;
 
-        // console.log(blog);
         setBlogdata(blog);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [props.match.params.slug]);
+
   useEffect(() => {
     axios
       .get(`/routes/author/${blogdata.userId}`)
@@ -56,42 +55,28 @@ console.log(props)
         console.log(err);
       });
   }, [blogdata.userId]);
-  // console.log(authorData[0].firstName)
+
   useEffect(() => {
     axios
       .get(`/blogs/showSimilarPosts/${blogdata.category}`)
       .then((resp) => {
-        const authorDetails = resp.data.detail;
-        // console.log(authorDetails);
+        const similarData = resp.data.detail;
 
-        setSimilar(authorDetails);
-        // console.log(authorDetails);
+        setSimilar(similarData);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [blogdata.category]);
-  // console.log( category[0].categoryName);
-  // console.log(similar);
-
-  // console.log("line 53 blog", blogdata);
 
   return (
     <React.Fragment>
-      {/* <ReadingProgress target={target}/> */}
       <div className="container">
         <div className="row">
           <div className="col-lg-9 col-md-8">
-            {/* {result.map((blogdata)=>{
-            return(
-
-            );
-          })} */}
             <BlogPostType
-              // key={blogdata.blogId}
               createdAt={blogdata.createdAt}
               blogImg={blogdata.blogImg}
-              blogPostAuthor={blogdata.userId}
               blogContent={blogdata.blogContent}
               blogTitle={blogdata.blogTitle}
               category={blogdata.category}

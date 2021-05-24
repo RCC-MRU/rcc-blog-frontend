@@ -123,6 +123,7 @@ const HomeComponent = () => {
                     <DisplayCard
                       cardCategory={category.categoryName}
                       categoryID={category.categoryId}
+                      cardPageSlug={category.slug}
                     />
                   </React.Fragment>
                 );

@@ -3,7 +3,10 @@ import React from "react";
 const PopularCard = ({ blogTitle, category, blogImg }) => {
   return (
     <React.Fragment>
-      <div className="col-12 p-2 d-flex justify-content-center" style={{backgroundColor: "#fff"}}>
+      <div
+        className="col-12 px-2 d-flex justify-content-center"
+        style={{ backgroundColor: "#fff" }}
+      >
         <div className="card border-0">
           <img
             className="card-img-top format-card-image img-fluid"

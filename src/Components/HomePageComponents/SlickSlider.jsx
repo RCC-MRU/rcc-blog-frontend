@@ -73,21 +73,18 @@ const SlickSlider = (props) => {
         {props.popularCardData.map((data) => {
           return (
             <Link
-                  to={"/blog/" + data.slug}
-                  style={{ textDecoration: "none", color: "#000" }}
-                  target="_blank"
+              to={"/blog/" + data.slug}
+              style={{ textDecoration: "none", color: "#000" }}
+              target="_blank"
               rel="noopener noreferrer"
               key={data.blogId}
-                >
-
-                  <PopularCard
-                    
-                    blogTitle={data.blogTitle}
-                    category={data.category}
-                    blogImg={data.blogImg}
-                  />
-                </Link>
-
+            >
+              <PopularCard
+                blogTitle={data.blogTitle}
+                category={data.category}
+                blogImg={data.blogImg}
+              />
+            </Link>
           );
         })}
       </Slider>

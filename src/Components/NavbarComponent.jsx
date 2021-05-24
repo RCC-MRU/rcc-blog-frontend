@@ -46,9 +46,9 @@ const NavbarComponent = () => {
               <NavItem className="format-main-menubar">
                 <NavLink href="/home">Home</NavLink>
               </NavItem>
-              <NavItem className="format-main-menubar">
+              {/* <NavItem className="format-main-menubar">
                 <NavLink href="/blog">All Feeds</NavLink>
-              </NavItem>
+              </NavItem> */}
               <UncontrolledDropdown
                 nav
                 inNavbar

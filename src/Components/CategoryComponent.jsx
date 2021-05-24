@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
-  console.log(props)
+  console.log(props);
   useEffect(() => {
     axios
-      .get(`/blogs/showBlogsByCategory/` +props.match.params.slug)
+      .get(`/blogs/showBlogsByCategory/` + props.match.params.slug)
       .then((res) => {
         const about = res.data.data;
         // console.log(about);
@@ -19,7 +19,7 @@ const CategoryComponent = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  } , [props.match.params.slug]);
+  }, [props.match.params.slug]);
   useEffect(() => {
     axios
       .get("/blogs/showCategoryMaster")
@@ -35,7 +35,12 @@ const CategoryComponent = (props) => {
     <React.Fragment>
       <div className="rectangle-nav">
         <p className="category-rectangle">Category</p>
-        <p className="fitness-rectangle" style={{textTransform : "capitalize"}}>{props.match.params.slug}</p>
+        <p
+          className="fitness-rectangle"
+          style={{ textTransform: "capitalize" }}
+        >
+          {props.match.params.slug}
+        </p>
       </div>
 
       <section id="blogPost">
@@ -50,12 +55,11 @@ const CategoryComponent = (props) => {
                   //   key={categoryData.blogId}
                   // >
                   <Link
-                  to={"/blog/" + categoryData.slug}
-                  style={{ textDecoration: "none", color: "#000" }}
-                  target="_blank"
-              rel="noopener noreferrer"
-                >
-
+                    to={"/blog/" + categoryData.slug}
+                    style={{ textDecoration: "none", color: "#000" }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <CategoryType
                       blogTitle={categoryData.blogTitle}
                       categoryAuthor={categoryData.categoryAuthor}
@@ -63,13 +67,13 @@ const CategoryComponent = (props) => {
                       blogImg={categoryData.blogImg}
                       blogContent={categoryData.blogContent}
                     />
-                </Link>
+                  </Link>
                   // </a>
                 );
               })}
             </div>
             <div className="col-md-3">
-              <div className="row-md-3 categories">
+              {/* <div className="row-md-3 categories">
                 <hr />
                 <h4 className="connectAndFollow-title border">
                   Connect And Follow
@@ -91,7 +95,7 @@ const CategoryComponent = (props) => {
                     <i className="fa fa-rss-square"></i>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="categories row-md-3">
                 <hr />
                 <h4 className="categories-title border">Categories</h4>

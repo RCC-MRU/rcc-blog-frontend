@@ -19,18 +19,12 @@ const BlogPostType = (props) => {
       <div className="blog-like">
         <div className="row">
           <div className="col-12 col-md-6 py-2">
-            <div className="row">
-              {/* <div className="col-6">
-                <span className="shadow-text">By:</span> {props.blogPostAuthor}
-              </div> */}
-              <div className="col-6 " >
-                <span className="shadow-text ">On:</span>{" "}
-                {new Date(props.createdAt).toLocaleDateString()}
-              </div>
-            </div>
+            <span className="shadow-text ">On:</span>{" "}
+            {new Date(props.createdAt).toLocaleDateString()}
           </div>
+
           <div
-            className="col-12 col-md-6 py-2 mb-4"
+            className="col-12 col-md-6 py-2"
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
             {/* <i className="fa fa-heart">20</i> */}
@@ -46,3 +40,7 @@ const BlogPostType = (props) => {
   );
 };
 export default BlogPostType;
+
+/* <div className="col-6">
+                <span className="shadow-text">By:</span> {props.blogPostAuthor}
+              </div> */
