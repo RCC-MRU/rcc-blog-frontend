@@ -44,8 +44,8 @@ const DisplayCard = (props) => {
         <div className="row">
           {categoryCardData.map((cardData) => {
             return (
-              <React.Fragment>
-                <div className="col-md-6 my-3" key={cardData.blogId}>
+              <React.Fragment key={cardData.blogId}>
+                <div className="col-md-6 my-3" >
                   <Link
                     to={"/blog/" + cardData.slug}
                     style={{ textDecoration: "none", color: "#000" }}
@@ -80,22 +80,24 @@ const DisplayCard = (props) => {
                       </CardBody>
                     </Card>
                   </Link>
-                </div>
-                {/* <div className="text-center">
+                <div className="text-center">
                   <Link
-                    to={`/category/${cardData.category}`}
+                    to={"/blog/" + cardData.slug}
                     type="button"
                     className="readmore-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Read More
                   </Link>
-                </div> */}
+                </div>
+                </div>
               </React.Fragment>
             );
           })}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link
             to={`/category` + props.cardPageSlug}
             type="button"
@@ -103,7 +105,7 @@ const DisplayCard = (props) => {
           >
             Read More
           </Link>
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );
