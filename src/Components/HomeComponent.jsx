@@ -4,6 +4,8 @@ import FeaturedCard from "./HomePageComponents/FeaturedCard";
 import SlickSlider from "./HomePageComponents/SlickSlider";
 import DisplayCard from "./HomePageComponents/DisplayCard";
 
+import { showFeatured } from "../Util/axios";
+
 import { Link } from "react-router-dom";
 
 const HomeComponent = () => {
@@ -13,17 +15,20 @@ const HomeComponent = () => {
 
   useEffect(() => {
     // api to get featured posts
-    axios
-      .get("/blogs/showFeatured")
-      .then((res) => {
-        const data = res.data.data;
-        // console.log(data);
-        setFeaturedPosts(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      }, []);
+    // axios
+    //   .get("/blogs/showFeatured")
+    //   .then((res) => {
+    //     const data = res.data.data;
+    //     // console.log(data);
+    //     setFeaturedPosts(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     throw err;
+    //   }, []);
+
+    const res = showFeatured();
+    res.then((data) => setFeaturedPosts(data)).catch((err) => console.log(err));
 
     // api to get categories
     axios

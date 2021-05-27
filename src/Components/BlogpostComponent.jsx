@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 import axios from "axios";
 
+import { showSingleBlogPost } from "../Util/axios";
+
 // const userName =() =>{
 
 // }
@@ -30,16 +32,19 @@ const BlogpostComponent = (props) => {
         console.log(err);
       }, []);
 
-    axios
-      .get(`/blogs/showSingleBlogPost/` + props.match.params.slug)
-      .then((res) => {
-        const blog = res.data.data;
+    // axios
+    //   .get(`/blogs/showSingleBlogPost/` + props.match.params.slug)
+    //   .then((res) => {
+    //     const blog = res.data.data;
 
-        setBlogdata(blog);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    //     setBlogdata(blog);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    const response = showSingleBlogPost(props.match.params.slug);
+    response.then((data) => setBlogdata(data)).catch((err) => console.log(err));
   }, [props.match.params.slug]);
 
   useEffect(() => {
@@ -69,7 +74,7 @@ const BlogpostComponent = (props) => {
       });
   }, [blogdata.category]);
 
-  console.log(authorData[0]?.firstName)
+  console.log(authorData[0]?.firstName);
 
   return (
     <React.Fragment>
