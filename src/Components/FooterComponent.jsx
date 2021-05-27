@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-let date = new Date();
-
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
     email: "",
     message: "",
   });
-
 
   function handleChange(event) {
     // console.log(event);
@@ -130,7 +127,9 @@ const FooterComponent = () => {
         </div>
         <div className="copyrights">
           <hr />
-          <p>Copywright @ Health and fitness {date.getFullYear()}</p>
+          <p style={{ fontFamily: `Nova Cut, cursive` }}>
+            Copywright @{new Date().getFullYear()} | Health &amp; Fitness
+          </p>
         </div>
       </section>
     </React.Fragment>

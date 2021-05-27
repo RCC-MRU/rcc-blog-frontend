@@ -1,140 +1,119 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const SignupComponent = () => {
-
-
-
-  const [value, setValue] = useState('Workout');
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {value: 'Workout'};
-
-  //   this.handleChange = this.handleChange.bind(this);
-  //   this.handleSubmit = this.handleSubmit.bind(this);
-  // }
-
+  const [value, setValue] = useState("Workout");
 
   function handleChange(event) {
     const { name, value } = event.target;
-  console.log(`type: ${name} and value: ${value}`);
+    console.log(`type: ${name} and value: ${value}`);
     setValue({ ...value, [name]: value });
   }
 
   const handleSubmit = (event) => {
     alert(`Your Preference is ${event.target.value}`);
     event.preventDefault();
-
   };
-
 
   return (
     <React.Fragment>
       <section>
-        <div className="container mt-5 mb-5">
+        <div className="container my-5">
           <div className="row box-shadow">
             <div className="col-md-6 col-12 left-side">
-              <div className="row pt-5">
+              {/* <div className="row pt-5">
                 <div className="col-8">
-                  <h1 className="company">Health & Fitness</h1>
+                  <h1 className="company">Health &amp; Fitness</h1>
                 </div>
-              </div>
+              </div> */}
 
-              <div
-                className="pl-3"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  height: "100%",
-                  padding: "0 0 0 1rem",
-                }}
-              >
+              <div className="my-5 px-4">
                 <h1 className="login">SIGN UP</h1>
                 <p>Sign up to continue to our application </p>
-                <form method="POST" action="/blog" onSubmit={handleSubmit}>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
+
+                <form method="POST" action="/home" onSubmit={handleSubmit}>
+                  <div className="form-row py-2">
+                    <div className="form-group col-md-6">
                       <input
                         type="name"
-                        class="form-control"
+                        className="form-control form-border-remove no-outline"
                         id="fname"
                         name="fname"
-                        placeholder="Enter firstname"
-                        className="inp no-outline pt-3"
+                        placeholder="Enter First Name"
                         required
                       />
                     </div>
-                    <div class="form-group col-md-6">
+                    <div className="form-group col-md-6">
                       <input
                         type="name"
-                        class="form-control"
+                        className="form-control form-border-remove no-outline"
                         id="lname"
                         name="lname"
-                        placeholder="Enter lastname"
-                        className="inp no-outline pt-3"
+                        placeholder="Enter Last Name"
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group py-2">
                     <input
                       type="email"
-                      placeholder="Enter Email"
-                      className=" inp no-outline pt-3"
+                      placeholder="Enter Email Address"
+                      className="form-control form-border-remove no-outline"
                       id="email"
                       required
                     />
                   </div>
-                  <div className="form-group">
+
+                  <div className="form-group py-2">
                     <input
                       type="password"
                       placeholder="Enter Password"
-                      className=" inp no-outline pt-3"
+                      className="form-control form-border-remove no-outline"
                       id="password"
                       required
                     />
                   </div>
-                  <div className="form-group">
+
+                  <div className="form-group py-2">
                     <input
                       type="password"
                       placeholder="Confirm Password"
-                      className=" inp no-outline pt-3"
+                      className="form-control form-border-remove no-outline"
                       id="confirm-password"
                       required
                     />
                   </div>
 
-
-
-                  <div>
-                  <label>
-           <p>Choose Preference</p>
-                  <select name="preference" onChange={handleChange}>
-               <option value="fitness">Fitness</option>
-               <option value="workout">Workout</option>
-               <option value="health">Health</option>
-           </select>
-           </label>
+                  <div className="form-group py-2">
+                    <select
+                      name="preference"
+                      className="form-control form-border-remove no-outline"
+                      onChange={handleChange}
+                    >
+                      <option value="default" selected>
+                        Preferences
+                      </option>
+                      <option value="fitness">Fitness</option>
+                      <option value="workout">Workout</option>
+                      <option value="health">Health</option>
+                    </select>
                   </div>
 
-
-                  <div class="custom-control custom-checkbox">
+                  <div className="custom-control custom-checkbox">
                     <input
-                    
                       type="checkbox"
-                      class="custom-control-input"
+                      className="custom-control-input"
                       id="confirm-box"
                       required
                     />
-                    <label class="custom-control-label" for="confirm-box">
-                      Terms & Conditions
+                    <label className="custom-control-label" htmlFor="t-and-c">
+                      Terms &amp; Conditions
                     </label>
                   </div>
-                  <div className="form-group form-check pt-4">
-                    <button type="submit" className="btn btn-col mb-5">
+
+                  <div className="form-group py-3">
+                    <button type="submit" className="btn btn-col" id="signup">
                       <span className="log-txt-for">Signup</span>
                     </button>
                   </div>
