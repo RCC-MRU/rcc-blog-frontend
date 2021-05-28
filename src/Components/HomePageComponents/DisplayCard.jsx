@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import { Link } from "react-router-dom";
 import { createDescription, stripHTML } from "../../Util/StringUtil";
+
+import { showBlogsByCategory } from "../../Util/axios";
 
 // const RandomCategory = ({ cardData, cardData1 }) => {
 //   let n = 2;
@@ -23,17 +24,20 @@ const DisplayCard = (props) => {
   const [categoryCardData, setCategoryData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`/blogs/showBlogsByCategory/${props.cardCategory}`)
-      .then((res) => {
-        const data = res.data.data;
-        // console.log(data);
-        setCategoryData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      });
+    showBlogsByCategory(props.cardCategory)
+      .then((data) => setCategoryData(data))
+      .catch((err) => console.error(err));
+    // axios
+    //   .get(`/blogs/showBlogsByCategory/${props.cardCategory}`)
+    //   .then((res) => {
+    //     const data = res.data.data;
+    //     // console.log(data);
+    //     setCategoryData(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     throw err;
+    //   });
   }, [props.cardCategory]);
 
   // FIXME: use the random category block so that to enter the categoryCardData json into the section and then return only 2 arrays

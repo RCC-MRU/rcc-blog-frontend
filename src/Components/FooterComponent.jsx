@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import { contactUs } from "../Util/axios";
 
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
@@ -8,8 +9,8 @@ const FooterComponent = () => {
   });
 
   function handleChange(event) {
-    // console.log(event);
-    // console.log(contact);
+    // console.log(event.target);
+    // console.log("Input val", inputVal);
     const { name, value } = event.target;
     // console.log(`Email: ${name} and value: ${value}`);
     setInputValue({ ...inputVal, [name]: value });
@@ -18,18 +19,36 @@ const FooterComponent = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post(`/routes/contact`, inputVal)
-      .then((res) => {
-        const persons = res.data;
-        console.log(persons);
+    // axios
+    //   .post(`/routes/contact`, inputVal)
+    //   .then((res) => {
+    //     const persons = res.data;
+    //     console.log(persons);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+
+    contactUs(inputVal)
+      .then((data) => {
+        const status = data.status;
+        if (status === 200) {
+          alert(data.data.message);
+        }
+        else if (status === 400) {
+          alert(data.data.message)
+        }
+
+        // console.log(data.data.result);
+        // console.log(data);
       })
       .catch((err) => {
         console.log(err);
+        alert(err);
       });
 
     console.log(inputVal);
-    alert(`Email: ${inputVal.email} & Message: ${inputVal.message}`);
+    // alert(`Email: ${inputVal.email} & Message: ${inputVal.message}`);
   };
 
   return (

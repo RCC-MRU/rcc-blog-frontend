@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import {
   Collapse,
   Navbar,
@@ -15,6 +14,8 @@ import {
 } from "reactstrap";
 // import HomeCategory from "./HomePageComponents/HomeCategoryType";
 
+import { showCategoryMaster } from "../Util/axios";
+
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [categoryData, setCategoryData] = useState([]);
@@ -23,17 +24,9 @@ const NavbarComponent = () => {
 
   // data fetching for menu using axios
   useEffect(() => {
-    // api to get categories
-    axios
-      .get("/blogs/showCategoryMaster")
-      .then((res) => {
-        const categories = res.data.data;
-
-        setCategoryData(categories);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    showCategoryMaster()
+      .then((data) => setCategoryData(data))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -60,7 +53,10 @@ const NavbarComponent = () => {
                 <DropdownMenu right>
                   {categoryData.map((data) => {
                     return (
-                      <DropdownItem href={"/category/"+ data.slug} key={data.categoryId}>
+                      <DropdownItem
+                        href={"/category/" + data.slug}
+                        key={data.categoryId}
+                      >
                         {data.categoryValue}
                       </DropdownItem>
                     );
@@ -69,17 +65,11 @@ const NavbarComponent = () => {
               </UncontrolledDropdown>
               {categoryData.map((data) => {
                 return (
-                  <NavItem className="format-main-menubar" key={data.categoryId}>
-                    <NavLink
-                      href={"/home#" + data.categoryValue}
-                      // onClick={() => {
-                      //   return (
-                      //     <HomeCategory
-                      //       homeUrihomecategoryUrl={data.slug}
-                      //     />
-                      //   );
-                      // }}
-                    >
+                  <NavItem
+                    className="format-main-menubar"
+                    key={data.categoryId}
+                  >
+                    <NavLink href={"/home#" + data.categoryValue}>
                       {data.categoryValue}
                     </NavLink>
                   </NavItem>

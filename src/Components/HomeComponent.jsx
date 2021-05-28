@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import FeaturedCard from "./HomePageComponents/FeaturedCard";
 import SlickSlider from "./HomePageComponents/SlickSlider";
 import DisplayCard from "./HomePageComponents/DisplayCard";
 
-import { showFeatured } from "../Util/axios";
+import {
+  showFeaturedPosts,
+  showCategoryMaster,
+  showPopularPosts,
+} from "../Util/axios";
 
 import { Link } from "react-router-dom";
 
@@ -14,6 +17,18 @@ const HomeComponent = () => {
   const [categoryData, setCategoryData] = useState([]);
 
   useEffect(() => {
+    showFeaturedPosts()
+      .then((data) => setFeaturedPosts(data))
+      .catch((err) => console.log(err));
+
+    showCategoryMaster()
+      .then((data) => setCategoryData(data))
+      .catch((err) => console.log(err));
+
+    showPopularPosts()
+      .then((data) => setPopular(data))
+      .catch((err) => console.log(err));
+
     // api to get featured posts
     // axios
     //   .get("/blogs/showFeatured")
@@ -27,35 +42,32 @@ const HomeComponent = () => {
     //     throw err;
     //   }, []);
 
-    const res = showFeatured();
-    res.then((data) => setFeaturedPosts(data)).catch((err) => console.log(err));
-
     // api to get categories
-    axios
-      .get("/blogs/showCategoryMaster")
-      .then((res) => {
-        const categories = res.data.data;
+    // axios
+    //   .get("/blogs/showCategoryMaster")
+    //   .then((res) => {
+    //     const categories = res.data.data;
 
-        setCategoryData(categories);
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      }, []);
+    //     setCategoryData(categories);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     throw err;
+    //   }, []);
 
     // api to get popular posts
-    axios
-      .get("/blogs/showPopular")
-      .then((res) => {
-        const data = res.data.data;
-        // console.log(data);
+    // axios
+    //   .get("/blogs/showPopular")
+    //   .then((res) => {
+    //     const data = res.data.data;
+    //     // console.log(data);
 
-        setPopular(data);
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      });
+    //     setPopular(data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     throw err;
+    //   });
   }, []);
 
   return (
@@ -114,7 +126,7 @@ const HomeComponent = () => {
                       style={{ height: "2rem" }}
                       id={category.categoryValue}
                     ></div>
-                    <div className="row" id={category.categoryValue}>
+                    <div className="row">
                       <div className="col-4 col-sm-5">
                         <div className="homepage-line-design"></div>
                       </div>

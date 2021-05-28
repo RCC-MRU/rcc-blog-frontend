@@ -1,36 +1,45 @@
 import React, { useEffect, useState } from "react";
 import CategoryType from "./SubComponents/CategoryType";
 import OtherCategories from "./RightSide/OtherCategories";
-import axios from "axios";
 import { Link } from "react-router-dom";
+
+import { showBlogsByCategory, showCategoryMaster } from "../Util/axios";
 
 const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
   console.log(props);
   useEffect(() => {
-    axios
-      .get(`/blogs/showBlogsByCategory/` + props.match.params.slug)
-      .then((res) => {
-        const about = res.data.data;
-        // console.log(about);
-        setCategory(about);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios
+    //   .get(`/blogs/showBlogsByCategory/` + props.match.params.slug)
+    //   .then((res) => {
+    //     const about = res.data.data;
+    //     // console.log(about);
+    //     setCategory(about);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    showBlogsByCategory(props.match.params.slug)
+      .then((data) => setCategory(data))
+      .catch((err) => console.log(err));
+
+    showCategoryMaster()
+      .then((data) => setOtherCategory(data))
+      .catch((err) => console.log(err));
   }, [props.match.params.slug]);
-  useEffect(() => {
-    axios
-      .get("/blogs/showCategoryMaster")
-      .then((res) => {
-        const result = res.data.data;
-        setOtherCategory(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("/blogs/showCategoryMaster")
+  //     .then((res) => {
+  //       const result = res.data.data;
+  //       setOtherCategory(result);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+
   return (
     <React.Fragment>
       <div className="rectangle-nav">

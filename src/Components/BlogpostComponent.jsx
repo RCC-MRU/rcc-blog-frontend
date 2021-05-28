@@ -3,11 +3,16 @@ import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
 import OtherCategories from "./RightSide/OtherCategories";
-import { Link } from "react-router-dom";
 // import ReadingProgress from "./SubComponents/ReadingBar";
-import axios from "axios";
 
-import { showSingleBlogPost } from "../Util/axios";
+import { Link } from "react-router-dom";
+
+import {
+  showSingleBlogPost,
+  showCategoryMaster,
+  showAuthor,
+  showSimilarPosts,
+} from "../Util/axios";
 
 // const userName =() =>{
 
@@ -22,15 +27,15 @@ const BlogpostComponent = (props) => {
   console.log(props);
   useEffect(() => {
     // fetching data
-    axios
-      .get("/blogs/showCategoryMaster")
-      .then((res) => {
-        const about = res.data.data;
-        setCategory(about);
-      })
-      .catch((err) => {
-        console.log(err);
-      }, []);
+    // axios
+    //   .get("/blogs/showCategoryMaster")
+    //   .then((res) => {
+    //     const about = res.data.data;
+    //     setCategory(about);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   }, []);
 
     // axios
     //   .get(`/blogs/showSingleBlogPost/` + props.match.params.slug)
@@ -42,39 +47,49 @@ const BlogpostComponent = (props) => {
     //   .catch((err) => {
     //     console.log(err);
     //   });
+    showCategoryMaster()
+      .then((data) => setCategory(data))
+      .catch((err) => console.log(err));
 
-    const response = showSingleBlogPost(props.match.params.slug);
-    response.then((data) => setBlogdata(data)).catch((err) => console.log(err));
-  }, [props.match.params.slug]);
+    showSingleBlogPost(props.match.params.slug)
+      .then((data) => setBlogdata(data))
+      .catch((err) => console.log(err));
 
-  useEffect(() => {
-    axios
-      .get(`/routes/author/${blogdata.userId}`)
-      .then((resp) => {
-        const authorDetails = resp.data.details;
-        console.log(authorDetails);
+    showAuthor(blogdata.userId)
+      .then((data) => setAuthorData(data))
+      .catch((err) => console.log(err));
 
-        setAuthorData(authorDetails);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [blogdata.userId]);
+    showSimilarPosts(blogdata.slug)
+      .then((data) => setSimilar(data))
+      .catch((err) => console.log(err));
+  }, [props.match.params.slug, blogdata.userId, blogdata.slug]);
 
-  useEffect(() => {
-    axios
-      .get(`/blogs/showSimilarPosts/${blogdata.category}`)
-      .then((resp) => {
-        const similarData = resp.data.detail;
+  // useEffect(() => {
+  //   // axios
+  //   //   .get(`/routes/author/${blogdata.userId}`)
+  //   //   .then((resp) => {
+  //   //     const authorDetails = resp.data.details;
+  //   //     console.log(authorDetails);
+  //   //     setAuthorData(authorDetails);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     console.log(err);
+  //   //   });
+  // }, [blogdata.userId]);
 
-        setSimilar(similarData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [blogdata.category]);
+  // useEffect(() => {
+  //   // axios
+  //   //   .get(`/blogs/showSimilarPosts/${blogdata.category}`)
+  //   //   .then((resp) => {
+  //   //     const similarData = resp.data.detail;
+  //   //     setSimilar(similarData);
+  //   //   })
+  //   //   .catch((err) => {
+  //   //     console.log(err);
+  //   //   });
+  // }, [blogdata.category]);
 
-  console.log(authorData[0]?.firstName);
+  // console.log(authorData[0]?.firstName);
 
   return (
     <React.Fragment>
@@ -112,7 +127,7 @@ const BlogpostComponent = (props) => {
 
             <div className=" latestPosts row-md-3">
               <hr />
-              <h4 className=" latestPosts-title border">Latest Posts</h4>
+              <h4 className=" latestPosts-title border">Similar Posts</h4>
 
               {similar.map((data) => {
                 return (
