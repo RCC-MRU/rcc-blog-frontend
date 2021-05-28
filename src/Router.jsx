@@ -9,6 +9,7 @@ import BlogpostComponent from "./Components/BlogpostComponent";
 // import header and footer
 import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
+import { ToastContainer } from "react-toastify";
 
 class Router extends Component {
   render() {
@@ -26,6 +27,7 @@ class Router extends Component {
 
     return (
       <React.Fragment>
+      <ToastContainer />
         <HeaderComponent />
         <Switch>
           <Route path="/home" component={() => <HomeComponent/>} />

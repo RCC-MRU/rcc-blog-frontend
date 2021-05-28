@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import {toast} from 'react-toastify'
 import { contactUs } from "../Util/axios";
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
@@ -38,14 +40,16 @@ const FooterComponent = () => {
         // else if (status === 400) {
         //   alert(data.data.message)
         // }
-
-        alert(data.data.message);
+        toast(data.data.message, {type: "success"});
+        // alert(data.data.message);
+        
         console.log(data.data.result);
         // console.log(data);
       })
       .catch((err) => {
         console.log(err);
-        alert(err);
+        toast(err, {type: "error"})
+        // alert(err);
       });
 
     console.log(inputVal);
