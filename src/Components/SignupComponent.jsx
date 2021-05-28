@@ -1,19 +1,19 @@
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 const SignupComponent = () => {
-  const [value, setValue] = useState("Workout");
+  // const [value, setValue] = useState("Workout");
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-    console.log(`type: ${name} and value: ${value}`);
-    setValue({ ...value, [name]: value });
-  }
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   console.log(`type: ${name} and value: ${value}`);
+  //   setValue({ ...value, [name]: value });
+  // }
 
-  const handleSubmit = (event) => {
-    alert(`Your Preference is ${event.target.value}`);
-    event.preventDefault();
-  };
+  // const handleSubmit = (event) => {
+  //   alert(`Your Preference is ${event.target.value}`);
+  //   event.preventDefault();
+  // };
 
   return (
     <React.Fragment>
@@ -31,7 +31,8 @@ const SignupComponent = () => {
                 <h1 className="login">SIGN UP</h1>
                 <p>Sign up to continue to our application </p>
 
-                <form method="POST" action="/home" onSubmit={handleSubmit}>
+                {/* onSubmit={handleSubmit} */}
+                <form method="POST" action="/home" >
                   <div className="form-row py-2">
                     <div className="form-group col-md-6">
                       <input
@@ -89,7 +90,7 @@ const SignupComponent = () => {
                     <select
                       name="preference"
                       className="form-control form-border-remove no-outline"
-                      onChange={handleChange}
+                      // onChange={handleChange}
                     >
                       <option value="default" selected>
                         Preferences

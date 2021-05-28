@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { login } from "../Util/axios";
 
 const LoginComponent = () => {
+  let [loginState, setLoginState] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    // console.log(event);
+    // console.log(event.target);
+    const { name, value } = event.target;
+    setLoginState({ ...loginState, [name]: value });
+  };
+  const handleLogin = (event) => {
+    event.preventDefault();
+    event.target.reset();
+    console.log(loginState);
+
+    login(loginState)
+      .then((data) => {
+        console.log(data);
+        alert(data.data.message);
+        window.localStorage.setItem("email", data.data.email)
+        window.localStorage.setItem("name", data.data.firstName);
+        window.localStorage.setItem("token", data.data.token);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <React.Fragment>
       <section>
@@ -17,13 +46,15 @@ const LoginComponent = () => {
                 <h1 className="login">LOG IN </h1>
                 <p>Sign in to continue to our application</p>
 
-                <form method="POST" action="/blog">
+                <form method="POST" onSubmit={handleLogin}>
                   <div className="form-group py-2">
                     <input
                       type="email"
                       placeholder="Enter Email Address"
                       className="form-control form-border-remove no-outline"
                       id="email"
+                      name="email"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -34,21 +65,41 @@ const LoginComponent = () => {
                       placeholder="Enter Password"
                       className="form-control form-border-remove no-outline"
                       id="password"
+                      name="password"
+                      onChange={handleChange}
                       required
                     />
                   </div>
 
-                  <div className="custom-control custom-checkbox">
+                  {/* <div className="form-group form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="check-box"
+                      name="check"
+                      required
+                      onChange={handleChange}
+                    />
+                    <label className="form-check-label" htmlFor="check-box">
+                      Remember me
+                    </label>
+                  </div> */}
+
+                  {/* <div className="custom-control custom-checkbox">
                     <input
                       type="checkbox"
                       className="custom-control-input"
                       id="confirm-box"
+                      onchange={handleChange}
                       required
                     />
-                    <label className="custom-control-label" htmlFor="remember-me">
+                    <label
+                      className="custom-control-label"
+                      htmlFor="remember-me"
+                    >
                       Remember Me
                     </label>
-                  </div>
+                  </div> */}
 
                   <div className="form-group py-3">
                     <button type="submit" className="btn btn-col" id="login">

@@ -107,10 +107,10 @@ let register = async () => {
 };
 
 // login the user
-let login = async () => {
-  let response = await api.post(`/users/login/`);
-  console.log(response.data);
-  return response.data.details;
+let login = async (loginDetails) => {
+  let response = await api.post(`/users/login/`, loginDetails);
+  console.log(response);
+  return response;
 };
 
 // ======== API of UserController ends here ========
