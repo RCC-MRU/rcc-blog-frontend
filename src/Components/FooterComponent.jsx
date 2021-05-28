@@ -31,15 +31,16 @@ const FooterComponent = () => {
 
     contactUs(inputVal)
       .then((data) => {
-        const status = data.status;
-        if (status === 200) {
-          alert(data.data.message);
-        }
-        else if (status === 400) {
-          alert(data.data.message)
-        }
+        // const status = data.status;
+        // if (status === 200) {
+        //   alert(data.data.message);
+        // }
+        // else if (status === 400) {
+        //   alert(data.data.message)
+        // }
 
-        // console.log(data.data.result);
+        alert(data.data.message);
+        console.log(data.data.result);
         // console.log(data);
       })
       .catch((err) => {

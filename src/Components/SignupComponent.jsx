@@ -32,7 +32,7 @@ const SignupComponent = () => {
                 <p>Sign up to continue to our application </p>
 
                 {/* onSubmit={handleSubmit} */}
-                <form method="POST" action="/home" >
+                <form method="POST" action="/home">
                   <div className="form-row py-2">
                     <div className="form-group col-md-6">
                       <input
@@ -87,17 +87,18 @@ const SignupComponent = () => {
                   </div>
 
                   <div className="form-group py-2">
+                    {/* <label htmlFor="">Preference</label> */}
                     <select
                       name="preference"
                       className="form-control form-border-remove no-outline"
                       // onChange={handleChange}
                     >
-                      <option value="default" selected>
-                        Preferences
+                      <option defaultValue="default" selected>
+                        Default
                       </option>
-                      <option value="fitness">Fitness</option>
-                      <option value="workout">Workout</option>
-                      <option value="health">Health</option>
+                      <option defaultValue="fitness">Fitness</option>
+                      <option defaultValue="workout">Workout</option>
+                      <option defaultValue="health">Health</option>
                     </select>
                   </div>
 
