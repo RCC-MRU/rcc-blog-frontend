@@ -4,60 +4,57 @@ const LoginComponent = () => {
   return (
     <React.Fragment>
       <section>
-        <div className="container mt-5 mb-5">
+        <div className="container my-5">
           <div className="row box-shadow">
             <div className="col-md-6 col-12 left-side">
-              <div className="row pt-5">
+              {/* <div className="row pt-5">
                 <div className="col-8">
                   <h1 className="company">Health & Fitness</h1>
                 </div>
-              </div>
+              </div> */}
 
-              <div
-                className="pl-3"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  height: "100%",
-                  padding: "0 0 0 1rem",
-                }}
-              >
+              <div className="my-5 px-4">
                 <h1 className="login">LOG IN </h1>
                 <p>Sign in to continue to our application</p>
 
                 <form method="POST" action="/blog">
-                  <div className="form-group">
+                  <div className="form-group py-2">
                     <input
                       type="email"
-                      placeholder="Enter Email"
-                      className="inp no-outline pt-4"
+                      placeholder="Enter Email Address"
+                      className="form-control form-border-remove no-outline"
                       id="email"
                       required
                     />
                   </div>
-                  <div className="form-group">
+
+                  <div className="form-group py-2">
                     <input
                       type="password"
                       placeholder="Enter Password"
-                      className=" inp no-outline pt-4"
+                      className="form-control form-border-remove no-outline"
                       id="password"
                       required
                     />
                   </div>
-                  <div className="form-group form-check pt-4">
+
+                  <div className="custom-control custom-checkbox">
                     <input
                       type="checkbox"
-                      className="form-check-input"
-                      id="exampleCheck1"
+                      className="custom-control-input"
+                      id="confirm-box"
+                      required
                     />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
+                    <label className="custom-control-label" htmlFor="remember-me">
                       Remember Me
                     </label>
                   </div>
-                  <button type="submit" className="btn btn-col mt-4 mb-5">
-                    <span className="log-txt-for">Login</span>
-                  </button>
+
+                  <div className="form-group py-3">
+                    <button type="submit" className="btn btn-col" id="login">
+                      <span className="log-txt-for">Login</span>
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>

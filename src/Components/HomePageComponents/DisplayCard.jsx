@@ -44,58 +44,61 @@ const DisplayCard = (props) => {
         <div className="row">
           {categoryCardData.map((cardData) => {
             return (
-              <React.Fragment>
-                <div className="col-md-6 my-3" key={cardData.blogId}>
-                  <Link
+              <React.Fragment key={cardData.blogId}>
+                <div className="col-md-6 my-3">
+                  {/* <Link
                     to={"/blog/" + cardData.slug}
                     style={{ textDecoration: "none", color: "#000" }}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >
-                    <Card className="border-0 card-effect-hover">
-                      <img
-                        src={cardData.blogImg}
-                        alt={cardData.blogTitle}
-                        className="featured-post-img img-fluid"
-                      />
-                      <CardBody className="text-center">
-                        <CardSubtitle
-                          tag="h6"
-                          className="format-text-health my-2"
-                        >
-                          <span className="text-dark-red">
-                            {cardData.category}
-                          </span>{" "}
-                          - {new Date(cardData.createdAt).toLocaleDateString()}
-                        </CardSubtitle>
+                  > */}
+                  <Card className="border-0 card-effect-hover">
+                    <img
+                      src={cardData.blogImg}
+                      alt={cardData.blogTitle}
+                      className="featured-post-img img-fluid"
+                      style={{ borderRadius: "10px" }}
+                    />
+                    <CardBody className="text-center">
+                      <CardSubtitle
+                        tag="h6"
+                        className="format-text-health my-2"
+                      >
+                        <span className="text-dark-red">
+                          {cardData.category}
+                        </span>{" "}
+                        - {new Date(cardData.createdAt).toLocaleDateString()}
+                      </CardSubtitle>
 
-                        <CardTitle tag="h5">{cardData.blogTitle}</CardTitle>
-                        <hr className="temp-line-format" />
-                        <CardText>
-                          {createDescription(
-                            stripHTML(cardData.blogContent),
-                            40
-                          )}
-                        </CardText>
-                      </CardBody>
-                    </Card>
-                  </Link>
+                      <CardTitle tag="h5">{cardData.blogTitle}</CardTitle>
+                      <hr className="temp-line-format" />
+                      <CardText>
+                        {createDescription(stripHTML(cardData.blogContent), 30)}
+                      </CardText>
+                    </CardBody>
+
+                    {/* Read more Button */}
+                    <div className="text-center">
+                      <Link
+                        to={"/blog/" + cardData.slug}
+                        type="button"
+                        className="readmore-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Read More
+                      </Link>
+                    </div>
+                  </Card>
+
+                  {/* </Link> */}
                 </div>
-                {/* <div className="text-center">
-                  <Link
-                    to={`/category/${cardData.category}`}
-                    type="button"
-                    className="readmore-btn"
-                  >
-                    Read More
-                  </Link>
-                </div> */}
               </React.Fragment>
             );
           })}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link
             to={`/category` + props.cardPageSlug}
             type="button"
@@ -103,7 +106,7 @@ const DisplayCard = (props) => {
           >
             Read More
           </Link>
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );
