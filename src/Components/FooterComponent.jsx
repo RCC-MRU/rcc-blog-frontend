@@ -48,8 +48,8 @@ const FooterComponent = () => {
       })
       .catch((err) => {
         console.log(err);
-        toast(err, {type: "error"})
-        // alert(err);
+        toast(err.message, {type: "error"})
+        alert(err);
       });
 
     console.log(inputVal);
