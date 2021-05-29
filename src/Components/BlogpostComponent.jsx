@@ -134,7 +134,6 @@ const BlogpostComponent = (props) => {
                   <Link
                     to={"/blog/" + data.slug}
                     key={data.blogId}
-                    target="_blank"
                     rel="noopener noreferrer"
                     style={{ textDecoration: "none", color: "#000" }}
                   >

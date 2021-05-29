@@ -6,7 +6,7 @@ const HeaderComponent = () => {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-black">
-        <div className="container-fluid mx-4">
+        <div className="container-fluid mx-auto">
           <div className="row w-100">
             <div className="col-12 col-sm-6 temp-2">
               <ul className="navbar-nav mr-auto">
@@ -44,9 +44,10 @@ const HeaderComponent = () => {
             </div>
             <div className="col-12 col-sm-6">
               <ul className="navbar-nav top-right-btns">
+
                 <li className="nav-item active px-1">
-                  <a className="nav-link" href="/#">
-                    <i className="fas fa-search"></i> Search
+                  <a className="nav-link" href="/">
+                    <i className="fa fa-search"></i> Search
                   </a>
                 </li>
 

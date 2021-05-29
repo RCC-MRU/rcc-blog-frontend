@@ -1,5 +1,5 @@
-// import axios from "axios";
-const axios = require("axios");
+import axios from "axios";
+// const axios = require("axios");
 
 let api = axios.create({
   baseURL: "http://localhost:3001/",
@@ -115,19 +115,36 @@ let login = async (loginDetails) => {
 
 // ======== API of UserController ends here ========
 
-module.exports = {
-  showAllBlogPost: showAllBlogPost,
-  showSingleBlogPost: showSingleBlogPost,
-  showBlogsByCategory: showBlogsByCategory,
-  showPopularPosts: showPopularPosts,
-  showLatestPosts: showLatestPosts,
-  showFeaturedPosts: showFeaturedPosts,
-  showCategoryMaster: showCategoryMaster,
-  getCategoryPost: getCategoryPost,
-  showSimilarPosts: showSimilarPosts,
-  contactUs: contactUs,
-  showComments: showComments,
-  showAuthor: showAuthor,
-  register: register,
-  login: login,
+// module.exports = {
+//   showAllBlogPost: showAllBlogPost,
+//   showSingleBlogPost: showSingleBlogPost,
+//   showBlogsByCategory: showBlogsByCategory,
+//   showPopularPosts: showPopularPosts,
+//   showLatestPosts: showLatestPosts,
+//   showFeaturedPosts: showFeaturedPosts,
+//   showCategoryMaster: showCategoryMaster,
+//   getCategoryPost: getCategoryPost,
+//   showSimilarPosts: showSimilarPosts,
+//   contactUs: contactUs,
+//   showComments: showComments,
+//   showAuthor: showAuthor,
+//   register: register,
+//   login: login,
+// };
+
+export {
+  showAllBlogPost,
+  showSingleBlogPost,
+  showBlogsByCategory,
+  showPopularPosts,
+  showLatestPosts,
+  showFeaturedPosts,
+  showCategoryMaster,
+  getCategoryPost,
+  showSimilarPosts,
+  contactUs,
+  showComments,
+  showAuthor,
+  register,
+  login,
 };

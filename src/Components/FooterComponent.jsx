@@ -1,14 +1,33 @@
-import React, { useState } from "react";
-import {toast} from 'react-toastify'
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import { contactUs } from "../Util/axios";
-import 'react-toastify/dist/ReactToastify.css';
-toast.configure()
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 const FooterComponent = () => {
   let [inputVal, setInputValue] = useState({
     email: "",
     message: "",
   });
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+  }, []);
 
   function handleChange(event) {
     // console.log(event.target);
@@ -20,6 +39,7 @@ const FooterComponent = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    event.target.reset();
 
     // axios
     //   .post(`/routes/contact`, inputVal)
@@ -33,23 +53,16 @@ const FooterComponent = () => {
 
     contactUs(inputVal)
       .then((data) => {
-        // const status = data.status;
-        // if (status === 200) {
-        //   alert(data.data.message);
-        // }
-        // else if (status === 400) {
-        //   alert(data.data.message)
-        // }
-        toast(data.data.message, {type: "success"});
+        toast(data.data.message, { type: "success" });
         // alert(data.data.message);
-        
+
         console.log(data.data.result);
         // console.log(data);
       })
       .catch((err) => {
         console.log(err);
-        toast(err.message, {type: "error"})
-        alert(err);
+        toast(err.message, { type: "error" });
+        // alert(err);
       });
 
     console.log(inputVal);
@@ -58,6 +71,20 @@ const FooterComponent = () => {
 
   return (
     <React.Fragment>
+      <div className="scroll-to-top">
+        {isVisible && (
+          <div onClick={scrollToTop}>
+            <img
+              // src="https://i.postimg.cc/44Ytsk8Z/top-arrow-emoj.png"
+              src={process.env.PUBLIC_URL + "/images/scroll-icon.png"}
+              alt="Go to top"
+              // width="10%"
+              className="img-fluid"
+            />
+          </div>
+        )}
+      </div>
+
       <section id="footer">
         <div className="container-fluid">
           <div className="row">

@@ -28,46 +28,6 @@ const HomeComponent = () => {
     showPopularPosts()
       .then((data) => setPopular(data))
       .catch((err) => console.log(err));
-
-    // api to get featured posts
-    // axios
-    //   .get("/blogs/showFeatured")
-    //   .then((res) => {
-    //     const data = res.data.data;
-    //     // console.log(data);
-    //     setFeaturedPosts(data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     throw err;
-    //   }, []);
-
-    // api to get categories
-    // axios
-    //   .get("/blogs/showCategoryMaster")
-    //   .then((res) => {
-    //     const categories = res.data.data;
-
-    //     setCategoryData(categories);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     throw err;
-    //   }, []);
-
-    // api to get popular posts
-    // axios
-    //   .get("/blogs/showPopular")
-    //   .then((res) => {
-    //     const data = res.data.data;
-    //     // console.log(data);
-
-    //     setPopular(data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     throw err;
-    //   });
   }, []);
 
   return (

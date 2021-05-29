@@ -8,7 +8,7 @@ import { showBlogsByCategory, showCategoryMaster } from "../Util/axios";
 const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
-  console.log(props);
+
   useEffect(() => {
     // axios
     //   .get(`/blogs/showBlogsByCategory/` + props.match.params.slug)
@@ -20,6 +20,7 @@ const CategoryComponent = (props) => {
     //   .catch((err) => {
     //     console.log(err);
     //   });
+
     showBlogsByCategory(props.match.params.slug)
       .then((data) => setCategory(data))
       .catch((err) => console.log(err));
@@ -66,7 +67,6 @@ const CategoryComponent = (props) => {
                   <Link
                     to={"/blog/" + categoryData.slug}
                     style={{ textDecoration: "none", color: "#000" }}
-                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <CategoryType
