@@ -1,12 +1,24 @@
-import React from "react";
-// import ReadingProgress from "./ReadingBar";
+import React, { useState } from "react";
+import { ProgressBar} from "./Styles";
 
 const BlogPostType = (props) => {
-  // const target = React.createRef();
+  const [scroll, setScroll] = useState(0);
+  
+  const onScroll = () => {
+    const Scrolled = document.documentElement.scrollTop;
+    const MaxHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const ScrollPercent = (Scrolled / MaxHeight) * 100;
+    setScroll(ScrollPercent);
+  };
+  
+  window.addEventListener("scroll", onScroll);
   return (
     <React.Fragment>
-      {/* <ReadingProgress target={target} /> */}
-
+    
+      <ProgressBar style={{ width: `${scroll}%` }}>
+      </ProgressBar>
       <div className="btn bg-dark-red btn-sm edit-font mb-2">
         {props.category}
       </div>
