@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import {toast} from 'react-toastify'
 import { login } from "../Util/axios";
+import "react-toastify/dist/ReactToastify.css";
+import {Redirect} from 'react-router-dom'
 
 const LoginComponent = () => {
   let [loginState, setLoginState] = useState({
@@ -22,12 +24,16 @@ const LoginComponent = () => {
     login(loginState)
       .then((data) => {
         console.log(data);
-        alert(data.data.message);
+        toast(data.data.message, {type: "success"})
+        // alert();
         window.localStorage.setItem("email", data.data.email)
         window.localStorage.setItem("name", data.data.firstName);
         window.localStorage.setItem("token", data.data.token);
+        <Redirect to="/home" />
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        toast(error.message, {type: "error"})
+        console.error(error)});
   };
 
   return (
