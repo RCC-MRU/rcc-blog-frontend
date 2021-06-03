@@ -50,7 +50,13 @@ const HeaderComponent = () => {
                     <i className="fa fa-search"></i> Search
                   </a>
                 </li>
-
+                {localStorage.getItem('token') ? 
+                <li className="nav-item px-1" onClick={()=>(localStorage.clear())}>
+                  <Link to="/home" className="nav-link text-white" refresh="true">
+                    Logout
+                  </Link>
+                </li>
+                 : <>
                 <li className="nav-item px-1">
                   <Link to="/signup" className="nav-link text-white">
                     Signup
@@ -61,6 +67,8 @@ const HeaderComponent = () => {
                     Login
                   </Link>
                 </li>
+                </>}
+                
               </ul>
             </div>
           </div>
