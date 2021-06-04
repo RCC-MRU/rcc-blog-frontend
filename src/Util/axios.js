@@ -100,10 +100,10 @@ let showAuthor = async (authorID) => {
 // ======== API of UserController starts here ========
 
 // register the user
-let register = async () => {
-  let response = await api.post(`/users/register/`);
+let register = async (signupDetails) => {
+  let response = await api.post(`/users/register/`,signupDetails);
   console.log(response.data);
-  return response.data.result;
+  return response;
 };
 
 // login the user
@@ -112,6 +112,12 @@ let login = async (loginDetails) => {
   console.log(response);
   return response;
 };
+
+let forgetPass = async (forgotPassword) => {
+  let response = await api.post(`/users/forget-password/`,forgotPassword);
+  console.log(response);
+  return response;
+}
 
 // ======== API of UserController ends here ========
 
@@ -147,4 +153,5 @@ export {
   showAuthor,
   register,
   login,
+  forgetPass
 };

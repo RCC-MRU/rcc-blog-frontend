@@ -1,8 +1,45 @@
 import React from "react";
-// import { useState, useEffect } from "react";
+import { register } from "../Util/axios";
+import { useState } from "react";
+import {toast} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 const SignupComponent = () => {
-  // const [value, setValue] = useState("Workout");
+  let [signupState, setSignupState] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    preference:""
+  });
+
+  const handleChange = (event) => {
+    // console.log(event);
+    // console.log(event.target);
+    const { name, value } = event.target;
+    setSignupState({ ...signupState, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.target.reset();
+    console.log(signupState);
+
+    register(signupState)
+      .then((data) => {
+        console.log(data);
+        toast(data.data.message, {type: "success"})
+        // alert();
+        // window.localStorage.setItem("email", data.data.email)
+        // window.localStorage.setItem("name", data.data.firstName);
+        // window.localStorage.setItem("token", data.data.token);
+        // <Redirect to="/home" />
+      })
+      .catch((error) => {
+        toast(error.message, {type: "error"})
+        console.error(error)});
+  };
+  // console.log(loginState)
 
   // function handleChange(event) {
   //   const { name, value } = event.target;
@@ -32,24 +69,26 @@ const SignupComponent = () => {
                 <p>Sign up to continue to our application </p>
 
                 {/* onSubmit={handleSubmit} */}
-                <form method="POST" action="/home">
+                <form method="POST" action="/home" onSubmit={handleSubmit}>
                   <div className="form-row py-2">
                     <div className="form-group col-md-6">
                       <input
-                        type="name"
+                        type="text"
                         className="form-control form-border-remove no-outline"
-                        id="fname"
-                        name="fname"
+                        id="firstName"
+                        name="firstName"
+                        onChange={handleChange}
                         placeholder="Enter First Name"
                         required
                       />
                     </div>
                     <div className="form-group col-md-6">
                       <input
-                        type="name"
+                        type="text"
                         className="form-control form-border-remove no-outline"
-                        id="lname"
-                        name="lname"
+                        id="lastName"
+                        name="lastName"
+                        onChange={handleChange}
                         placeholder="Enter Last Name"
                         required
                       />
@@ -62,6 +101,8 @@ const SignupComponent = () => {
                       placeholder="Enter Email Address"
                       className="form-control form-border-remove no-outline"
                       id="email"
+                      name="email"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -72,26 +113,30 @@ const SignupComponent = () => {
                       placeholder="Enter Password"
                       className="form-control form-border-remove no-outline"
                       id="password"
+                      name="password"
+                      onChange={handleChange}
                       required
                     />
                   </div>
 
-                  <div className="form-group py-2">
+                  {/* <div className="form-group py-2">
                     <input
                       type="password"
                       placeholder="Confirm Password"
                       className="form-control form-border-remove no-outline"
-                      id="confirm-password"
+                      id="confirmPassword"
+                      onChange={handleChange}
                       required
                     />
-                  </div>
+                  </div> */}
 
                   <div className="form-group py-2">
                     {/* <label htmlFor="">Preference</label> */}
                     <select
                       name="preference"
+                      id="preference"
                       className="form-control form-border-remove no-outline"
-                      // onChange={handleChange}
+                      onChange={handleChange}
                     >
                       <option defaultValue="default" selected>
                         Default
@@ -102,7 +147,7 @@ const SignupComponent = () => {
                     </select>
                   </div>
 
-                  <div className="custom-control custom-checkbox">
+                  {/* <div className="custom-control custom-checkbox">
                     <input
                       type="checkbox"
                       className="custom-control-input"
@@ -112,7 +157,7 @@ const SignupComponent = () => {
                     <label className="custom-control-label" htmlFor="t-and-c">
                       Terms &amp; Conditions
                     </label>
-                  </div>
+                  </div> */}
 
                   <div className="form-group py-3">
                     <button type="submit" className="btn btn-col" id="signup">

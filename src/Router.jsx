@@ -5,6 +5,7 @@ import LoginComponent from "./Components/LoginComponent";
 import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
+import ForgotPassowrd from "./Components/ForgotPassword";
 
 // import header and footer
 import HeaderComponent from "./Components/HeaderComponent";
@@ -35,6 +36,7 @@ class Router extends Component {
           <Route exact path="/category/:slug" component={CategoryComponent} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
           <Route exact path="/login" component={() => <LoginComponent />} />
+          <Route exact path="/forgotPassword" component={() => <ForgotPassowrd />} />
           <Redirect to="/home" />
         </Switch>
         <FooterComponent />
