@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { register } from "../Util/axios";
 import { useState } from "react";
 import {toast} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+// impoerting context
+import {BlogContext} from '../Context/BlogContext'
 
 const SignupComponent = () => {
+  const context = useContext(BlogContext)
   let [signupState, setSignupState] = useState({
     firstName: "",
     lastName: "",
@@ -13,6 +16,7 @@ const SignupComponent = () => {
     preference:""
   });
 
+  
   const handleChange = (event) => {
     // console.log(event);
     // console.log(event.target);
@@ -29,10 +33,15 @@ const SignupComponent = () => {
       .then((data) => {
         console.log(data);
         toast(data.data.message, {type: "success"})
+        context.setToken({
+          email: data.data.email,
+          name: data.data.firstName,
+          token: data.data.token
+        })
         // alert();
-        // window.localStorage.setItem("email", data.data.email)
-        // window.localStorage.setItem("name", data.data.firstName);
-        // window.localStorage.setItem("token", data.data.token);
+        window.localStorage.setItem("email", data.data.email)
+        window.localStorage.setItem("name", data.data.firstName);
+        window.localStorage.setItem("token", data.data.token);
         // <Redirect to="/home" />
       })
       .catch((error) => {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import HomeComponent from "./Components/HomeComponent";
 import LoginComponent from "./Components/LoginComponent";
@@ -6,14 +6,21 @@ import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 import ForgotPassowrd from "./Components/ForgotPassword";
-
+ 
+// impoerting context
+import {BlogContext} from './Context/BlogContext'
 // import header and footer
 import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
-class Router extends Component {
-  render() {
+const Router = () => {
+  const name = localStorage.getItem("name")
+  const email = localStorage.getItem("email")
+  const localToken = localStorage.getItem("token")
+  const [token, setToken] = useState({
+    email: email, name:name,token:localToken
+  });
     // const HomePage = () => {
     //   return <HomeComponent />;
     // };
@@ -29,6 +36,8 @@ class Router extends Component {
     return (
       <React.Fragment>
       <ToastContainer />
+      <BlogContext.Provider value={{ token, setToken}}>
+
         <HeaderComponent />
         <Switch>
           <Route path="/home" component={() => <HomeComponent/>} />
@@ -40,9 +49,9 @@ class Router extends Component {
           <Redirect to="/home" />
         </Switch>
         <FooterComponent />
+      </BlogContext.Provider>
       </React.Fragment>
     );
   }
-}
 
 export default Router;
