@@ -2,12 +2,13 @@ import React, { useState, useContext } from "react";
 import {toast} from 'react-toastify'
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import {Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 // impoerting context
 import {BlogContext} from '../Context/BlogContext'
 
 const LoginComponent = () => {
   const context = useContext(BlogContext)
+  // const [checkbox,setCheckBox] = useState(false)
   let [loginState, setLoginState] = useState({
     email: "",
     password: "",
@@ -99,8 +100,12 @@ const LoginComponent = () => {
                       type="checkbox"
                       className="custom-control-input"
                       id="confirm-box"
+                      name="confirm-box"
                       onchange={handleChange}
                       required
+                      value={checkbox}
+                      defaultChecked={checkbox}
+                      onChange={(e)=>e.target.value(setCheckBox(!checkbox))}
                     />
                     <label
                       className="custom-control-label"
@@ -109,6 +114,10 @@ const LoginComponent = () => {
                       Remember Me
                     </label>
                   </div> */}
+                  <Link to="/forgotpassword">
+
+                  <div className="forgotpass">Forgot Password?</div>
+                  </Link>
 
                   <div className="form-group py-3">
                     <button type="submit" className="btn btn-col" id="login">
