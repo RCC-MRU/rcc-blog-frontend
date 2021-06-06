@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import NavbarComponent from "./NavbarComponent";
+// impoerting context
+import {BlogContext} from '../Context/BlogContext'
+
 
 const HeaderComponent = () => {
+  const context = useContext(BlogContext)
+  const logout = () => {
+    localStorage.clear();
+    context.setToken(null)
+
+  }
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-black">
@@ -50,12 +59,15 @@ const HeaderComponent = () => {
                     <i className="fa fa-search"></i> Search
                   </a>
                 </li>
-                {localStorage.getItem('token') ? 
-                <li className="nav-item px-1" onClick={()=>(localStorage.clear())}>
+                {context.token?.token ? <>
+                <li className="nav-item px-1" onClick={logout}>
                   <Link to="/home" className="nav-link text-white" refresh="true">
                     Logout
                   </Link>
                 </li>
+                <li><Link className="nav-link text-white">{`Welcome ${context.token?.name}`}</Link> </li>
+
+                </>
                  : <>
                 <li className="nav-item px-1">
                   <Link to="/signup" className="nav-link text-white">
@@ -74,7 +86,6 @@ const HeaderComponent = () => {
           </div>
         </div>
       </nav>
-      {/* FIXME: add a if else for switching from login or logout */}
 
       <div className="container text-center my-4">
         <p className="format-heading">

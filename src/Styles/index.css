@@ -412,6 +412,12 @@ textarea {
   size: 26px;
 } */
 
+
+.forgotpass{
+text-decoration: none !important;
+text-align: right !important;
+color: #DA3232;
+}
 .rectangle-nav {
   width: 100%;
   margin-bottom: 1.3rem;

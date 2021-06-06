@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {toast} from 'react-toastify'
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import {Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
+// impoerting context
+import {BlogContext} from '../Context/BlogContext'
 
 const LoginComponent = () => {
+  const context = useContext(BlogContext)
+  // const [checkbox,setCheckBox] = useState(false)
   let [loginState, setLoginState] = useState({
     email: "",
     password: "",
@@ -26,28 +30,28 @@ const LoginComponent = () => {
         console.log(data);
         toast(data.data.message, {type: "success"})
         // alert();
+        context.setToken({
+          email: data.data.email,
+          name: data.data.firstName,
+          token: data.data.token
+        })
         window.localStorage.setItem("email", data.data.email)
         window.localStorage.setItem("name", data.data.firstName);
         window.localStorage.setItem("token", data.data.token);
-        <Redirect to="/home" />
       })
       .catch((error) => {
         toast(error.message, {type: "error"})
         console.error(error)});
   };
-
+  if(context.token?.token){
+    <Redirect to="/home" />
+  }
   return (
     <React.Fragment>
       <section>
         <div className="container my-5">
           <div className="row box-shadow">
             <div className="col-md-6 col-12 left-side">
-              {/* <div className="row pt-5">
-                <div className="col-8">
-                  <h1 className="company">Health & Fitness</h1>
-                </div>
-              </div> */}
-
               <div className="my-5 px-4">
                 <h1 className="login">LOG IN </h1>
                 <p>Sign in to continue to our application</p>
@@ -96,8 +100,12 @@ const LoginComponent = () => {
                       type="checkbox"
                       className="custom-control-input"
                       id="confirm-box"
+                      name="confirm-box"
                       onchange={handleChange}
                       required
+                      value={checkbox}
+                      defaultChecked={checkbox}
+                      onChange={(e)=>e.target.value(setCheckBox(!checkbox))}
                     />
                     <label
                       className="custom-control-label"
@@ -106,6 +114,10 @@ const LoginComponent = () => {
                       Remember Me
                     </label>
                   </div> */}
+                  <Link to="/forgotpassword">
+
+                  <div className="forgotpass">Forgot Password?</div>
+                  </Link>
 
                   <div className="form-group py-3">
                     <button type="submit" className="btn btn-col" id="login">
