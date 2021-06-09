@@ -6,6 +6,7 @@ import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 import ForgotPassowrd from "./Components/ForgotPassword";
+import ResetPassowrd from "./Components/ResetPassword";
 
 // impoerting context
 import { BlogContext } from "./Context/BlogContext";
@@ -44,6 +45,11 @@ const Router = () => {
             exact
             path="/forgotPassword"
             component={() => <ForgotPassowrd />}
+          />
+          <Route
+            exact
+            path="/resetPassword"
+            component={() => <ResetPassowrd />}
           />
           <Redirect to="/home" />
         </Switch>
