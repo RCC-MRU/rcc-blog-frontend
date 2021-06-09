@@ -9,18 +9,8 @@ const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
 
+  console.log(props);
   useEffect(() => {
-    // axios
-    //   .get(`/blogs/showBlogsByCategory/` + props.match.params.slug)
-    //   .then((res) => {
-    //     const about = res.data.data;
-    //     // console.log(about);
-    //     setCategory(about);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
     showBlogsByCategory(props.match.params.slug)
       .then((data) => setCategory(data))
       .catch((err) => console.log(err));
@@ -29,17 +19,10 @@ const CategoryComponent = (props) => {
       .then((data) => setOtherCategory(data))
       .catch((err) => console.log(err));
   }, [props.match.params.slug]);
+
   // useEffect(() => {
-  //   axios
-  //     .get("/blogs/showCategoryMaster")
-  //     .then((res) => {
-  //       const result = res.data.data;
-  //       setOtherCategory(result);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  //   console.log(props);
+  // }, [props])
 
   return (
     <React.Fragment>
@@ -68,6 +51,7 @@ const CategoryComponent = (props) => {
                     to={"/blog/" + categoryData.slug}
                     className="Link-highlight"
                     rel="noopener noreferrer"
+                    key={categoryData.id}
                   >
                     <CategoryType
                       blogTitle={categoryData.blogTitle}

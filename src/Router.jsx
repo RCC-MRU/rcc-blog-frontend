@@ -28,16 +28,8 @@ const Router = () => {
         <HeaderComponent />
         <Switch>
           <Route path="/home" component={() => <HomeComponent />} />
-          <Route
-            exact
-            path="/blog/:slug"
-            component={() => <BlogpostComponent />}
-          />
-          <Route
-            exact
-            path="/category/:slug"
-            component={() => <CategoryComponent />}
-          />
+          <Route exact path="/blog/:slug" component={BlogpostComponent} />
+          <Route exact path="/category/:slug" component={CategoryComponent} />
           <Route exact path="/signup" component={() => <SignupComponent />} />
           <Route exact path="/login" component={() => <LoginComponent />} />
           <Route

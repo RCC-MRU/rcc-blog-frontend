@@ -69,9 +69,9 @@ const ForgotPassowrd = () => {
               </div>
             </div>
 
-            <div className="col-md-6 col-12 right-side">
+            <div className="col-md-6 col-12 ">
               <img
-                src={process.env.PUBLIC_URL + "images/login.svg"}
+                src={process.env.PUBLIC_URL + "images/forgot-pass.svg"}
                 alt="login"
                 className="login-img"
               />

@@ -32,10 +32,11 @@
 
 .Link-highlight {
   text-decoration: none;
-  color: #000000;
+  color: #000000 !important;
 }
 .Link-highlight:hover {
   text-decoration: none;
+  color: #000000;
 }
 /* ============ Color definitions ends ============ */
 

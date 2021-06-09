@@ -10,6 +10,7 @@ const HeaderComponent = () => {
     localStorage.clear();
     context.setCredentials(null);
   };
+  // alert(JSON.stringify(context))
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-black">
