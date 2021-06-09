@@ -66,7 +66,7 @@ const CategoryComponent = (props) => {
                   // >
                   <Link
                     to={"/blog/" + categoryData.slug}
-                    style={{ textDecoration: "none", color: "#000" }}
+                    className="Link-highlight"
                     rel="noopener noreferrer"
                   >
                     <CategoryType

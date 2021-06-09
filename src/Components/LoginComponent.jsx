@@ -1,14 +1,13 @@
 import React, { useState, useContext } from "react";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import {Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from "react-router-dom";
 // impoerting context
-import {BlogContext} from '../Context/BlogContext'
+import { BlogContext } from "../Context/BlogContext";
 
 const LoginComponent = () => {
-  const context = useContext(BlogContext)
-  // const [checkbox,setCheckBox] = useState(false)
+  const context = useContext(BlogContext);
   let [loginState, setLoginState] = useState({
     email: "",
     password: "",
@@ -28,24 +27,28 @@ const LoginComponent = () => {
     login(loginState)
       .then((data) => {
         console.log(data);
-        toast(data.data.message, {type: "success"})
+        toast(data.data.message, { type: "success" });
+
         // alert();
-        context.setToken({
+        context.setCredentials({
           email: data.data.email,
           name: data.data.firstName,
-          token: data.data.token
-        })
-        window.localStorage.setItem("email", data.data.email)
-        window.localStorage.setItem("name", data.data.firstName);
-        window.localStorage.setItem("token", data.data.token);
+          token: data.data.token,
+        });
+
+        if (context.credentials?.token) {
+          <Redirect to="/home" />;
+        }
+        // window.localStorage.setItem("email", data.data.email);
+        // window.localStorage.setItem("name", data.data.firstName);
+        // window.localStorage.setItem("token", data.data.token);
       })
       .catch((error) => {
-        toast(error.message, {type: "error"})
-        console.error(error)});
+        toast(error.message, { type: "error" });
+        console.error(error);
+      });
   };
-  if(context.token?.token){
-    <Redirect to="/home" />
-  }
+
   return (
     <React.Fragment>
       <section>
@@ -103,7 +106,7 @@ const LoginComponent = () => {
                       name="confirm-box"
                       onchange={handleChange}
                       required
-                      value={checkbox}
+                      defaultValue={checkbox}
                       defaultChecked={checkbox}
                       onChange={(e)=>e.target.value(setCheckBox(!checkbox))}
                     />
@@ -114,9 +117,8 @@ const LoginComponent = () => {
                       Remember Me
                     </label>
                   </div> */}
-                  <Link to="/forgotpassword">
-
-                  <div className="forgotpass">Forgot Password?</div>
+                  <Link to="/forgotpassword" className="Link-highlight">
+                    <div className="forgotpass">Forgot Password?</div>
                   </Link>
 
                   <div className="form-group py-3">

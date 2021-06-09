@@ -8,10 +8,7 @@ const OtherCategories = ({ category }) => {
       {category.map((category) => {
         return (
           <div className="row-md-4" key={category.categoryId}>
-            <Link
-              to={`/category/`+category.slug}
-              style={{ textDecoration: "none", color: "#000" }}
-            >
+            <Link to={`/category/` + category.slug} className="Link-highlight">
               <img src={category.categoryImg} className="img-fluid" alt="cat" />
               <div className="textblock">
                 <span>{category.categoryName}</span>

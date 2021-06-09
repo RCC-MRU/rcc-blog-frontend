@@ -1,22 +1,18 @@
-import React, {useContext} from "react";
+import React from "react";
 import { register } from "../Util/axios";
 import { useState } from "react";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// impoerting context
-import {BlogContext} from '../Context/BlogContext'
 
 const SignupComponent = () => {
-  const context = useContext(BlogContext)
   let [signupState, setSignupState] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    preference:""
+    preference: "",
   });
 
-  
   const handleChange = (event) => {
     // console.log(event);
     // console.log(event.target);
@@ -25,41 +21,21 @@ const SignupComponent = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    event.target.reset();
-    console.log(signupState);
+    // event.preventDefault();
+    // event.target.reset();
+    // console.log(signupState);
 
     register(signupState)
       .then((data) => {
         console.log(data);
-        toast(data.data.message, {type: "success"})
-        context.setToken({
-          email: data.data.email,
-          name: data.data.firstName,
-          token: data.data.token
-        })
-        // alert();
-        window.localStorage.setItem("email", data.data.email)
-        window.localStorage.setItem("name", data.data.firstName);
-        window.localStorage.setItem("token", data.data.token);
-        // <Redirect to="/home" />
+        toast(data.data.message, { type: "success" });
+        window.location.href = "/login";
       })
       .catch((error) => {
-        toast(error.message, {type: "error"})
-        console.error(error)});
+        toast(error.message, { type: "error" });
+        console.error(error);
+      });
   };
-  // console.log(loginState)
-
-  // function handleChange(event) {
-  //   const { name, value } = event.target;
-  //   console.log(`type: ${name} and value: ${value}`);
-  //   setValue({ ...value, [name]: value });
-  // }
-
-  // const handleSubmit = (event) => {
-  //   alert(`Your Preference is ${event.target.value}`);
-  //   event.preventDefault();
-  // };
 
   return (
     <React.Fragment>
@@ -77,8 +53,7 @@ const SignupComponent = () => {
                 <h1 className="login">SIGN UP</h1>
                 <p>Sign up to continue to our application </p>
 
-                {/* onSubmit={handleSubmit} */}
-                <form method="POST" action="/home" onSubmit={handleSubmit}>
+                <form method="POST" onSubmit={handleSubmit}>
                   <div className="form-row py-2">
                     <div className="form-group col-md-6">
                       <input

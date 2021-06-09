@@ -33,7 +33,6 @@ const FooterComponent = () => {
     // console.log(event.target);
     // console.log("Input val", inputVal);
     const { name, value } = event.target;
-    // console.log(`Email: ${name} and value: ${value}`);
     setInputValue({ ...inputVal, [name]: value });
   }
 

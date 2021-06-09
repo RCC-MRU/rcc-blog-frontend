@@ -29,6 +29,14 @@
 .text-dark-red {
   color: #991414 !important;
 }
+
+.Link-highlight {
+  text-decoration: none;
+  color: #000000;
+}
+.Link-highlight:hover {
+  text-decoration: none;
+}
 /* ============ Color definitions ends ============ */
 
 /* ============ For selection color ============ */
@@ -132,24 +140,7 @@
   margin: 0 auto;
   font-weight: 600;
   margin-bottom: 1rem;
-  /*
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  width: 90%;
-  height: 40%;
-  position: absolute;
-  bottom: 0; */
 }
-
-/* .authorLatestCard {
-  font-size: 14px;
-  position: absolute;
-  bottom: 10px;
-} */
-
 /* ============ Featured Posts ends ============ */
 
 /* ============ Category Posts starts ============ */
@@ -184,6 +175,7 @@
   height: 18rem;
   border-radius: 8px;
 }
+
 .format-card-image:hover {
   box-shadow: 0 0px 2px 1px rgba(25, 25, 26, 0.5);
 }
@@ -239,35 +231,33 @@
   font-family: Nova Cut;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  margin-top: 5px;
+  font-size: 20px;
   color: #991414;
+  text-align: center;
 }
 
 .format-text-para {
   font-family: Nova Cut;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   align-items: center;
   text-align: center;
   color: #000000;
+  text-align: center;
+}
+
+.format-text-popular:hover, .format-text-para:hover {
+  /* text-decoration:underline; */
+  color: #991414;
+  text-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.4);
 }
 
 .div-spacing-0 {
   padding-top: 2rem;
   padding-left: 4rem;
   margin-bottom: 4rem;
-}
-
-.card-body {
-  /* -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  min-height: 1px; */
-  padding: 0.25rem !important;
-}
-
-.card-body:hover {
-  text-decoration: none;
 }
 
 .format-text-health {
@@ -296,10 +286,6 @@
   left: 371px;
   top: 1944px;
   border: 2px solid #000000;
-}
-
-.spacing-section {
-  padding-top: 0.4rem;
 }
 
 .temp-line-format {
@@ -412,11 +398,10 @@ textarea {
   size: 26px;
 } */
 
-
-.forgotpass{
-text-decoration: none !important;
-text-align: right !important;
-color: #DA3232;
+.forgotpass {
+  text-decoration: none !important;
+  text-align: right !important;
+  color: #da3232;
 }
 .rectangle-nav {
   width: 100%;

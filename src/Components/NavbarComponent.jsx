@@ -25,7 +25,10 @@ const NavbarComponent = () => {
   // data fetching for menu using axios
   useEffect(() => {
     showCategoryMaster()
-      .then((data) => setCategoryData(data))
+      .then((data) => {
+        console.log("Line 29 navbar", data);
+        setCategoryData(data);
+      })
       .catch((err) => console.log(err));
   }, []);
 

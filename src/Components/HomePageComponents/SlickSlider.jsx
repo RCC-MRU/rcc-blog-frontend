@@ -74,7 +74,7 @@ const SlickSlider = (props) => {
           return (
             <Link
               to={"/blog/" + data.slug}
-              style={{ textDecoration: "none", color: "#000" }}
+              className="Link-highlight"
               target="_blank"
               rel="noopener noreferrer"
               key={data.blogId}

@@ -135,7 +135,7 @@ const BlogpostComponent = (props) => {
                     to={"/blog/" + data.slug}
                     key={data.blogId}
                     rel="noopener noreferrer"
-                    style={{ textDecoration: "none", color: "#000" }}
+                    className="Link-highlight"
                   >
                     <RightSideMenuBot
                       blogImg={data.blogImg}

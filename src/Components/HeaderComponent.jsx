@@ -1,17 +1,15 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import NavbarComponent from "./NavbarComponent";
 // impoerting context
-import {BlogContext} from '../Context/BlogContext'
-
+import { BlogContext } from "../Context/BlogContext";
 
 const HeaderComponent = () => {
-  const context = useContext(BlogContext)
+  const context = useContext(BlogContext);
   const logout = () => {
     localStorage.clear();
-    context.setToken(null)
-
-  }
+    context.setCredentials(null);
+  };
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-black">
@@ -53,34 +51,40 @@ const HeaderComponent = () => {
             </div>
             <div className="col-12 col-sm-6">
               <ul className="navbar-nav top-right-btns">
-
                 <li className="nav-item active px-1">
                   <a className="nav-link" href="/">
                     <i className="fa fa-search"></i> Search
                   </a>
                 </li>
-                {context.token?.token ? <>
-                <li className="nav-item px-1" onClick={logout}>
-                  <Link to="/home" className="nav-link text-white" refresh="true">
-                    Logout
-                  </Link>
-                </li>
-                <li><Link className="nav-link text-white">{`Welcome ${context.token?.name}`}</Link> </li>
-
-                </>
-                 : <>
-                <li className="nav-item px-1">
-                  <Link to="/signup" className="nav-link text-white">
-                    Signup
-                  </Link>
-                </li>
-                <li className="nav-item px-1">
-                  <Link to="/login" className="nav-link text-white">
-                    Login
-                  </Link>
-                </li>
-                </>}
-                
+                {context.credentials?.token ? (
+                  <>
+                    <li className="nav-item px-1" onClick={logout}>
+                      <Link
+                        to="/home"
+                        className="nav-link text-white"
+                        refresh="true"
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="nav-link text-white" to="/home">{`Welcome ${context.credentials?.name}`}</Link>{" "}
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="nav-item px-1">
+                      <Link to="/signup" className="nav-link text-white">
+                        Signup
+                      </Link>
+                    </li>
+                    <li className="nav-item px-1">
+                      <Link to="/login" className="nav-link text-white">
+                        Login
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>

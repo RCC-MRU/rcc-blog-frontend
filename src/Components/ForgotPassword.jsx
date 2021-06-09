@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 import { forgetPass } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
 // import {Redirect} from 'react-router-dom'
@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const ForgotPassowrd = () => {
   let [forgotState, setForgotState] = useState({
     email: "",
-    
   });
 
   const handleChange = (event) => {
@@ -24,11 +23,12 @@ const ForgotPassowrd = () => {
     forgetPass(forgotState)
       .then((data) => {
         // console.log(data);
-        toast(data.data.message, {type: "success"})
+        toast(data.data.message, { type: "success" });
       })
       .catch((error) => {
-        toast(error.message, {type: "error"})
-        console.error(error)});
+        toast(error.message, { type: "error" });
+        console.error(error);
+      });
   };
 
   return (
@@ -60,51 +60,9 @@ const ForgotPassowrd = () => {
                     />
                   </div>
 
-                  {/* <div className="form-group py-2">
-                    <input
-                      type="password"
-                      placeholder="Enter Password"
-                      className="form-control form-border-remove no-outline"
-                      id="password"
-                      name="password"
-                      onChange={handleChange}
-                      required
-                    />
-                  </div> */}
-
-                  {/* <div className="form-group form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="check-box"
-                      name="check"
-                      required
-                      onChange={handleChange}
-                    />
-                    <label className="form-check-label" htmlFor="check-box">
-                      Remember me
-                    </label>
-                  </div> */}
-
-                  {/* <div className="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="confirm-box"
-                      onchange={handleChange}
-                      required
-                    />
-                    <label
-                      className="custom-control-label"
-                      htmlFor="remember-me"
-                    >
-                      Remember Me
-                    </label>
-                  </div> */}
-
                   <div className="form-group py-3">
                     <button type="submit" className="btn btn-col" id="login">
-                      <span className="log-txt-for">Login</span>
+                      <span className="log-txt-for">Click here</span>
                     </button>
                   </div>
                 </form>

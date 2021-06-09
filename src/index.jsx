@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import axios from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
 
 // Custom CSS imports
