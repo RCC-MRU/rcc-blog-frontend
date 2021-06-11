@@ -30,6 +30,7 @@ const SignupComponent = () => {
         console.log(data);
         toast(data.data.message, { type: "success" });
         window.location.href = "/login";
+        
       })
       .catch((error) => {
         toast(error.message, { type: "error" });

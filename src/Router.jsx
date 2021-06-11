@@ -6,6 +6,7 @@ import SignupComponent from "./Components/SignupComponent";
 import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 import ForgotPassowrd from "./Components/ForgotPassword";
+import ResetPassowrd from "./Components/ResetPassword";
 
 // impoerting context
 import { BlogContext } from "./Context/BlogContext";
@@ -14,11 +15,17 @@ import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
+//local storage items
+const emailLocal = localStorage.getItem("email")
+const tokenLocal = localStorage.getItem("token");
+const nameLocal = localStorage.getItem("name");
+
+
 const Router = () => {
   const [credentials, setCredentials] = useState({
-    email: "",
-    name: "",
-    token: "",
+    email: emailLocal,
+    name: nameLocal,
+    token: tokenLocal,
   });
 
   return (
@@ -44,6 +51,11 @@ const Router = () => {
             exact
             path="/forgotPassword"
             component={() => <ForgotPassowrd />}
+          />
+          <Route
+            exact
+            path="/resetPassword"
+            component={() => <ResetPassowrd />}
           />
           <Redirect to="/home" />
         </Switch>

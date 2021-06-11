@@ -102,6 +102,7 @@ const BlogpostComponent = (props) => {
               blogContent={blogdata.blogContent}
               blogTitle={blogdata.blogTitle}
               category={blogdata.category}
+              likes={blogdata.likes}
               blogPostAuthor={authorData[0]?.firstName}
             />
           </div>
