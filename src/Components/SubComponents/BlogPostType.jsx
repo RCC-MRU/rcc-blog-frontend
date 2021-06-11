@@ -16,9 +16,7 @@ const BlogPostType = (props) => {
   window.addEventListener("scroll", onScroll);
   return (
     <React.Fragment>
-    
-      <ProgressBar style={{ width: `${scroll}%` }}>
-      </ProgressBar>
+      <ProgressBar style={{ width: `${scroll}%` }}></ProgressBar>
       <div className="btn bg-dark-red btn-sm edit-font mb-2">
         {props.category}
       </div>
@@ -30,10 +28,9 @@ const BlogPostType = (props) => {
       <hr />
       <div className="blog-like">
         <div className="row">
-        
-         <div className="col-md-3">
-                <span className="shadow-text">By:</span> {props.blogPostAuthor}
-              </div> 
+          <div className="col-md-3">
+            <span className="shadow-text">By:</span> {props.blogPostAuthor}
+          </div>
           <div className="col-md-3 py-2">
             <span className="shadow-text ">On:</span>{" "}
             {new Date(props.createdAt).toLocaleDateString()}
@@ -43,7 +40,7 @@ const BlogPostType = (props) => {
             className="col-12 col-md-6 py-2"
             style={{ display: "flex", justifyContent: "space-evenly" }}
           >
-            {/* <i className="fa fa-heart">20</i> */}
+            <i className="fa fa-heart">{props.likes}</i>
             <i className="fab fa-facebook-f fa-lg"></i>
             <i className="fab fa-twitter fa-lg"></i>
             <i className="fa fa-envelope fa-lg"></i>

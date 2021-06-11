@@ -15,11 +15,17 @@ import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
+//local storage items
+const emailLocal = localStorage.getItem("email")
+const tokenLocal = localStorage.getItem("token");
+const nameLocal = localStorage.getItem("name");
+
+
 const Router = () => {
   const [credentials, setCredentials] = useState({
-    email: "",
-    name: "",
-    token: "",
+    email: emailLocal,
+    name: nameLocal,
+    token: tokenLocal,
   });
 
   return (
