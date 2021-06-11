@@ -35,10 +35,10 @@ const LoginComponent = () => {
           name: data.data.firstName,
           token: data.data.token,
         });
-
         window.localStorage.setItem("email", data.data.email);
         window.localStorage.setItem("name", data.data.firstName);
         window.localStorage.setItem("token", data.data.token);
+        window.location.href = "/home";
       })
       .catch((error) => {
         toast(error.message, { type: "error" });
