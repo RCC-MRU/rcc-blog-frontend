@@ -59,7 +59,13 @@ const HeaderComponent = () => {
                 </li>
                 {context.credentials?.token ? (
                   <>
-                    <li className="nav-item px-1" onClick={logout}>
+                    <li className="nav-item px-1">
+                      <Link
+                        className="nav-link text-white "
+                        to="/home"
+                      >{`Welcome ${context.credentials?.name}`}</Link>{" "}
+                    </li>
+                    <li className="nav-item" onClick={logout}>
                       <Link
                         to="/home"
                         className="nav-link text-white"
@@ -68,19 +74,22 @@ const HeaderComponent = () => {
                         Logout
                       </Link>
                     </li>
-                    <li>
-                      <Link className="nav-link text-white" to="/home">{`Welcome ${context.credentials?.name}`}</Link>{" "}
-                    </li>
                   </>
                 ) : (
                   <>
-                    <li className="nav-item px-1">
-                      <Link to="/signup" className="nav-link text-white">
+                    <li className="nav-item px-1 ">
+                      <Link
+                        to="/signup"
+                        className="nav-link text-white"
+                      >
                         Signup
                       </Link>
                     </li>
                     <li className="nav-item px-1">
-                      <Link to="/login" className="nav-link text-white">
+                      <Link
+                        to="/login"
+                        className="nav-link text-white"
+                      >
                         Login
                       </Link>
                     </li>
@@ -94,9 +103,10 @@ const HeaderComponent = () => {
 
       <div className="container text-center my-4">
         <p className="format-heading">
-          Health <span className="text-light-red"> & </span> Fitness
+          Health <span className="text-light-red"> &amp; </span> Fitness
         </p>
         <p className="small-heading">How To Live a Healthy and Fit Life?</p>
+        {/* <img src={process.env.PUBLIC_URL + "images/LOGO.png"} alt="logo" width="10%" /> */}
       </div>
 
       <NavbarComponent />
