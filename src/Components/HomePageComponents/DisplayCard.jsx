@@ -18,7 +18,7 @@ const DisplayCard = (props) => {
       .catch((err) => console.error(err));
   }, [props.cardCategory]);
 
-  console.log("Display Card Page. Line 33", categoryCardData);
+  // console.log("Display Card Page. Line 33", categoryCardData);
 
   return (
     <React.Fragment>

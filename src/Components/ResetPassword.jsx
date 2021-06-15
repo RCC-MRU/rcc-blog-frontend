@@ -10,35 +10,6 @@ const ResetPassword = (props) => {
     confirmPassword: "",
   });
 
-  // console.log(props);
-
-  //   const handleChange = (event) => {
-  //     // console.log(event);
-  //     // console.log(event.target);
-  //     const { name, value } = event.target;
-  //     setForgotState({ ...forgotState, [name]: value });
-  //   };
-  // const handleLogin = (event) => {
-  //   event.preventDefault();
-  //   if (password === confirmPassword) {
-  //     toast("Passwords matched", { type: "success" });
-  //   }
-  //   if (password !== confirmPassword) {
-  //     toast("Passwords Don't match", { type: "error" });
-  //   }
-  // console.log(forgotState);
-
-  // forgetPass(forgotState)
-  //   .then((data) => {
-  //     // console.log(data);
-  //     toast(data.data.message, { type: "success" });
-  //   })
-  //   .catch((error) => {
-  //     toast(error.message, { type: "error" });
-  //     console.error(error);
-  //   });
-  // };
-
   const handleChange = (event) => {
     console.log(event.target.value);
     const { name, value } = event.target;
