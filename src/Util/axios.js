@@ -52,7 +52,7 @@ let showFeaturedPosts = async () => {
 // api to get categories cards
 let showCategoryMaster = async () => {
   let response = await api.get("/blogs/showCategoryMaster");
-  console.log(response.data.result);
+  // console.log(response.data.result);
   return response.data.result;
 };
 

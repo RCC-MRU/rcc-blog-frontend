@@ -69,9 +69,9 @@ const ForgotPassowrd = () => {
               </div>
             </div>
 
-            <div className="col-md-6 col-12 ">
+            <div className="col-md-6 col-12 right-side">
               <img
-                src={process.env.PUBLIC_URL + "images/forgot-pass.svg"}
+                src="https://blog-project-react.vercel.app/images/forgot-pass.svg"
                 alt="login"
                 className="login-img"
               />

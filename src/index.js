@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
-import axios from 'axios';
+// import axios from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'font-awesome/css/font-awesome.css';
@@ -14,7 +13,7 @@ import "./Styles/footer.css";
 import "./Styles/blog.css";
 import "./Styles/login_signup.css";
 
-axios.defaults.baseURL = "http://localhost:3001/";
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 ReactDOM.render(<App/>, document.getElementById("root"));
 
@@ -23,4 +22,3 @@ ReactDOM.render(<App/>, document.getElementById("root"));
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
 serviceWorker.register();
-reportWebVitals();
