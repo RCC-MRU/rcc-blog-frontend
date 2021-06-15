@@ -27,6 +27,7 @@ const ResetPassword = (props) => {
         .then((result) => {
           console.log(result);
           toast("Password updated correctly", { type: "success" });
+          window.location.href = "/login";
         })
         .catch((err) => {
           console.log(err);
@@ -87,7 +88,7 @@ const ResetPassword = (props) => {
 
             <div className="col-md-6 col-12 right-side">
               <img
-                src="https://blog-project-react.vercel.app/images/forgot-pass.svg"
+                src={process.env.PUBLIC_URL + "/images/forgot-pass.svg"}
                 alt="login"
                 className="login-img"
               />

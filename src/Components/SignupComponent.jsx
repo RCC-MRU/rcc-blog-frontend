@@ -11,7 +11,7 @@ const SignupComponent = () => {
     email: "",
     password: "",
     preference: "",
-    confirmPassword: ""
+    confirmPassword: "",
   });
 
   const handleChange = (event) => {
@@ -26,12 +26,19 @@ const SignupComponent = () => {
     event.preventDefault();
     // event.target.reset();
     // console.log(signupState);
-    if (signupState.password === signupState.confirmPassword) {
+    const newSignupObj = {
+      firstName: signupState.firstName,
+      lastName: signupState.lastName,
+      email: signupState.email,
+      password: signupState.password,
+      preference: signupState.preference,
+    };
 
-      register(signupState)
+    if (signupState.password === signupState.confirmPassword) {
+      register(newSignupObj)
         .then((data) => {
           // console.log(data);
-          
+
           toast(data.data.message, { type: "success" });
           window.location.href = "/login";
         })
@@ -39,9 +46,8 @@ const SignupComponent = () => {
           toast(error.message, { type: "error" });
           console.error(error);
         });
-    }
-    else{
-      toast("Password Don't match" , {type: "warning"})
+    } else {
+      toast("Password Don't match", { type: "warning" });
     }
   };
 
@@ -131,7 +137,7 @@ const SignupComponent = () => {
                       className="form-control form-border-remove no-outline"
                       onChange={handleChange}
                     >
-                      <option defaultValue="default" selected>
+                      <option defaultValue="default" defaultChecked>
                         Default
                       </option>
                       <option defaultValue="fitness">Fitness</option>
