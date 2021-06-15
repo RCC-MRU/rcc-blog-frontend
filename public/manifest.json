@@ -1,7 +1,18 @@
 {
   "short_name": "H&F",
   "name": "Health and Fitness",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
+    {
+      "src": "maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
     {
       "src": "icons/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -22,10 +33,6 @@
       "sizes": "32x32",
       "type": "image/png"
     }
-  ],
-  "start_url": "/home",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
 
