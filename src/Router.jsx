@@ -16,10 +16,9 @@ import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
 //local storage items
-const emailLocal = localStorage.getItem("email")
+const emailLocal = localStorage.getItem("email");
 const tokenLocal = localStorage.getItem("token");
 const nameLocal = localStorage.getItem("name");
-
 
 const Router = () => {
   const [credentials, setCredentials] = useState({
@@ -46,8 +45,8 @@ const Router = () => {
           />
           <Route
             exact
-            path="/resetPassword"
-            component={() => <ResetPassowrd />}
+            path="/resetPassword/:token"
+            component={ResetPassowrd}
           />
           <Redirect to="/home" />
         </Switch>

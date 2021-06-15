@@ -9,7 +9,7 @@ const CategoryComponent = (props) => {
   const [category, setCategory] = useState([]);
   const [otherCategory, setOtherCategory] = useState([]);
 
-  console.log(props);
+  console.log("Category Page props, line 12", props);
   useEffect(() => {
     showBlogsByCategory(props.match.params.slug)
       .then((data) => setCategory(data))
