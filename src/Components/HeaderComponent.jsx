@@ -7,7 +7,7 @@ import { BlogContext } from "../Context/BlogContext";
 const HeaderComponent = () => {
   const context = useContext(BlogContext);
   const logout = () => {
-    localStorage.clear();
+    sessionStorage.clear();
     context.setCredentials(null);
   };
   // alert(JSON.stringify(context))
@@ -52,17 +52,17 @@ const HeaderComponent = () => {
             </div>
             <div className="col-12 col-sm-6">
               <ul className="navbar-nav top-right-btns">
-                <li className="nav-item active px-1">
+                {/* <li className="nav-item active px-1">
                   <a className="nav-link" href="/">
                     <i className="fa fa-search"></i> Search
                   </a>
-                </li>
+                </li> */}
                 {context.credentials?.token ? (
                   <>
                     <li className="nav-item px-1">
                       <Link
                         className="nav-link text-white "
-                        to="/home"
+                        to="http://localhost:3002"
                       >{`Welcome ${context.credentials?.name}`}</Link>{" "}
                     </li>
                     <li className="nav-item" onClick={logout}>
@@ -78,18 +78,12 @@ const HeaderComponent = () => {
                 ) : (
                   <>
                     <li className="nav-item px-1 ">
-                      <Link
-                        to="/signup"
-                        className="nav-link text-white"
-                      >
+                      <Link to="/signup" className="nav-link text-white">
                         Signup
                       </Link>
                     </li>
                     <li className="nav-item px-1">
-                      <Link
-                        to="/login"
-                        className="nav-link text-white"
-                      >
+                      <Link to="/login" className="nav-link text-white">
                         Login
                       </Link>
                     </li>
