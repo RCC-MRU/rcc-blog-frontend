@@ -26,7 +26,7 @@ const NavbarComponent = () => {
   useEffect(() => {
     showCategoryMaster()
       .then((data) => {
-        console.log("Line 29 navbar", data);
+        // console.log("Line 29 navbar", data);
         setCategoryData(data);
       })
       .catch((err) => console.log(err));

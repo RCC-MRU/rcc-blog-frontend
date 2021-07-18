@@ -10,6 +10,7 @@ const HeaderComponent = () => {
     sessionStorage.clear();
     context.setCredentials(null);
   };
+  // alert(JSON.stringify(context))
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand navbar-dark bg-black">
@@ -51,14 +52,20 @@ const HeaderComponent = () => {
             </div>
             <div className="col-12 col-sm-6">
               <ul className="navbar-nav top-right-btns">
-                <li className="nav-item active px-1">
+                {/* <li className="nav-item active px-1">
                   <a className="nav-link" href="/">
                     <i className="fa fa-search"></i> Search
                   </a>
-                </li>
+                </li> */}
                 {context.credentials?.token ? (
                   <>
-                    <li className="nav-item px-1" onClick={logout}>
+                    <li className="nav-item px-1">
+                      <Link
+                        className="nav-link text-white "
+                        to="http://localhost:3002"
+                      >{`Welcome ${context.credentials?.name}`}</Link>{" "}
+                    </li>
+                    <li className="nav-item" onClick={logout}>
                       <Link
                         to="/home"
                         className="nav-link text-white"
@@ -67,16 +74,10 @@ const HeaderComponent = () => {
                         Logout
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        className="nav-link text-white"
-                        to="/home"
-                      >{`Welcome ${context.credentials?.name}`}</Link>{" "}
-                    </li>
                   </>
                 ) : (
                   <>
-                    <li className="nav-item px-1">
+                    <li className="nav-item px-1 ">
                       <Link to="/signup" className="nav-link text-white">
                         Signup
                       </Link>
@@ -96,9 +97,10 @@ const HeaderComponent = () => {
 
       <div className="container text-center my-4">
         <p className="format-heading">
-          Health <span className="text-light-red"> & </span> Fitness
+          Health <span className="text-light-red"> &amp; </span> Fitness
         </p>
         <p className="small-heading">How To Live a Healthy and Fit Life?</p>
+        {/* <img src={process.env.PUBLIC_URL + "images/LOGO.png"} alt="logo" width="10%" /> */}
       </div>
 
       <NavbarComponent />

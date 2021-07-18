@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ProgressBar} from "./Styles";
+import { ProgressBar } from "./Styles";
 
 const BlogPostType = (props) => {
   const [scroll, setScroll] = useState(0);
-  
+
   const onScroll = () => {
     const Scrolled = document.documentElement.scrollTop;
     const MaxHeight =
@@ -12,7 +12,7 @@ const BlogPostType = (props) => {
     const ScrollPercent = (Scrolled / MaxHeight) * 100;
     setScroll(ScrollPercent);
   };
-  
+
   window.addEventListener("scroll", onScroll);
   return (
     <React.Fragment>

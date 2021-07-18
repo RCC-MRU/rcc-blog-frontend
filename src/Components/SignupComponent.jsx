@@ -11,6 +11,7 @@ const SignupComponent = () => {
     email: "",
     password: "",
     preference: "",
+    confirmPassword: "",
   });
 
   const handleChange = (event) => {
@@ -19,23 +20,35 @@ const SignupComponent = () => {
     const { name, value } = event.target;
     setSignupState({ ...signupState, [name]: value });
   };
+  // console.log(signupState)
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // event.target.reset();
     // console.log(signupState);
+    const newSignupObj = {
+      firstName: signupState.firstName,
+      lastName: signupState.lastName,
+      email: signupState.email,
+      password: signupState.password,
+      preference: signupState.preference,
+    };
 
-    register(signupState)
-      .then((data) => {
-        console.log(data);
-        toast(data.data.message, { type: "success" });
-        window.location.href = "/login";
-        
-      })
-      .catch((error) => {
-        toast(error.message, { type: "error" });
-        console.error(error);
-      });
+    if (signupState.password === signupState.confirmPassword) {
+      register(newSignupObj)
+        .then((data) => {
+          // console.log(data);
+
+          toast(data.data.message, { type: "success" });
+          window.location.href = "/login";
+        })
+        .catch((error) => {
+          toast(error.message, { type: "error" });
+          console.error(error);
+        });
+    } else {
+      toast("Password Don't match", { type: "warning" });
+    }
   };
 
   return (
@@ -104,16 +117,17 @@ const SignupComponent = () => {
                     />
                   </div>
 
-                  {/* <div className="form-group py-2">
+                  <div className="form-group py-2">
                     <input
                       type="password"
                       placeholder="Confirm Password"
                       className="form-control form-border-remove no-outline"
                       id="confirmPassword"
+                      name="confirmPassword"
                       onChange={handleChange}
                       required
                     />
-                  </div> */}
+                  </div>
 
                   <div className="form-group py-2">
                     {/* <label htmlFor="">Preference</label> */}
@@ -123,7 +137,7 @@ const SignupComponent = () => {
                       className="form-control form-border-remove no-outline"
                       onChange={handleChange}
                     >
-                      <option defaultValue="default" selected>
+                      <option defaultValue="default" defaultChecked>
                         Default
                       </option>
                       <option defaultValue="fitness">Fitness</option>

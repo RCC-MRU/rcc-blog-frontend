@@ -1,38 +1,40 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-// import { forgetPass } from "../Util/axios";
+import { resetPass } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
 // import {Redirect} from 'react-router-dom'
 
-const ForgotPassowrd = () => {
-  const [password,setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("");
+const ResetPassword = (props) => {
+  const [resetPassword, setNewPassword] = useState({
+    newPassword: "",
+    confirmPassword: "",
+  });
 
-//   const handleChange = (event) => {
-//     // console.log(event);
-//     // console.log(event.target);
-//     const { name, value } = event.target;
-//     setForgotState({ ...forgotState, [name]: value });
-//   };
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    const { name, value } = event.target;
+    setNewPassword({ ...resetPassword, [name]: value });
+  };
+
   const handleLogin = (event) => {
     event.preventDefault();
-    if(password===confirmPassword){
-        toast("Passwords matched", { type: "success" });
-    }
-    if (password !== confirmPassword) {
-      toast("Passwords Don't match", { type: "error" });
-    }
-    // console.log(forgotState);
+    event.target.reset();
 
-    // forgetPass(forgotState)
-    //   .then((data) => {
-    //     // console.log(data);
-    //     toast(data.data.message, { type: "success" });
-    //   })
-    //   .catch((error) => {
-    //     toast(error.message, { type: "error" });
-    //     console.error(error);
-    //   });
+    const paramsToken = props.match.params.token;
+
+    if (resetPassword.newPassword === resetPassword.confirmPassword) {
+      resetPass(paramsToken, { password: resetPassword.newPassword })
+        .then((result) => {
+          console.log(result);
+          toast("Password updated correctly", { type: "success" });
+          window.location.href = "/login";
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      toast("Error updating password", { type: "error" });
+    }
   };
 
   return (
@@ -57,10 +59,9 @@ const ForgotPassowrd = () => {
                       type="password"
                       placeholder="Enter Password"
                       className="form-control form-border-remove no-outline"
-                      id="password"
-                      name="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.password)}
+                      id="newPassword"
+                      name="newPassword"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -71,20 +72,15 @@ const ForgotPassowrd = () => {
                       className="form-control form-border-remove no-outline"
                       id="confirmPassword"
                       name="confirmPassword"
-                      value={confirmPassword}
-                      onChange={(e) =>
-                        setConfirmPassword(e.target.confirmPassword)
-                      }
+                      onChange={handleChange}
                       required
                     />
                   </div>
 
                   <div className="form-group py-3">
-                    
-                      <button type="submit" className="btn btn-col" id="login">
-                        <span className="log-txt-for">Click here</span>
-                      </button>
-                    
+                    <button type="submit" className="btn btn-col" id="login">
+                      <span className="log-txt-for">Click here</span>
+                    </button>
                   </div>
                 </form>
               </div>
@@ -92,7 +88,7 @@ const ForgotPassowrd = () => {
 
             <div className="col-md-6 col-12 right-side">
               <img
-                src={process.env.PUBLIC_URL + "images/forgot-pass.svg"}
+                src={process.env.PUBLIC_URL + "/images/forgot-pass.svg"}
                 alt="login"
                 className="login-img"
               />
@@ -104,4 +100,4 @@ const ForgotPassowrd = () => {
   );
 };
 
-export default ForgotPassowrd;
+export default ResetPassword;

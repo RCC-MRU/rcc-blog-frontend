@@ -52,7 +52,7 @@ let showFeaturedPosts = async () => {
 // api to get categories cards
 let showCategoryMaster = async () => {
   let response = await api.get("/blogs/showCategoryMaster");
-  console.log(response.data.result);
+  // console.log(response.data.result);
   return response.data.result;
 };
 
@@ -101,7 +101,7 @@ let showAuthor = async (authorID) => {
 
 // register the user
 let register = async (signupDetails) => {
-  let response = await api.post(`/users/register/`,signupDetails);
+  let response = await api.post(`/users/register/`, signupDetails);
   console.log(response.data);
   return response;
 };
@@ -114,10 +114,20 @@ let login = async (loginDetails) => {
 };
 
 let forgetPass = async (forgotPassword) => {
-  let response = await api.post(`/users/forget-password/`,forgotPassword);
+  let response = await api.post(`/users/forget-password/`, forgotPassword);
   console.log(response);
   return response;
-}
+};
+
+let resetPass = async (token, passObj) => {
+  try {
+    let response = await api.post(`/users/reset-pass/${token}`, passObj);
+    console.log(response);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 // ======== API of UserController ends here ========
 
@@ -153,5 +163,6 @@ export {
   showAuthor,
   register,
   login,
-  forgetPass
+  forgetPass,
+  resetPass,
 };
