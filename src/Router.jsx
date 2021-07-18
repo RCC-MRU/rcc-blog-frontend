@@ -16,10 +16,9 @@ import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
 //local storage items
-const emailLocal = localStorage.getItem("email")
-const tokenLocal = localStorage.getItem("token");
-const nameLocal = localStorage.getItem("name");
-
+const emailLocal = sessionStorage.getItem("email");
+const tokenLocal = sessionStorage.getItem("token");
+const nameLocal = sessionStorage.getItem("name");
 
 const Router = () => {
   const [credentials, setCredentials] = useState({

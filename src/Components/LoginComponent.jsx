@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 // impoerting context
 import { BlogContext } from "../Context/BlogContext";
 
@@ -35,9 +35,9 @@ const LoginComponent = () => {
           name: data.data.firstName,
           token: data.data.token,
         });
-        window.localStorage.setItem("email", data.data.email);
-        window.localStorage.setItem("name", data.data.firstName);
-        window.localStorage.setItem("token", data.data.token);
+        window.sessionStorage.setItem("email", data.data.email);
+        window.sessionStorage.setItem("name", data.data.firstName);
+        window.sessionStorage.setItem("token", data.data.token);
         window.location.href = "/home";
       })
       .catch((error) => {

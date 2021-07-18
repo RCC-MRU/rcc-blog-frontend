@@ -13,6 +13,7 @@ import {
   showAuthor,
   showSimilarPosts,
 } from "../Util/axios";
+import HelmetCustom from "./HelmetCustom";
 
 // const userName =() =>{
 
@@ -95,6 +96,10 @@ const BlogpostComponent = (props) => {
     <React.Fragment>
       <div className="container">
         <div className="row">
+          <HelmetCustom
+            title={blogdata.blogTitle}
+            description={blogdata.blogContent}
+          />
           <div className="col-lg-9 col-md-8">
             <BlogPostType
               createdAt={blogdata.createdAt}

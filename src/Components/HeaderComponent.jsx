@@ -7,7 +7,7 @@ import { BlogContext } from "../Context/BlogContext";
 const HeaderComponent = () => {
   const context = useContext(BlogContext);
   const logout = () => {
-    localStorage.clear();
+    sessionStorage.clear();
     context.setCredentials(null);
   };
   return (
@@ -68,7 +68,10 @@ const HeaderComponent = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link className="nav-link text-white" to="/home">{`Welcome ${context.credentials?.name}`}</Link>{" "}
+                      <Link
+                        className="nav-link text-white"
+                        to="/home"
+                      >{`Welcome ${context.credentials?.name}`}</Link>{" "}
                     </li>
                   </>
                 ) : (
