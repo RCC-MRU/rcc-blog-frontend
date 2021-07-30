@@ -131,23 +131,6 @@ let resetPass = async (token, passObj) => {
 
 // ======== API of UserController ends here ========
 
-// module.exports = {
-//   showAllBlogPost: showAllBlogPost,
-//   showSingleBlogPost: showSingleBlogPost,
-//   showBlogsByCategory: showBlogsByCategory,
-//   showPopularPosts: showPopularPosts,
-//   showLatestPosts: showLatestPosts,
-//   showFeaturedPosts: showFeaturedPosts,
-//   showCategoryMaster: showCategoryMaster,
-//   getCategoryPost: getCategoryPost,
-//   showSimilarPosts: showSimilarPosts,
-//   contactUs: contactUs,
-//   showComments: showComments,
-//   showAuthor: showAuthor,
-//   register: register,
-//   login: login,
-// };
-
 export {
   showAllBlogPost,
   showSingleBlogPost,
