@@ -81,39 +81,7 @@ const LoginComponent = () => {
                     />
                   </div>
 
-                  {/* <div className="form-group form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="check-box"
-                      name="check"
-                      required
-                      onChange={handleChange}
-                    />
-                    <label className="form-check-label" htmlFor="check-box">
-                      Remember me
-                    </label>
-                  </div> */}
-
-                  {/* <div className="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="confirm-box"
-                      name="confirm-box"
-                      onchange={handleChange}
-                      required
-                      defaultValue={checkbox}
-                      defaultChecked={checkbox}
-                      onChange={(e)=>e.target.value(setCheckBox(!checkbox))}
-                    />
-                    <label
-                      className="custom-control-label"
-                      htmlFor="remember-me"
-                    >
-                      Remember Me
-                    </label>
-                  </div> */}
+                
                   <Link to="/forgotpassword" className="Link-highlight">
                     <div className="forgotpass">Forgot Password?</div>
                   </Link>
