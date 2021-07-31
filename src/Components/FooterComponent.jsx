@@ -178,7 +178,8 @@ const FooterComponent = () => {
         <div className="copyrights">
           <hr />
           <p style={{ fontFamily: `Nova Cut, cursive` }}>
-            Copywright @{new Date().getFullYear()} | Health &amp; Fitness
+            RCC Blog | Health &amp; Fitness @{new Date().getFullYear()} - All
+            Rights Reserved.
           </p>
         </div>
       </section>
