@@ -2,7 +2,7 @@ import axios from "axios";
 // const axios = require("axios");
 
 let api = axios.create({
-  baseURL: "http://localhost:3001/",
+  baseURL: "http://rccblog.raviprakashdev.com/",
 });
 
 // ======== API of BlogController starts here ========
