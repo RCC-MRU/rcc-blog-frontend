@@ -43,12 +43,7 @@ const HomeComponent = () => {
           {featured.map((feature) => {
             return (
               <div className="col-lg-4 my-1 px-2" key={feature.blogId}>
-                <Link
-                  to={`/blog/${feature.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="Link-highlight"
-                >
+                <Link to={`/blog/${feature.slug}`} className="Link-highlight">
                   <FeaturedCard
                     category={feature.category}
                     blogTitle={feature.blogTitle}

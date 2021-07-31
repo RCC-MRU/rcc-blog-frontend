@@ -25,7 +25,7 @@ const BlogpostComponent = (props) => {
   const [authorData, setAuthorData] = useState([]);
   const [similar, setSimilar] = useState([]);
 
-  console.log(props);
+  // console.log(props);
   useEffect(() => {
     // fetching data
     // axios
