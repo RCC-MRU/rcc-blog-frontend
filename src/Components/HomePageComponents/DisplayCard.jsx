@@ -53,8 +53,6 @@ const DisplayCard = (props) => {
                       to={"/blog/" + cardData.slug}
                       type="button"
                       className="Link-highlight"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       <span className="readmore-btn ">Read More</span>
                     </Link>

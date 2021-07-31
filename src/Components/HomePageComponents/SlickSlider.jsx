@@ -75,8 +75,6 @@ const SlickSlider = (props) => {
             <Link
               to={"/blog/" + data.slug}
               className="Link-highlight"
-              target="_blank"
-              rel="noopener noreferrer"
               key={data.blogId}
             >
               <PopularCard
