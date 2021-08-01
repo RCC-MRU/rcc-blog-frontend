@@ -44,7 +44,9 @@ const Router = () => {
             component={() => <ForgotPassowrd />}
           />
           <Route exact path="/resetPassword/:token" component={ResetPassowrd} />
-          <Redirect to="/home" />
+          <Route path="*">
+            <Redirect to="/home" />
+          </Route>
         </Switch>
         <FooterComponent />
       </BlogContext.Provider>
