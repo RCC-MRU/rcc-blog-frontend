@@ -129,7 +129,7 @@ const FooterComponent = () => {
                   9812345678
                 </div>
                 <div className="footer-icon-gap">
-                  <i className="fa fa-envelope fa-lg mr-3"></i> abc@example.com
+                  <i className="fa fa-envelope fa-lg mr-3"></i> fitnessblog223@gmail.com
                 </div>
               </div>
             </div>
