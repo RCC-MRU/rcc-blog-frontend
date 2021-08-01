@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { register } from "../Util/axios";
-import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +13,8 @@ const SignupComponent = () => {
     preference: "",
     confirmPassword: "",
   });
+
+  const history = useHistory();
 
   const handleChange = (event) => {
     // console.log(event);
@@ -40,7 +42,9 @@ const SignupComponent = () => {
           // console.log(data);
 
           toast(data.data.message, { type: "success" });
-          window.location.href = "/login";
+          
+          // window.location.href = "/login";
+          history.push("/login");
         })
         .catch((error) => {
           toast(error.message, { type: "error" });

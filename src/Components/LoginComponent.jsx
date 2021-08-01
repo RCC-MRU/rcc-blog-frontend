@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // impoerting context
 import { BlogContext } from "../Context/BlogContext";
 
@@ -12,6 +12,8 @@ const LoginComponent = () => {
     email: "",
     password: "",
   });
+
+  const history = useHistory();
 
   const handleChange = (event) => {
     // console.log(event);
@@ -38,7 +40,8 @@ const LoginComponent = () => {
         window.sessionStorage.setItem("email", data.data.email);
         window.sessionStorage.setItem("name", data.data.firstName);
         window.sessionStorage.setItem("token", data.data.token);
-        window.location.href = "/home";
+        // window.location.href = "/";
+        history.push("/")
       })
       .catch((error) => {
         toast(error.message, { type: "error" });
