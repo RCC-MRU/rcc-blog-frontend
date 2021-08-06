@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import FeaturedCard from "./HomePageComponents/FeaturedCard";
 import SlickSlider from "./HomePageComponents/SlickSlider";
 import DisplayCard from "./HomePageComponents/DisplayCard";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 import {
   showFeaturedPosts,
@@ -15,18 +16,28 @@ const HomeComponent = () => {
   const [featured, setFeaturedPosts] = useState([]);
   const [popular, setPopular] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [loading2, setLoading2] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     showFeaturedPosts()
-      .then((data) => setFeaturedPosts(data))
+      .then((data) => {
+        setFeaturedPosts(data);
+        setLoading(false);
+      })
       .catch((err) => console.log(err));
 
     showCategoryMaster()
       .then((data) => setCategoryData(data))
       .catch((err) => console.log(err));
 
+    setLoading2(true);
     showPopularPosts()
-      .then((data) => setPopular(data))
+      .then((data) => {
+        setPopular(data);
+        setLoading2(false);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -40,21 +51,41 @@ const HomeComponent = () => {
         </div>
 
         <div className="row">
-          {featured.map((feature) => {
-            return (
-              <div className="col-lg-4 my-1 px-2" key={feature.blogId}>
-                <Link to={`/blog/${feature.slug}`} className="Link-highlight">
-                  <FeaturedCard
-                    category={feature.category}
-                    blogTitle={feature.blogTitle}
-                    createdAt={feature.createdAt}
-                    blogImg={feature.blogImg}
-                    authorName={feature.firstName}
-                  />
-                </Link>
+          {!loading ? (
+            featured.map((feature) => {
+              return (
+                <div className="col-lg-4 my-1 px-2" key={feature.blogId}>
+                  <Link to={`/blog/${feature.slug}`} className="Link-highlight">
+                    <FeaturedCard
+                      category={feature.category}
+                      blogTitle={feature.blogTitle}
+                      createdAt={feature.createdAt}
+                      blogImg={feature.blogImg}
+                      authorName={feature.firstName}
+                    />
+                  </Link>
+                </div>
+              );
+            })
+          ) : (
+            <>
+              <div className="col-lg-4  px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={350} />
+                </SkeletonTheme>
               </div>
-            );
-          })}
+              <div className="col-lg-4 px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={350} />
+                </SkeletonTheme>
+              </div>
+              <div className="col-lg-4 px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={350} />
+                </SkeletonTheme>
+              </div>
+            </>
+          )}
         </div>
 
         {/* <!-- After Most popular card --> */}
@@ -66,7 +97,32 @@ const HomeComponent = () => {
         </div>
 
         <div className="container">
-          <SlickSlider popularCardData={popular} />
+          {!loading2 ? (
+            <SlickSlider popularCardData={popular} />
+          ) : (
+            <div className="row">
+              <div className="col-lg-3  px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={250} />
+                </SkeletonTheme>
+              </div>
+              <div className="col-lg-3  px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={250} />
+                </SkeletonTheme>
+              </div>
+              <div className="col-lg34 px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={250} />
+                </SkeletonTheme>
+              </div>
+              <div className="col-lg34 px-2">
+                <SkeletonTheme color="#AEAEAE">
+                  <Skeleton height={400} width={250} />
+                </SkeletonTheme>
+              </div>
+            </div>
+          )}
         </div>
 
         {/*  <!-- After health div --> */}
