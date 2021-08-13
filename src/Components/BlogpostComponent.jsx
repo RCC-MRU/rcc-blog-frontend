@@ -3,6 +3,7 @@ import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
 import OtherCategories from "./RightSide/OtherCategories";
+import AddComment from "./SubComponents/AddComment";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 
 import { Link } from "react-router-dom";
@@ -109,6 +110,10 @@ const BlogpostComponent = (props) => {
               category={blogdata.category}
               likes={blogdata.likes}
               blogPostAuthor={authorData[0]?.firstName}
+            />
+
+            <AddComment 
+              blogId={blogdata.blogId}
             />
           </div>
 
