@@ -37,6 +37,7 @@
   margin-left: -10px;
   margin-right: -10px;
 }
+
 .row-md-3 hr {
   border: 0.5px solid #991414;
   margin-bottom: -1px;
@@ -56,6 +57,7 @@
 .connectAndFollow-title {
   margin-bottom: 28px;
 }
+
 .fitness-title {
   font-family: "Nova Cut", cursive;
   font-size: 19px;
@@ -83,40 +85,9 @@
 
 /* Shadow text of By and On */
 .shadow-text {
-  /* color: rgba(0, 0, 0, 0.39); */
   color: #991414;
 }
 
-/* .blog-like .col-md-6 p {
-  color: #991414;
-}
-
-.blog-like .col-md-6 p::before {
-  content: "By - ";
-  color: rgba(0, 0, 0, 0.39);
-}
-
-.blog-like .col-md-3 .far.fa-heart::after {
-  content: " 10 ";
-  color: #000000;
-} */
-
-.comment-submit{
-  position: relative;
-    text-align: right;
-    margin-top: -55px;
-    z-index: 1 !important;
-    margin-right: 10px;
-}
-
-.comment-btn{
-  background: #991414;
-  text-align: center;
-  font-family: Red Rose;
-  color: #ffffff;
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
 
 .connectAndFollow-title {
   margin-bottom: 28px;
@@ -208,3 +179,13 @@
     margin: 2rem 0;
   }
 }
+
+/* ======= Comment Section CSS starts ======= */
+.comment-box {
+  box-shadow: inset 0 1px 5px rgba(218, 50, 50, 0.7);
+  margin: 2rem 1rem 2rem 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* ======= Comment Section CSS ends ======= */

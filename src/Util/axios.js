@@ -2,7 +2,8 @@ import axios from "axios";
 // const axios = require("axios");
 
 let api = axios.create({
-  baseURL: "https://rccblog.raviprakashdev.com/",
+  // baseURL: "https://rccblog.raviprakashdev.com/",
+  baseURL: "http://localhost:3001"
 });
 
 // ======== API of BlogController starts here ========
@@ -66,7 +67,7 @@ let getCategoryPost = async () => {
 // Similar post through slug
 let showSimilarPosts = async (slug) => {
   let response = await api.get(`/blogs/showSimilarPosts/${slug}`);
-  console.log(response.data.data);
+  console.log(response.data.result);
   return response.data.result;
 };
 
@@ -82,8 +83,8 @@ let contactUs = async (inputVal) => {
 };
 
 // show all comments
-let showComments = async () => {
-  let response = await api.get("/apis/showComments");
+let showComments = async (slug) => {
+  let response = await api.get(`/apis/showComments/${slug}`);
   console.log(response.data.result);
   return response.data.result;
 };
