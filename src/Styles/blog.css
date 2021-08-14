@@ -101,23 +101,23 @@
   color: #000000;
 } */
 
-.Post-btn input {
-  font-family: "Nova Cut", cursive;
-  background-color: #991414;
-  color: #e5e5e5;
-  font-size: 19px;
-  padding: 6px 23px 6px 23px;
-  width: auto !important;
-  border: 0;
+.comment-submit{
+  position: relative;
+    text-align: right;
+    margin-top: -55px;
+    z-index: 1 !important;
+    margin-right: 10px;
 }
 
-.Post-btn {
-  position: relative;
-  text-align: right;
-  margin-top: -55px;
-  z-index: 1 !important;
-  margin-right: 10px;
+.comment-btn{
+  background: #991414;
+  text-align: center;
+  font-family: Red Rose;
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0.5rem 0;
 }
+
 .connectAndFollow-title {
   margin-bottom: 28px;
 }
