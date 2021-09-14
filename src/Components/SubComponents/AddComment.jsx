@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { showComments } from "../../Util/axios";
+import axios from "axios";
+import { BlogContext } from "../../Context/BlogContext";
+import { toast } from "react-toastify";
 
 const AddComment = ({ slug }) => {
+  const [newComment, setNewComment] = useState({ comment: "" });
   const [comments, setComments] = useState([]);
+  const context = useContext(BlogContext);
 
   useEffect(() => {
     showComments(slug)
@@ -10,8 +15,34 @@ const AddComment = ({ slug }) => {
       .catch((err) => console.log(err));
   }, [slug]);
 
+  const handleChange = (event) => {
+    console.log(event.target.value);
+
+    const { name, value } = event.target;
+    setNewComment({ ...newComment, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    axios({
+      url: `http://localhost:3001/apis/addComment/${slug}`,
+      method: "POST",
+      data: newComment,
+      headers: {
+        authorization: `Bearer ${context.credentials?.token}`,
+      },
+    })
+      .then((data) => {
+        toast(data.data.message, { type: "success" });
+      })
+      .catch((err) => {
+        console.log(err);
+        toast(err.message, { type: "error" });
+      });
+
+    console.log(newComment);
+    console.log(context.credentials?.token);
   };
 
   return (
@@ -19,12 +50,14 @@ const AddComment = ({ slug }) => {
       <div className="add-comment">
         <h3>Comments</h3>
         <form className="form-center mr-2" onSubmit={handleSubmit}>
-          <div class="form-group">
+          <div className="form-group">
             <textarea
-              class="form-control"
-              id="blog-comment"
+              className="form-control"
+              id="comment"
+              name="comment"
               rows="3"
               placeholder="Add your comment"
+              onChange={handleChange}
             ></textarea>
           </div>
 

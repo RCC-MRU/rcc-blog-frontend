@@ -54,7 +54,9 @@ const DisplayCard = (props) => {
                       type="button"
                       className="Link-highlight"
                     >
-                      <span className="readmore-btn ">Read More</span>
+                      <span className="btn bg-black btn-sm edit-font mb-2">
+                        Read More
+                      </span>
                     </Link>
                   </div>
                 </Card>

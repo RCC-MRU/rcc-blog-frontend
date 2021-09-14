@@ -70,10 +70,9 @@
 
 .blog-text {
   font-size: 18px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 0px;
-  padding-right: 50px;
+  padding: 20px 0;
+  padding-right: 3rem;
+  text-align: justify;
 }
 
 .blog-like {
@@ -87,7 +86,6 @@
 .shadow-text {
   color: #991414;
 }
-
 
 .connectAndFollow-title {
   margin-bottom: 28px;
@@ -182,10 +180,10 @@
 
 /* ======= Comment Section CSS starts ======= */
 .comment-box {
-  box-shadow: inset 0 1px 5px rgba(218, 50, 50, 0.7);
+  box-shadow: inset 0 1px 4px rgba(218, 50, 50, 0.2);
   margin: 2rem 1rem 2rem 0;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 12px;
 }
 
 /* ======= Comment Section CSS ends ======= */

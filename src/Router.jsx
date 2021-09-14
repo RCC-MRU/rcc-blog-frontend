@@ -7,7 +7,7 @@ import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 import ForgotPassowrd from "./Components/ForgotPassword";
 import ResetPassowrd from "./Components/ResetPassword";
-
+import TeamMembers from "./Components/TeamMembers";
 // impoerting context
 import { BlogContext } from "./Context/BlogContext";
 // import header and footer
@@ -44,6 +44,11 @@ const Router = () => {
             component={() => <ForgotPassowrd />}
           />
           <Route exact path="/resetPassword/:token" component={ResetPassowrd} />
+
+          <Route exact path="/team-members">
+            <TeamMembers />
+          </Route>
+
           <Route path="*">
             <Redirect to="/home" />
           </Route>
