@@ -41,7 +41,6 @@ const SamplePrevArrow = (props) => {
 
 const SlickSlider = (props) => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 4,

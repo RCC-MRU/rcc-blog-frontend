@@ -44,7 +44,7 @@ const BlogpostComponent = (props) => {
     // showComments(blogdata.slug)
     //   .then((data) => setShowCommentsAll(data))
     //   .catch((err) => console.log(err));
-  }, [props.match.params.slug, blogdata.userId]);
+  }, [props.match.params.slug, blogdata?.userId]);
 
   console.log(props.match.params.slug);
 
