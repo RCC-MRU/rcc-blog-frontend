@@ -16,8 +16,6 @@ const AddComment = ({ slug }) => {
   }, [slug]);
 
   const handleChange = (event) => {
-    console.log(event.target.value);
-
     const { name, value } = event.target;
     setNewComment({ ...newComment, [name]: value });
   };
@@ -34,15 +32,17 @@ const AddComment = ({ slug }) => {
       },
     })
       .then((data) => {
-        toast(data.data.message, { type: "success" });
+        toast("Comment Posted", { type: "success" });
       })
       .catch((err) => {
         console.log(err);
         toast(err.message, { type: "error" });
       });
-
-    console.log(newComment);
-    console.log(context.credentials?.token);
+    setTimeout(() => {
+      showComments(slug)
+        .then((data) => setComments(data))
+        .catch((err) => console.log(err));
+    }, 3000);
   };
 
   return (
