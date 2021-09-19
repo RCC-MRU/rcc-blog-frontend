@@ -42,7 +42,7 @@ const AddComment = ({ slug }) => {
       showComments(slug)
         .then((data) => setComments(data))
         .catch((err) => console.log(err));
-    }, 3000);
+    }, 2000);
   };
 
   return (

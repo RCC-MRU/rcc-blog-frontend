@@ -8,10 +8,9 @@ const PopularCard = ({ blogTitle, category, blogImg }) => {
         className="col-12 d-flex justify-content-center"
         style={{ textDecoration: "none", color: "#000" }}
       >
-        <Card className="border-0">
+        <Card className="border-0 w-100">
           <CardImg
             top
-            width="100%"
             src={blogImg}
             alt={blogTitle}
             className="format-card-image img-fluid"
