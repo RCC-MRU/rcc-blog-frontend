@@ -3,6 +3,7 @@ import BlogPostType from "./SubComponents/BlogPostType";
 import RightSideMenuTop from "./RightSide/RightSideMenuTop";
 import RightSideMenuBot from "./RightSide/RightSideMenuBot";
 import OtherCategories from "./RightSide/OtherCategories";
+import AddComment from "./SubComponents/AddComment";
 // import ReadingProgress from "./SubComponents/ReadingBar";
 
 import { Link } from "react-router-dom";
@@ -12,41 +13,18 @@ import {
   showCategoryMaster,
   showAuthor,
   showSimilarPosts,
+  // showComments,
 } from "../Util/axios";
-
-// const userName =() =>{
-
-// }
+import HelmetCustom from "./HelmetCustom";
 
 const BlogpostComponent = (props) => {
   const [blogdata, setBlogdata] = useState({});
   const [category, setCategory] = useState([]);
   const [authorData, setAuthorData] = useState([]);
   const [similar, setSimilar] = useState([]);
+  // const [showCommentsAll, setShowCommentsAll] = useState([]);
 
-  console.log(props);
   useEffect(() => {
-    // fetching data
-    // axios
-    //   .get("/blogs/showCategoryMaster")
-    //   .then((res) => {
-    //     const about = res.data.data;
-    //     setCategory(about);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   }, []);
-
-    // axios
-    //   .get(`/blogs/showSingleBlogPost/` + props.match.params.slug)
-    //   .then((res) => {
-    //     const blog = res.data.data;
-
-    //     setBlogdata(blog);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
     showCategoryMaster()
       .then((data) => setCategory(data))
       .catch((err) => console.log(err));
@@ -59,42 +37,26 @@ const BlogpostComponent = (props) => {
       .then((data) => setAuthorData(data))
       .catch((err) => console.log(err));
 
-    showSimilarPosts(blogdata.slug)
+    showSimilarPosts(props.match.params.slug)
       .then((data) => setSimilar(data))
       .catch((err) => console.log(err));
-  }, [props.match.params.slug, blogdata.userId, blogdata.slug]);
 
-  // useEffect(() => {
-  //   // axios
-  //   //   .get(`/routes/author/${blogdata.userId}`)
-  //   //   .then((resp) => {
-  //   //     const authorDetails = resp.data.details;
-  //   //     console.log(authorDetails);
-  //   //     setAuthorData(authorDetails);
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     console.log(err);
-  //   //   });
-  // }, [blogdata.userId]);
+    // showComments(blogdata.slug)
+    //   .then((data) => setShowCommentsAll(data))
+    //   .catch((err) => console.log(err));
+  }, [props.match.params.slug, blogdata?.userId]);
 
-  // useEffect(() => {
-  //   // axios
-  //   //   .get(`/blogs/showSimilarPosts/${blogdata.category}`)
-  //   //   .then((resp) => {
-  //   //     const similarData = resp.data.detail;
-  //   //     setSimilar(similarData);
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     console.log(err);
-  //   //   });
-  // }, [blogdata.category]);
-
-  // console.log(authorData[0]?.firstName);
+  console.log(props.match.params.slug);
+  console.log(blogdata);
 
   return (
     <React.Fragment>
       <div className="container">
         <div className="row">
+          <HelmetCustom
+            title={blogdata.blogTitle}
+            description={blogdata.blogContent}
+          />
           <div className="col-lg-9 col-md-8">
             <BlogPostType
               createdAt={blogdata.createdAt}
@@ -105,6 +67,8 @@ const BlogpostComponent = (props) => {
               likes={blogdata.likes}
               blogPostAuthor={authorData[0]?.firstName}
             />
+
+            <AddComment slug={props.match.params.slug} />
           </div>
 
           <div className="col-lg-3 col-md-4">
@@ -136,8 +100,7 @@ const BlogpostComponent = (props) => {
                     to={"/blog/" + data.slug}
                     key={data.blogId}
                     rel="noopener noreferrer"
-                    className="Link-highlight"
-                  >
+                    className="Link-highlight">
                     <RightSideMenuBot
                       blogImg={data.blogImg}
                       blogTitle={data.blogTitle}

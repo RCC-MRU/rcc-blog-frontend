@@ -37,7 +37,8 @@ const DisplayCard = (props) => {
                   <CardBody className="text-center">
                     <CardSubtitle tag="h6" className="format-text-health my-2">
                       <span className="text-dark-red">{cardData.category}</span>{" "}
-                      - {new Date(cardData.createdAt).toLocaleDateString()}
+                      -{" "}
+                      {new Date(cardData.createdAt).toLocaleDateString("en-GB")}
                     </CardSubtitle>
 
                     <CardTitle tag="h5">{cardData.blogTitle}</CardTitle>
@@ -52,11 +53,10 @@ const DisplayCard = (props) => {
                     <Link
                       to={"/blog/" + cardData.slug}
                       type="button"
-                      className="Link-highlight"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="readmore-btn ">Read More</span>
+                      className="Link-highlight">
+                      <span className="btn bg-black btn-sm edit-font mb-2">
+                        Read More
+                      </span>
                     </Link>
                   </div>
                 </Card>

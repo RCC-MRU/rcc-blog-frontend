@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { contactUs } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,16 +41,6 @@ const FooterComponent = () => {
     event.preventDefault();
     event.target.reset();
 
-    // axios
-    //   .post(`/routes/contact`, inputVal)
-    //   .then((res) => {
-    //     const persons = res.data;
-    //     console.log(persons);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
     contactUs(inputVal)
       .then((data) => {
         toast(data.data.message, { type: "success" });
@@ -74,10 +65,8 @@ const FooterComponent = () => {
         {isVisible && (
           <div onClick={scrollToTop}>
             <img
-              // src="https://i.postimg.cc/44Ytsk8Z/top-arrow-emoj.png"
               src={process.env.PUBLIC_URL + "/images/scroll-icon.png"}
               alt="Go to top"
-              // width="10%"
               className="img-fluid"
             />
           </div>
@@ -111,6 +100,12 @@ const FooterComponent = () => {
                 <i className="fab fa-twitter fa-lg"></i>
                 <i className="fab fa-youtube fa-lg"></i>
               </div>
+
+              <div className="text-center">
+                <Link to="/team-members" className="text-white">
+                  Team Members
+                </Link>
+              </div>
             </div>
 
             <div className="col-12 col-md-4 my-1">
@@ -129,7 +124,8 @@ const FooterComponent = () => {
                   9812345678
                 </div>
                 <div className="footer-icon-gap">
-                  <i className="fa fa-envelope fa-lg mr-3"></i> abc@example.com
+                  <i className="fa fa-envelope fa-lg mr-3"></i>{" "}
+                  fitnessblog223@gmail.com
                 </div>
               </div>
             </div>
@@ -178,7 +174,8 @@ const FooterComponent = () => {
         <div className="copyrights">
           <hr />
           <p style={{ fontFamily: `Nova Cut, cursive` }}>
-            Copywright @{new Date().getFullYear()} | Health &amp; Fitness
+            RCC Blog | Health &amp; Fitness @{new Date().getFullYear()} - All
+            Rights Reserved.
           </p>
         </div>
       </section>

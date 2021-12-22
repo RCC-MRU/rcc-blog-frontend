@@ -22,7 +22,12 @@ const BlogPostType = (props) => {
       </div>
       <h3>{props.blogTitle}</h3>
       <div className="blog-header-img">
-        <img src={props.blogImg} className="img-fluid" alt={props.blogTitle} />
+        <img
+          src={props.blogImg}
+          className="img-fluid"
+          alt={props.metaDescription}
+          title={props.metaDescription}
+        />
       </div>
       <div className="blog-text">{props.blogContent}</div>
       <hr />
@@ -33,13 +38,12 @@ const BlogPostType = (props) => {
           </div>
           <div className="col-md-3 py-2">
             <span className="shadow-text ">On:</span>{" "}
-            {new Date(props.createdAt).toLocaleDateString()}
+            {new Date(props.createdAt).toLocaleDateString("en-GB")}
           </div>
 
           <div
             className="col-12 col-md-6 py-2"
-            style={{ display: "flex", justifyContent: "space-evenly" }}
-          >
+            style={{ display: "flex", justifyContent: "space-evenly" }}>
             <i className="fa fa-heart">{props.likes}</i>
             <i className="fab fa-facebook-f fa-lg"></i>
             <i className="fab fa-twitter fa-lg"></i>

@@ -7,7 +7,7 @@ import CategoryComponent from "./Components/CategoryComponent";
 import BlogpostComponent from "./Components/BlogpostComponent";
 import ForgotPassowrd from "./Components/ForgotPassword";
 import ResetPassowrd from "./Components/ResetPassword";
-
+import TeamMembers from "./Components/TeamMembers";
 // impoerting context
 import { BlogContext } from "./Context/BlogContext";
 // import header and footer
@@ -16,9 +16,9 @@ import FooterComponent from "./Components/FooterComponent";
 import { ToastContainer } from "react-toastify";
 
 //local storage items
-const emailLocal = localStorage.getItem("email");
-const tokenLocal = localStorage.getItem("token");
-const nameLocal = localStorage.getItem("name");
+const emailLocal = sessionStorage.getItem("email");
+const tokenLocal = sessionStorage.getItem("token");
+const nameLocal = sessionStorage.getItem("name");
 
 const Router = () => {
   const [credentials, setCredentials] = useState({
@@ -43,12 +43,15 @@ const Router = () => {
             path="/forgotPassword"
             component={() => <ForgotPassowrd />}
           />
-          <Route
-            exact
-            path="/resetPassword/:token"
-            component={ResetPassowrd}
-          />
-          <Redirect to="/home" />
+          <Route exact path="/resetPassword/:token" component={ResetPassowrd} />
+
+          <Route exact path="/team-members">
+            <TeamMembers />
+          </Route>
+
+          <Route path="*">
+            <Redirect to="/home" />
+          </Route>
         </Switch>
         <FooterComponent />
       </BlogContext.Provider>

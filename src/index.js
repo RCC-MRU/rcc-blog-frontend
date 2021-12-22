@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+
 import * as serviceWorker from "./serviceWorker";
 // import axios from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'font-awesome/css/font-awesome.css';
+import "font-awesome/css/font-awesome.css";
 
 // Custom CSS imports
 import "./Styles/index.css";
@@ -15,7 +15,15 @@ import "./Styles/login_signup.css";
 
 // axios.defaults.baseURL = "http://localhost:3001/";
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.render(
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

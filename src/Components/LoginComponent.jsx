@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
 import { login } from "../Util/axios";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // impoerting context
 import { BlogContext } from "../Context/BlogContext";
 
@@ -12,6 +12,8 @@ const LoginComponent = () => {
     email: "",
     password: "",
   });
+
+  const history = useHistory();
 
   const handleChange = (event) => {
     // console.log(event);
@@ -35,10 +37,11 @@ const LoginComponent = () => {
           name: data.data.firstName,
           token: data.data.token,
         });
-        window.localStorage.setItem("email", data.data.email);
-        window.localStorage.setItem("name", data.data.firstName);
-        window.localStorage.setItem("token", data.data.token);
-        window.location.href = "/home";
+        window.sessionStorage.setItem("email", data.data.email);
+        window.sessionStorage.setItem("name", data.data.firstName);
+        window.sessionStorage.setItem("token", data.data.token);
+        // window.location.href = "/";
+        history.push("/")
       })
       .catch((error) => {
         toast(error.message, { type: "error" });
@@ -81,39 +84,7 @@ const LoginComponent = () => {
                     />
                   </div>
 
-                  {/* <div className="form-group form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="check-box"
-                      name="check"
-                      required
-                      onChange={handleChange}
-                    />
-                    <label className="form-check-label" htmlFor="check-box">
-                      Remember me
-                    </label>
-                  </div> */}
-
-                  {/* <div className="custom-control custom-checkbox">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="confirm-box"
-                      name="confirm-box"
-                      onchange={handleChange}
-                      required
-                      defaultValue={checkbox}
-                      defaultChecked={checkbox}
-                      onChange={(e)=>e.target.value(setCheckBox(!checkbox))}
-                    />
-                    <label
-                      className="custom-control-label"
-                      htmlFor="remember-me"
-                    >
-                      Remember Me
-                    </label>
-                  </div> */}
+                
                   <Link to="/forgotpassword" className="Link-highlight">
                     <div className="forgotpass">Forgot Password?</div>
                   </Link>

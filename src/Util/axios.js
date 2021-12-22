@@ -1,8 +1,10 @@
 import axios from "axios";
-// const axios = require("axios");
+
+const baseURL = "http://localhost:3001";
+// const baseURL = "https://rccblog.raviprakashdev.com/";
 
 let api = axios.create({
-  baseURL: "http://localhost:3001/",
+  baseURL: baseURL,
 });
 
 // ======== API of BlogController starts here ========
@@ -66,7 +68,7 @@ let getCategoryPost = async () => {
 // Similar post through slug
 let showSimilarPosts = async (slug) => {
   let response = await api.get(`/blogs/showSimilarPosts/${slug}`);
-  console.log(response.data.data);
+  console.log(response.data.result);
   return response.data.result;
 };
 
@@ -82,8 +84,8 @@ let contactUs = async (inputVal) => {
 };
 
 // show all comments
-let showComments = async () => {
-  let response = await api.get("/apis/showComments");
+let showComments = async (slug) => {
+  let response = await api.get(`/apis/showComments/${slug}`);
   console.log(response.data.result);
   return response.data.result;
 };
@@ -130,23 +132,6 @@ let resetPass = async (token, passObj) => {
 };
 
 // ======== API of UserController ends here ========
-
-// module.exports = {
-//   showAllBlogPost: showAllBlogPost,
-//   showSingleBlogPost: showSingleBlogPost,
-//   showBlogsByCategory: showBlogsByCategory,
-//   showPopularPosts: showPopularPosts,
-//   showLatestPosts: showLatestPosts,
-//   showFeaturedPosts: showFeaturedPosts,
-//   showCategoryMaster: showCategoryMaster,
-//   getCategoryPost: getCategoryPost,
-//   showSimilarPosts: showSimilarPosts,
-//   contactUs: contactUs,
-//   showComments: showComments,
-//   showAuthor: showAuthor,
-//   register: register,
-//   login: login,
-// };
 
 export {
   showAllBlogPost,

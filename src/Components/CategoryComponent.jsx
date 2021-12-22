@@ -20,10 +20,6 @@ const CategoryComponent = (props) => {
       .catch((err) => console.log(err));
   }, [props.match.params.slug]);
 
-  // useEffect(() => {
-  //   console.log(props);
-  // }, [props])
-
   return (
     <React.Fragment>
       <div className="rectangle-nav">
@@ -38,15 +34,10 @@ const CategoryComponent = (props) => {
 
       <section id="blogPost">
         <div className="container">
-          {/* <ReadingProgress /> */}
           <div className="row">
             <div className="col-md-9">
               {category.map((categoryData) => {
                 return (
-                  // <a
-                  //   href={"/blog/" + categoryData.slug}
-                  //   key={categoryData.blogId}
-                  // >
                   <Link
                     to={"/blog/" + categoryData.slug}
                     className="Link-highlight"
@@ -60,35 +51,12 @@ const CategoryComponent = (props) => {
                       blogImg={categoryData.blogImg}
                       blogContent={categoryData.blogContent}
                     />
+                    <br />
                   </Link>
-                  // </a>
                 );
               })}
             </div>
             <div className="col-md-3">
-              {/* <div className="row-md-3 categories">
-                <hr />
-                <h4 className="connectAndFollow-title border">
-                  Connect And Follow
-                </h4>
-                <div className="social-blogpost">
-                  <div>
-                    <i className="fab fa-facebook-f socials"></i>
-                  </div>
-                  <div>
-                    <i className="fab fa-instagram socials"></i>
-                  </div>
-                  <div>
-                    <i className="fab fa-google-plus socials"></i>
-                  </div>
-                  <div>
-                    <i className="fab fa-twitter socials"></i>
-                  </div>
-                  <div>
-                    <i className="fa fa-rss-square"></i>
-                  </div>
-                </div>
-              </div> */}
               <div className="categories row-md-3">
                 <hr />
                 <h4 className="categories-title border">Categories</h4>

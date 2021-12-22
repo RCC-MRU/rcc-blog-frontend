@@ -13,7 +13,7 @@ const SampleNextArrow = (props) => {
       style={{
         ...style,
         display: "block",
-        background: "black",
+        background: "#991414",
         padding: "1px",
         borderRadius: "50px",
       }}
@@ -30,7 +30,7 @@ const SamplePrevArrow = (props) => {
       style={{
         ...style,
         display: "block",
-        background: "black",
+        background: "#991414",
         padding: "1px",
         borderRadius: "50px",
       }}
@@ -41,14 +41,13 @@ const SamplePrevArrow = (props) => {
 
 const SlickSlider = (props) => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    centerPadding: "60px",
+    // centerPadding: "60px",
     responsive: [
       {
         breakpoint: 769,
@@ -75,8 +74,6 @@ const SlickSlider = (props) => {
             <Link
               to={"/blog/" + data.slug}
               className="Link-highlight"
-              target="_blank"
-              rel="noopener noreferrer"
               key={data.blogId}
             >
               <PopularCard

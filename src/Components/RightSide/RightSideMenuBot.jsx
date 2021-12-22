@@ -31,7 +31,7 @@ const RightSideMenuBot = ({ blogImg, blogTitle, createdAt }) => {
       </div>
       <div className="col-6 my-auto">
         <h6>{blogTitle}</h6>
-        <p>{new Date(createdAt).toLocaleDateString()}</p>
+        <p>{new Date(createdAt).toLocaleDateString("en-GB")}</p>
       </div>
     </div>
   );
