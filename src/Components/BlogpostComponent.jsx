@@ -47,6 +47,7 @@ const BlogpostComponent = (props) => {
   }, [props.match.params.slug, blogdata?.userId]);
 
   console.log(props.match.params.slug);
+  console.log(blogdata);
 
   return (
     <React.Fragment>
@@ -99,8 +100,7 @@ const BlogpostComponent = (props) => {
                     to={"/blog/" + data.slug}
                     key={data.blogId}
                     rel="noopener noreferrer"
-                    className="Link-highlight"
-                  >
+                    className="Link-highlight">
                     <RightSideMenuBot
                       blogImg={data.blogImg}
                       blogTitle={data.blogTitle}

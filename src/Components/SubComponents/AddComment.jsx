@@ -57,15 +57,13 @@ const AddComment = ({ slug }) => {
               name="comment"
               rows="3"
               placeholder="Add your comment"
-              onChange={handleChange}
-            ></textarea>
+              onChange={handleChange}></textarea>
           </div>
 
           <div className="form-group">
             <button
               type="submit"
-              className="btn bg-dark-red btn-sm edit-font mb-2"
-            >
+              className="btn bg-dark-red btn-sm edit-font mb-2">
               Add Comment
             </button>
           </div>
@@ -79,7 +77,7 @@ const AddComment = ({ slug }) => {
               <p style={{ textAlign: "left", color: "gray" }}>
                 {item.author} &nbsp;
                 <span style={{ fontSize: "12px" }}>
-                  on {new Date(item.createdAt).toLocaleDateString()}
+                  on {new Date(item.createdAt).toLocaleDateString("en-GB")}
                 </span>{" "}
               </p>
               <p style={{ fontSize: "20px" }}>{item.comment}</p>
