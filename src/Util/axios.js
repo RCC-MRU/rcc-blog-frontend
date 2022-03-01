@@ -19,7 +19,7 @@ let showAllBlogPost = async () => {
 // show posts by slug
 let showSingleBlogPost = async (slug) => {
   let response = await api.get(`/blogs/showSingleBlogPost/${slug}`);
-  console.log(response.data.result);
+  console.log("showSingleBlogPost result", response.data.result);
   return response.data.result;
 };
 

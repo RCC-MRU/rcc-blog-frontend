@@ -30,7 +30,10 @@ const BlogpostComponent = (props) => {
       .catch((err) => console.log(err));
 
     showSingleBlogPost(props.match.params.slug)
-      .then((data) => setBlogdata(data))
+      .then((data) => {
+        console.log("user data", data);
+        setBlogdata(data);
+      })
       .catch((err) => console.log(err));
 
     showAuthor(blogdata.userId)
@@ -46,7 +49,7 @@ const BlogpostComponent = (props) => {
     //   .catch((err) => console.log(err));
   }, [props.match.params.slug, blogdata?.userId]);
 
-  console.log(props.match.params.slug);
+  // console.log(props.match.params.slug);
   console.log(blogdata);
 
   return (
