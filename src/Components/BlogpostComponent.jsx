@@ -84,13 +84,13 @@ const BlogpostComponent = (props) => {
               );
             })}
 
-            <div className="categories row-md-3">
+            <div className="categories">
               <hr />
               <h4 className="categories-title border">Categories</h4>
               <OtherCategories category={category} />
             </div>
 
-            <div className=" latestPosts row-md-3">
+            <div className="latestPosts">
               <hr />
               <h4 className=" latestPosts-title border">Similar Posts</h4>
 
