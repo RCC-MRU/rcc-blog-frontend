@@ -30,7 +30,10 @@ const BlogpostComponent = (props) => {
       .catch((err) => console.log(err));
 
     showSingleBlogPost(props.match.params.slug)
-      .then((data) => setBlogdata(data))
+      .then((data) => {
+        console.log("user data", data);
+        setBlogdata(data);
+      })
       .catch((err) => console.log(err));
 
     showAuthor(blogdata.userId)
@@ -46,7 +49,7 @@ const BlogpostComponent = (props) => {
     //   .catch((err) => console.log(err));
   }, [props.match.params.slug, blogdata?.userId]);
 
-  console.log(props.match.params.slug);
+  // console.log(props.match.params.slug);
   console.log(blogdata);
 
   return (
@@ -84,13 +87,13 @@ const BlogpostComponent = (props) => {
               );
             })}
 
-            <div className="categories row-md-3">
+            <div className="categories">
               <hr />
               <h4 className="categories-title border">Categories</h4>
               <OtherCategories category={category} />
             </div>
 
-            <div className=" latestPosts row-md-3">
+            <div className="latestPosts">
               <hr />
               <h4 className=" latestPosts-title border">Similar Posts</h4>
 

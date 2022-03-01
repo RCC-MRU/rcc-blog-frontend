@@ -148,9 +148,10 @@
 /* Sanchit: Card effect on mouse hover */
 .card-effect-hover {
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
-  padding: 0.5rem;
+  padding: 0.25rem;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
+  align-items: center;
 }
 
 .card-effect-hover:hover {

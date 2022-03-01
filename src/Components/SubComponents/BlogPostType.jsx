@@ -29,7 +29,11 @@ const BlogPostType = (props) => {
           title={props.metaDescription}
         />
       </div>
-      <div className="blog-text">{props.blogContent}</div>
+      <div
+        className="blog-text"
+        dangerouslySetInnerHTML={{
+          __html: props.blogContent,
+        }}></div>
       <hr />
       <div className="blog-like">
         <div className="row">
